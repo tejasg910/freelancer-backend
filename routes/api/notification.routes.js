@@ -1,0 +1,12 @@
+const express = require("express");
+const router = express.Router({ mergeParams: true });
+
+const notificationController = require("../../controllers/notification.controller");
+const { useTryCatch } = require("../../services/utility.service");
+
+router.post(
+  "/getProjectPostedNotification",
+  useTryCatch(notificationController.getProjectPostedNotifications)
+);
+
+module.exports = router;
