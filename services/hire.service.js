@@ -290,6 +290,7 @@ const getAllHireRequestsService = async ({ freelancerId }) => {
 };
 
 const agreeRejectHireService = async ({ hireRequestId, hireRequestStatus }) => {
+  console.log(hireRequestId);
   //checking if there is a freelancer in hirerequest
   const userWithValidHireRequest = await User.findOne({
     "hireRequests.hireRequestId": mongoose.Types.ObjectId(hireRequestId),
@@ -408,6 +409,7 @@ const agreeRejectHireService = async ({ hireRequestId, hireRequestStatus }) => {
   });
 
   return {
+    status: 200,
     message: switchObj[hireRequestStatus].responseMessage,
     freelancerId: hireRequest.userId?._id,
     projectId: hireRequest?.projectId,
@@ -444,7 +446,7 @@ const getAllIncommingHireRequestsService = async (clientId, page, size) => {
   const { limit, skip } = pagination({ page, size });
   const count = await HireRequest.find({
     freelancerId: clientId,
-  }).count();
+  }).countDocuments();
   const totalPages = count / size;
   const hireRequests = await HireRequest.find(
     { freelancerId: clientId },

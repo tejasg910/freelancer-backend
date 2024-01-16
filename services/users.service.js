@@ -236,7 +236,7 @@ const registerUserService = async ({
 
   // userType,
 }) => {
-  const company = await User.findOne({ fullName });
+  const company = await User.findOne({ fullName, userType: "client" });
 
   if (company) {
     return {
@@ -247,6 +247,7 @@ const registerUserService = async ({
 
   const user = await User.findOne({
     email,
+    userType: "client",
   });
 
   if (user) {
@@ -269,7 +270,7 @@ const registerUserService = async ({
 
     //verify user
     const otp = await generateOTP();
-    const expiration = new Date(Date.now() + 10 * 60 * 1000);
+    const expiration = new Date(Date.now() + 2 * 60 * 1000);
     const emailContent = `You account verification code is ${otp}. Please do not share this code with anyone. This otp is valid until 10 minutes.`;
     const emailTempate = emailVerificationTemplate(otp, email, fullName);
     sendEmail(email, emailTempate, "Verifying email for registration!");
@@ -324,7 +325,7 @@ const verifyEmailService = async ({ email }) => {
 
   if (!user.isVerified) {
     const otp = await generateOTP();
-    const expiration = new Date(Date.now() + 10 * 60 * 1000);
+    const expiration = new Date(Date.now() + 2 * 60 * 1000);
 
     const emailTempate = emailVerificationTemplate(otp, email, user?.fullName);
     sendEmail(email, emailTempate, "Verifying email for registration!");
@@ -743,7 +744,7 @@ const updateUserService = async ({
 const resendOtpService = async (email) => {
   const otp = await generateOTP();
 
-  const expiration = new Date(Date.now() + 10 * 60 * 1000);
+  const expiration = new Date(Date.now() + 2 * 60 * 1000);
   const company = await User.findOne({ email });
 
   if (!company) {
@@ -752,13 +753,16 @@ const resendOtpService = async (email) => {
       message: "No company found with this email",
     };
   }
+
   if (company && company.otp && company.otp.expireIn > new Date()) {
-    const remainingMinutes = Math.ceil(
-      (company.otp.expireIn - Date.now()) / (60 * 1000)
-    );
+    const remainingTime = company.otp.expireIn - Date.now();
+    const remainingMinutes = Math.ceil(remainingTime / (60 * 1000));
+    const remainingSeconds = Math.ceil((remainingTime % (60 * 1000)) / 1000);
     return {
       status: 400,
-      message: `Please wait ${remainingMinutes} minutes before requesting a new OTP.`,
+      message: `Please wait ${
+        remainingMinutes - 1
+      } minutes ${remainingSeconds} seconds before requesting a new OTP.`,
     };
   }
   const emailTempate = emailVerificationTemplate(otp, email, company?.fullName);
@@ -866,6 +870,51 @@ const getCompaniesInFeedService = async ({ companyId, page, size }) => {
     companies: users,
   };
 };
+const getCompaniesByProjectIdInFeedService = async ({
+  companyId,
+  page,
+  size,
+  projectId,
+}) => {
+  const company = await User.findById(companyId);
+  if (!company) {
+    return {
+      status: 404,
+      message: "No company found",
+    };
+  }
+  const project = await Project.findById(projectId);
+  if (!project) {
+    return {
+      status: 404,
+      message: "No project found",
+    };
+  }
+
+  const result = await getMatchedUsers(project._id, companyId);
+
+  const allUsersArrays = await Promise.all(result);
+  const allUsers = allUsersArrays.flat(); // Flatten the array
+
+  const sortedUsers = allUsers.sort(
+    (a, b) => parseInt(b.matchingPercentage) - parseInt(a.matchingPercentage)
+  );
+
+  const startIndex = (page - 1) * size;
+  const endIndex = page * size;
+  const users = sortedUsers.slice(startIndex, endIndex);
+  const totalPages = allUsers.length / size;
+
+  //sending  notification
+
+  return {
+    status: 200,
+    page: page,
+    totalPages,
+    message: "Feed updated successfully",
+    companies: users,
+  };
+};
 
 module.exports = {
   userFindService,
@@ -884,4 +933,5 @@ module.exports = {
   resendOtpService,
   verifyEmailService,
   getMatchedUsers,
+  getCompaniesByProjectIdInFeedService,
 };

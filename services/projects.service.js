@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const { User, Project, Application } = require("../models");
 const { pagination } = require("../services/utility.service");
 const { setNotification } = require("./notification.service");
@@ -278,6 +279,75 @@ const getProjectByClientIdService = async ({
   }
 };
 
+async function getMatchedProjects(company) {
+  try {
+    const projects = await Project.find({ postedBy: company._id });
+
+    const companySkills = company.skills.map((skill) => skill._id);
+
+    const matchingProjects = await Project.find({
+      postedBy: { $ne: mongoose.Types.ObjectId(company._id) },
+      skills: { $in: companySkills },
+    }).populate("skills");
+
+    // Step 4: Calculate matching score for each user
+    const projectWithScore = matchingProjects.map((project) => {
+      let matchingScore = 0;
+      project.skills.forEach((projectSkill) => {
+        if (company?.skills.includes(projectSkill._id)) {
+          matchingScore++;
+        }
+      });
+      const matchingPercentage = (matchingScore / companySkills.length) * 100;
+
+      const formattedPercentage = matchingPercentage.toFixed(2);
+
+      return {
+        matchingPercentage: formattedPercentage,
+        project,
+        matchingScore,
+      };
+    });
+
+    return projectWithScore;
+  } catch (error) {
+    throw error;
+  }
+}
+const getProjectInFeedService = async ({ companyId, page, size }) => {
+  const company = await User.findById(companyId);
+  if (!company) {
+    return {
+      status: 404,
+      message: "No project found",
+    };
+  }
+
+  const result = await getMatchedProjects(company);
+
+  const allProjectArrays = await Promise.all(result);
+  const allProjects = allProjectArrays.flat(); // Flatten the array
+
+  const sortedProjects = allProjects.sort(
+    (a, b) => parseInt(b.matchingPercentage) - parseInt(a.matchingPercentage)
+  );
+
+  const startIndex = (page - 1) * size;
+  const endIndex = page * size;
+  const projects = sortedProjects.slice(startIndex, endIndex);
+  const totalPages = allProjects.length / parseInt(size);
+
+  //sending  notification
+
+  return {
+    status: 200,
+    page: page,
+    totalPages,
+    message: "Feed updated successfully",
+    projects: projects,
+  };
+};
+
 const deleteProjectService = async ({ projectId }) => {
   if (!projectId) {
     return {
@@ -294,6 +364,7 @@ const deleteProjectService = async ({ projectId }) => {
     message: "Project deleted successfully",
   };
 };
+
 const deleteProjectById = async ({ projectId }) => {
   const updatedProject = await Project.findByIdAndUpdate(
     { _id: projectId, isDeleted: false },
@@ -319,6 +390,7 @@ const deleteProjectById = async ({ projectId }) => {
 
 module.exports = {
   createProjectService,
+  getProjectInFeedService,
   getAllProjectsService,
   editProjectService,
   getProjectByClientIdService,

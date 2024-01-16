@@ -8,6 +8,7 @@ const {
   getProjectByClientIdService,
   deleteProjectService,
   deleteProjectById,
+  getProjectInFeedService,
 } = require("../services/projects.service");
 const { queryConditions } = require("../services/utility.service");
 
@@ -144,6 +145,21 @@ const getProjectByClientId = async (req, res) => {
   });
 };
 
+const getProjectsInFeed = async (req, res) => {
+  const { companyId } = req.body;
+  const { page = 1, size = 10 } = req.query;
+  console.log("req.query: ", req.query);
+
+  const response = await getProjectInFeedService({
+    companyId,
+    page,
+    size,
+  });
+  res.status(response.status).json({
+    ...response,
+  });
+};
+
 const deleteProject = async (req, res) => {
   const { projectId } = req.body;
   const response = await deleteProjectService({
@@ -163,4 +179,5 @@ module.exports = {
   getProjectByClientId,
   deleteProject,
   deleteProjectByIdController,
+  getProjectsInFeed,
 };

@@ -18,6 +18,7 @@ const {
   getCompanyByIdService,
   resendOtpService,
   verifyEmailService,
+  getCompaniesByProjectIdInFeedService,
 } = require("../services/users.service");
 const { generateLoginToken } = require("../utils/forgotPasswordtoken");
 
@@ -279,6 +280,21 @@ const getCompaniesInFeed = async (req, res) => {
   });
 };
 
+const getCompaniesByProjectIdInFeed = async (req, res) => {
+  const { companyId, projectId } = req.body;
+  const { page = 1, size = 10 } = req.query;
+  console.log("req.query: ", req.query);
+
+  const response = await getCompaniesByProjectIdInFeedService({
+    companyId,
+    page,
+    size,
+    projectId,
+  });
+  res.status(response.status).json({
+    ...response,
+  });
+};
 module.exports = {
   getAllUsers,
   registerUser,
@@ -296,4 +312,5 @@ module.exports = {
   getCompanyById,
   resendOTP,
   verifyEmail,
+  getCompaniesByProjectIdInFeed,
 };

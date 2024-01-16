@@ -159,9 +159,7 @@ const searchService = async ({
   const matchStage = {
     $match: {
       $or: [
-        { $text: { $search: searchString } },
-        { skills: { $in: skillIds } },
-        // ...budgetQuery
+        { $text: { $search: searchString }, ...budgetQuery },
       ],
     },
   };

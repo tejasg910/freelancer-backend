@@ -19,6 +19,10 @@ router.get(
   "/getvalidProjectForHire",
   useTryCatch(projectControllers.getValidProjectsForHire)
 );
+router.post(
+  "/getProjectsInFeed",
+  useTryCatch(projectControllers.getProjectsInFeed)
+);
 router.delete("/deleteProject", useTryCatch(projectControllers.deleteProject));
 router.delete(
   "/deleteProjectById/:projectId",

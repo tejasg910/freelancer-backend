@@ -1,33 +1,48 @@
-const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
+const {
+  S3Client,
+  PutObjectCommand,
+  GetObjectCommand,
+} = require("@aws-sdk/client-s3");
 
 const client = new S3Client({
+  region: "us-east-1",
+  credentials: {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_ACCESS_SECRET_KEY,
-    region: "us-east-1"
+  },
+  // accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  // secretAccessKey: process.env.AWS_ACCESS_SECRET_KEY,
 });
 
 const uploadFile = async (file) => {
-    const params = {
-        ACL: "private" || "public-read" || "public-read-write",
-        Bucket: "freelance-ipan-bucket",
-        Key: "document/" + file.originalname,
-        Body: file.buffer,
-        ContentType: 'application/pdf',
-    };
+  const params = {
+    ACL: "public-read",
+    Bucket: "freelance-ipan-bucket",
+    Key: "document/" + file.originalname,
+    Body: file.buffer,
+    ContentType: "application/pdf",
+  };
 
-    const command = new PutObjectCommand(params);
+  const uploadCommand = new PutObjectCommand(params);
 
-    try {
-        const data = await client.send(command);
-        console.log(data);
-    } catch (error) {
-        console.log(error);
+  try {
+    const uploadData = await client.send(uploadCommand);
+    if (uploadData.$metadata.httpStatusCode === 200) {
+      const bucketName = "freelance-ipan-bucket";
+      const objectKey = `document/${file.originalname}`;
+      const region = "us-east-1";
+      // const getUrlCommand = new GetObjectCommand(getObjectParams);
+      const downloadUrl = `https://${bucketName}.s3.${region}.amazonaws.com/${objectKey}`;
+      const url = downloadUrl;
+      return url;
     }
-}
+  } catch (error) {
+    console.error(error);
+    throw error; // Rethrow the error to handle it at a higher level
+  }
+};
 
 module.exports = { uploadFile };
-
-
 
 // const aws = require("aws-sdk");
 
@@ -58,7 +73,5 @@ module.exports = { uploadFile };
 //         });
 //     });
 // };
-
-
 
 // module.exports = { uploadFile };

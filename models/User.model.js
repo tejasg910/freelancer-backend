@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       lowercase: true,
       trim: true,
-      unique: true,
+      // unique: true,
       match: [/\S+@\S+\.\S+/, "Please enter a valid email"],
     },
     userName: {
@@ -36,7 +36,7 @@ const userSchema = new mongoose.Schema(
     // need to update
     userType: {
       type: String,
-      enum: ["freelancer", "client"],
+      enum: ["user", "client"],
       default: "client",
       // required: true,
     },
@@ -79,8 +79,7 @@ const userSchema = new mongoose.Schema(
     },
     resumes: [
       {
-        name: String,
-        email: String,
+        public_url: String,
       },
     ],
     team: [
@@ -89,6 +88,11 @@ const userSchema = new mongoose.Schema(
         ref: "user",
       },
     ],
+    owner: {
+      type: mongoose.Schema.ObjectId,
+      ref: "user",
+    },
+
     socialProfiles: [
       {
         name: {
@@ -114,7 +118,7 @@ const userSchema = new mongoose.Schema(
       {
         type: mongoose.Schema.ObjectId,
         ref: "category",
-        index: true
+        index: true,
       },
     ],
 
@@ -244,6 +248,6 @@ const userSchema = new mongoose.Schema(
 // db.users.createIndex({ "$**" : "text" })
 userSchema.index({
   fullName: "text",
-  intro: "text"
+  intro: "text",
 });
 module.exports = mongoose.model("user", userSchema);

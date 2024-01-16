@@ -24,6 +24,10 @@ router.post(
   "/getCompaniesInFeed",
   useTryCatch(userControllers.getCompaniesInFeed)
 );
+router.post(
+  "/getCompaniesByProjectIdInFeed",
+  useTryCatch(userControllers.getCompaniesByProjectIdInFeed)
+);
 router.post("/verifyUser", useTryCatch(userControllers.verifyUser));
 router.post("/forgotPassword", useTryCatch(userControllers.forgotPassword));
 

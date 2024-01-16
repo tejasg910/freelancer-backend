@@ -14,7 +14,6 @@ const app = express();
 
 app.use(multer().any());
 
-
 corsOptions = {
   origin: "*",
 };
@@ -29,7 +28,6 @@ app.use(cors(corsOptions));
 connectDB()
   .then(() => console.log("Database Connected"))
   .catch((err) => console.log(err));
-
 
 // app.use(upload.any());
 
@@ -51,9 +49,6 @@ connectDB()
 //     return res.status(500).json({ message: "Internal Server Error" });
 //   }
 // });
-
-
-
 
 app.get("/", (req, res) => {
   return res.json({ msg: "Welcome! Its freelance - Backend" });
@@ -94,7 +89,6 @@ app.use("*", function (req, res) {
 
 // error handler middleware
 app.use((error, req, res, next) => {
-  console.log(error);
   return res.status(error.status || 500).send({
     error: {
       status: error.status || 500,

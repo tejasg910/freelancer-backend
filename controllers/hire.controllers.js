@@ -163,18 +163,13 @@ const getAllIncomingHireRequests = async (req, res) => {
 const agreeHireRequest = async (req, res) => {
   const { hireRequestId } = req.body;
 
-  const { message, freelancerId, projectId, notificationId } =
-    await agreeRejectHireService({
-      hireRequestId,
-      hireRequestStatus: "agreed",
-    });
-
-  res.status(200).json({
-    message,
-    freelancerId,
-    projectId,
-    notificationId,
+  const response = await agreeRejectHireService({
     hireRequestId,
+    hireRequestStatus: "agreed",
+  });
+  console.log(response);
+  res.status(response.status).json({
+    ...response,
   });
 };
 
