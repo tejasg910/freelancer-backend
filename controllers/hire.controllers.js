@@ -13,6 +13,7 @@ const {
 const applyProject = async (req, res) => {
   const {
     projectId,
+    receiverId,
     userId,
     description,
     bid,
@@ -24,6 +25,7 @@ const applyProject = async (req, res) => {
   const response = await applyProjectService({
     projectId,
     userId,
+    receiverId,
     description,
     bid,
     duration,

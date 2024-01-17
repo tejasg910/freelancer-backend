@@ -13,6 +13,10 @@ router.post(
   "/getApplicationsByFreelancerId",
   useTryCatch(applicationController.getApplicationsByFreelancerId)
 );
+router.post(
+  "/getAllReceivedApplications",
+  useTryCatch(applicationController.getAllRecievedApplications)
+);
 
 router.delete(
   "/deleteApplication",

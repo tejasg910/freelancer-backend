@@ -218,7 +218,7 @@ const getProjectByClientIdService = async ({
       {},
       { limit, skip }
     )
-      .populate("projectId")
+
       .sort({ createdAt: -1 })
       .exec();
     return {
@@ -243,7 +243,7 @@ const getProjectByClientIdService = async ({
       {},
       { limit, skip }
     )
-      .populate("projectId")
+
       .sort({ createdAt: -1 })
       .exec();
     return {
@@ -265,6 +265,7 @@ const getProjectByClientIdService = async ({
       {},
       { limit, skip }
     )
+      .populate("skills")
 
       .sort({ createdAt: -1 })
       .exec();
@@ -288,7 +289,9 @@ async function getMatchedProjects(company) {
     const matchingProjects = await Project.find({
       postedBy: { $ne: mongoose.Types.ObjectId(company._id) },
       skills: { $in: companySkills },
-    }).populate("skills");
+    })
+      .populate("skills")
+      .populate("postedBy");
 
     // Step 4: Calculate matching score for each user
     const projectWithScore = matchingProjects.map((project) => {

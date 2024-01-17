@@ -68,7 +68,7 @@ const calculateProfileCompletion = async (email) => {
       }
     });
   }
-  if (user.skills.length > 0) {
+  if (user?.skills?.length > 0) {
     completedFields += 1;
   }
 

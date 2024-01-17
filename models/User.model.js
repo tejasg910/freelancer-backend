@@ -52,6 +52,9 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
     },
+    gstId: {
+      type: String,
+    },
     profilePic: {
       type: String,
       // required: true,

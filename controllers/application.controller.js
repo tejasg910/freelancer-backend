@@ -3,6 +3,7 @@ const {
   getApplicationsByProjectIdService,
   getApplicationsByFreelancerIdService,
   deleteApplicationService,
+  getAllRecivedApplicationsService,
 } = require("../services/applications.service");
 const { queryConditions } = require("../services/utility.service");
 
@@ -48,6 +49,20 @@ const getApplicationsByFreelancerId = async (req, res) => {
   });
 };
 
+const getAllRecievedApplications = async (req, res) => {
+  const { receiverId } = req.body;
+  const { page = 1, size = 10 } = req.query;
+  const response = await getAllRecivedApplicationsService({
+    receiverId,
+    page,
+    size,
+  });
+
+  res.status(response.status).json({
+    ...response,
+  });
+};
+
 const deleteApplication = async (req, res) => {
   const { applicationId, freelancerId, projectId } = req.body;
   const response = await deleteApplicationService({
@@ -64,4 +79,5 @@ module.exports = {
   getApplicationsByProjectId,
   getApplicationsByFreelancerId,
   deleteApplication,
+  getAllRecievedApplications,
 };

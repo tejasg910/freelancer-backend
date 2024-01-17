@@ -79,24 +79,27 @@ const registerUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
   const {
-    // firstName,
-    // lastName,
-    // companyName,
     fullName,
     email,
-    // userType,
-    // occupation,
     intro,
-    profilePic,
     phoneNumber,
     address,
     socialProfiles,
     qualifications,
     skills,
-    // portfolioProjects,
     companyId,
     website,
+    // firstName,
+    // lastName,
+    // companyName,
+    // userType,
+    // occupation,
+    // profilePic,
+    // portfolioProjects,
   } = req.body;
+
+  const files = req.files;
+
   const response = await updateUserService({
     // companyName,
     fullName,
@@ -107,12 +110,12 @@ const updateUser = async (req, res) => {
     // occupation,
     intro,
     companyId,
-    profilePic,
     phoneNumber,
     address,
     socialProfiles,
     qualifications,
     skills,
+    files,
     // portfolioProjects,
     website,
   });
@@ -144,7 +147,7 @@ const verifyUser = async (req, res) => {
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
-  console.log(email, password);
+  // console.log(email, password);
   const response = await loginUserService({
     email,
     password,
@@ -268,7 +271,7 @@ const setContacted = async (req, res) => {
 const getCompaniesInFeed = async (req, res) => {
   const { companyId } = req.body;
   const { page = 1, size = 10 } = req.query;
-  console.log("req.query: ", req.query);
+  // console.log("req.query: ", req.query);
 
   const response = await getCompaniesInFeedService({
     companyId,
@@ -283,7 +286,7 @@ const getCompaniesInFeed = async (req, res) => {
 const getCompaniesByProjectIdInFeed = async (req, res) => {
   const { companyId, projectId } = req.body;
   const { page = 1, size = 10 } = req.query;
-  console.log("req.query: ", req.query);
+  // console.log("req.query: ", req.query);
 
   const response = await getCompaniesByProjectIdInFeedService({
     companyId,

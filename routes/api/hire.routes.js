@@ -9,7 +9,10 @@ router.post(
   "/getAllAppliedProjects",
   useTryCatch(hireControllers.getAllAppliedProjects)
 );
-
+router.post(
+  "/getAllRecievedApplications",
+  useTryCatch(hireControllers.getAllAppliedProjects)
+);
 router.post("/hireApplicant", useTryCatch(hireControllers.hireApplicant));
 router.post("/rejectApplicant", useTryCatch(hireControllers.rejectApplicant));
 

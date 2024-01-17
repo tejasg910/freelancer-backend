@@ -11,7 +11,7 @@ const applyProjectService = async (bodyArgs) => {
   });
   if (existing.length > 0) {
     return {
-      message: "Bad Request",
+      message: "You have already  applied to this project",
       status: 400,
     };
   }

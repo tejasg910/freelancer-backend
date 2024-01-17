@@ -277,6 +277,33 @@ const getApplicationsByFreelancerIdService = async ({
     };
   }
 };
+const getAllRecivedApplicationsService = async ({ receiverId, page, size }) => {
+  const { limit, skip } = pagination({ page, size });
+
+  const count = await Application.find({
+    receiverId,
+    active: true,
+  }).countDocuments();
+  const totalPages = count / size;
+  const applications = await Application.find(
+    {
+      receiverId,
+      active: true,
+    },
+    {},
+    { limit, skip }
+  )
+    .populate("projectId")
+    .sort({ createdAt: -1 })
+    .exec();
+  return {
+    status: 200,
+    totalPages,
+    page,
+    message: "Applications fetched successfully",
+    applications: applications,
+  };
+};
 
 const deleteApplicationService = async ({
   applicationId,
@@ -334,4 +361,5 @@ module.exports = {
   getApplicationsByFreelancerIdService,
   getApplicationsByProjectIdService,
   deleteApplicationService,
+  getAllRecivedApplicationsService,
 };

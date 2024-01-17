@@ -20,7 +20,6 @@ async function FileService(url) {
 }
 
 const createUserFromPdfService = async (files, companyId) => {
-  console.log(companyId);
   try {
     const user = await User.findById(companyId);
     if (!user) {
@@ -46,17 +45,15 @@ const createUserFromPdfService = async (files, companyId) => {
       //uploading the files
 
       const users = await files.map(async (file) => {
-        let url = await uploadFile(file);
-
+        const url = await uploadFile(file, "document");
         const getData = await FileService(url);
-        console.log(getData, "getdata");
         const existingUser = await User.findOne({
           email: getData.email,
-          userType: "user",
         });
-        if (!existingUser) {
-          //extracting users from the getData and save in database
 
+        console.log(existingUser, "this is existing user");
+        if (!existingUser) {
+          console.log("came here ");
           const skillsData = await Category.find({
             title: { $in: getData?.skills },
           });
@@ -77,21 +74,16 @@ const createUserFromPdfService = async (files, companyId) => {
             resume: url,
           });
 
-          const err = await newUser.validateSync();
+          const err = newUser.validateSync();
           if (!err) {
             const newUserSave = await newUser.save();
             resumes.push(newUserSave.resume);
             team.push(newUserSave._id);
 
-            // console.log(newUserSave, "new user");
-            //saving this user in our database
-
-            if (skills.length > 0) {
+            if (newSkills.length > 0) {
               skills.push(...newSkills);
             }
 
-            //update user
-            console.log(team);
             await User.findByIdAndUpdate(companyId, { resumes, team, skills });
           }
         }
@@ -107,7 +99,7 @@ const createUserFromPdfService = async (files, companyId) => {
       message: "Invlaid file format",
     };
   } catch (error) {
-    console.log(error);
+    console.log("error in pdf extractor", error);
     return {
       status: 500,
       message: "Internal server error ",

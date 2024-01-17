@@ -51,6 +51,7 @@ const projectSchema = new mongoose.Schema(
         type: String,
       },
     ],
+
     budget: {
       minPrice: { type: Number },
       maxPrice: { type: Number },
@@ -150,6 +151,6 @@ projectSchema.pre("findOne", function () {
 // db.projects.createIndex({ "$**" : "text" })
 projectSchema.index({
   projectTitle: "text",
-  description: "text"
+  description: "text",
 });
 module.exports = mongoose.model("project", projectSchema);

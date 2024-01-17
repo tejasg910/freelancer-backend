@@ -11,6 +11,11 @@ const applicationSchema = new mongoose.Schema(
       ref: "user",
       // unique: true,
     },
+    receiverId: {
+      type: mongoose.Schema.ObjectId,
+      ref: "user",
+    },
+
     description: {
       type: String,
       required: true,

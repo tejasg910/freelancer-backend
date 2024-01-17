@@ -130,7 +130,6 @@ const getValidProjectsForHire = async (req, res) => {
 
 const getProjectByClientId = async (req, res) => {
   const { clientId, projectType = "open" } = req.body;
-  console.log(clientId);
   const { page = 1, size = 10 } = req.query;
 
   const response = await getProjectByClientIdService({

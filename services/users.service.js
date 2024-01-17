@@ -24,6 +24,7 @@ const {
   generateResetToken,
   verifyResetToken,
 } = require("../utils/forgotPasswordtoken");
+const { uploadFile } = require("../utils/awsUpload");
 
 const userFindService = async (conditions) => {
   const user = await User.find({ ...conditions })
@@ -519,7 +520,7 @@ const resetPasswordService = async ({ token, password }) => {
     { $set: { password: hashedPassword } },
     { new: true }
   );
-  console.log(updatedCompany);
+  // console.log(updatedCompany);
   if (!updatedCompany) {
     return {
       message: "Company not found",
@@ -546,7 +547,7 @@ const setReviewService = async ({
     reviews.reduce((sum, review) => sum + review.rating, 0) + parseInt(rating);
   const newAverageRating =
     totalRating > 0 ? totalRating / (reviews.length + 1) : 0;
-  console.log(totalRating, newAverageRating, "this is average rating");
+  // console.log(totalRating, newAverageRating, "this is average rating");
 
   const userUpdate = await User.findByIdAndUpdate(
     userId,
@@ -666,7 +667,7 @@ const updateUserService = async ({
   // userType,
   // occupation,
   intro,
-  profilePic,
+  files,
   phoneNumber,
   address,
   socialProfiles,
@@ -685,7 +686,7 @@ const updateUserService = async ({
       message: "Please provide valid email",
     };
   }
-  console.log(skills);
+  // console.log(skills);
   const user = await User.findOne({
     email,
   });
@@ -705,10 +706,21 @@ const updateUserService = async ({
     if (isCompanyExists) {
       return {
         status: 400,
-        message: "Company Name is alreay exists",
+        message: "Company Name is already exists",
       };
     }
+
   }
+
+  let profilePic = '';
+  const acceptedImageFormats = ["image/jpeg", "image/png", "image/jpg"];
+  if (files && files.length > 0 && acceptedImageFormats.includes(files[0].mimetype)) {
+    const image = files[0]
+    const uploadImage = await uploadFile(image, "ProfileImage")
+    profilePic = uploadImage;
+  }
+
+
   const userDetails = await User.findOneAndUpdate(
     { email: email },
     {
@@ -719,8 +731,8 @@ const updateUserService = async ({
       email,
       // userType,
       // occupation,
-      intro,
       profilePic,
+      intro,
       phoneNumber,
       address,
       socialProfiles,
@@ -760,9 +772,8 @@ const resendOtpService = async (email) => {
     const remainingSeconds = Math.ceil((remainingTime % (60 * 1000)) / 1000);
     return {
       status: 400,
-      message: `Please wait ${
-        remainingMinutes - 1
-      } minutes ${remainingSeconds} seconds before requesting a new OTP.`,
+      message: `Please wait ${remainingMinutes - 1
+        } minutes ${remainingSeconds} seconds before requesting a new OTP.`,
     };
   }
   const emailTempate = emailVerificationTemplate(otp, email, company?.fullName);
