@@ -123,10 +123,9 @@ module.exports = {
 
 //  */
 
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Project, Category, User } = require("../models");
 const { pagination } = require("./utility.service");
-
 
 const searchService = async ({
   searchString,
@@ -134,7 +133,7 @@ const searchService = async ({
   size,
   budgetMin = null,
   budgetMax = null,
-  skill
+  skill,
 }) => {
   const isSearchValid = searchString && searchString.length >= 3;
   const { limit, skip } = pagination({ page, size });
@@ -146,20 +145,21 @@ const searchService = async ({
   const skills = await Category.find(skillsQuery);
   const skillIds = skills.map((skill) => skill._id);
 
-
-
   const budgetQuery =
     budgetMin !== null && budgetMax !== null
       ? {
-        "budget.minPrice": { $gte: budgetMin },
-        "budget.maxPrice": { $lte: budgetMax },
-      }
+          "budget.minPrice": { $gte: budgetMin },
+          "budget.maxPrice": { $lte: budgetMax },
+        }
       : {};
 
   const matchStage = {
     $match: {
       $or: [
-        { $text: { $search: searchString }, ...budgetQuery },
+        { $text: { $search: searchString } },
+        {
+          skills: { $in: skillIds },
+        },
       ],
     },
   };
@@ -167,20 +167,25 @@ const searchService = async ({
   const userAggregationPipeline = [
     matchStage,
     {
-      $lookup: { from: "categories", localField: "skills", foreignField: "_id", as: "skills" },
+      $lookup: {
+        from: "categories",
+        localField: "skills",
+        foreignField: "_id",
+        as: "skills",
+      },
     },
     {
       $project: {
-        "_id": 1,
-        "userType": 1,
-        "email": 1,
-        "fullName": 1,
-        "intro": 1,
-        "profilePic": 1,
-        "address": 1,
+        _id: 1,
+        userType: 1,
+        email: 1,
+        fullName: 1,
+        intro: 1,
+        profilePic: 1,
+        address: 1,
         "skills._id": 1,
         "skills.title": 1,
-        "createdAt": 1,
+        createdAt: 1,
       },
     },
     { $sort: { createdAt: -1, ...stringScore } },
@@ -192,22 +197,32 @@ const searchService = async ({
     matchStage,
     { $sort: { createdAt: -1, ...stringScore } },
     {
-      $lookup: { from: "users", localField: "postedBy", foreignField: "_id", as: "postedBy" },
+      $lookup: {
+        from: "users",
+        localField: "postedBy",
+        foreignField: "_id",
+        as: "postedBy",
+      },
     },
     {
-      $lookup: { from: "categories", localField: "skills", foreignField: "_id", as: "skills" },
+      $lookup: {
+        from: "categories",
+        localField: "skills",
+        foreignField: "_id",
+        as: "skills",
+      },
     },
     {
       $project: {
-        "_id": 1,
-        "projectTitle": 1,
-        "description": 1,
+        _id: 1,
+        projectTitle: 1,
+        description: 1,
         "skills._id": 1,
         "skills.title": 1,
-        "duration": 1,
+        duration: 1,
         "postedBy._id": 1,
         "postedBy.fullName": 1,
-        "createdAt": 1,
+        createdAt: 1,
       },
     },
     { $skip: skip },
@@ -219,7 +234,7 @@ const searchService = async ({
     Project.aggregate(projectAggregationPipeline),
   ]);
 
-  console.log("websites")
+  console.log("websites");
 
   const [userCount, projectCount] = await Promise.all([
     User.countDocuments({ ...stringQuery }),
@@ -229,20 +244,20 @@ const searchService = async ({
   const totalUserPages = Math.ceil(userCount / size);
   const totalProjectPages = Math.ceil(projectCount / size);
 
-  return (users.length >= 1 || projects.length >= 1)
+  return users.length >= 1 || projects.length >= 1
     ? {
-      message: "search done",
-      status: 200,
-      users,
-      projects,
-      page,
-      totalUserPages,
-      totalProjectPages,
-    }
+        message: "search done",
+        status: 200,
+        users,
+        projects,
+        page,
+        totalUserPages,
+        totalProjectPages,
+      }
     : {
-      message: "Bad Request",
-      status: 400,
-    };
+        message: "Bad Request",
+        status: 400,
+      };
 };
 
 module.exports = {
