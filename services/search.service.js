@@ -148,9 +148,9 @@ const searchService = async ({
   const budgetQuery =
     budgetMin !== null && budgetMax !== null
       ? {
-          "budget.minPrice": { $gte: budgetMin },
-          "budget.maxPrice": { $lte: budgetMax },
-        }
+        "budget.minPrice": { $gte: budgetMin },
+        "budget.maxPrice": { $lte: budgetMax },
+      }
       : {};
 
   const matchStage = {
@@ -234,30 +234,30 @@ const searchService = async ({
     Project.aggregate(projectAggregationPipeline),
   ]);
 
-  console.log("websites");
-
-  const [userCount, projectCount] = await Promise.all([
-    User.countDocuments({ ...stringQuery }),
-    Project.countDocuments({ ...stringQuery, skills: { $in: skillIds } }),
-  ]);
-
-  const totalUserPages = Math.ceil(userCount / size);
-  const totalProjectPages = Math.ceil(projectCount / size);
+  /*   console.log("websites");
+  
+    const [userCount, projectCount] = await Promise.all([
+      User.countDocuments({ ...stringQuery }),
+      Project.countDocuments({ ...stringQuery, skills: { $in: skillIds } }),
+    ]);
+   */
+  const totalUserPages = Math.ceil(User.length / size);
+  const totalProjectPages = Math.ceil(Project.length / size);
 
   return users.length >= 1 || projects.length >= 1
     ? {
-        message: "search done",
-        status: 200,
-        users,
-        projects,
-        page,
-        totalUserPages,
-        totalProjectPages,
-      }
+      message: "search done",
+      status: 200,
+      users,
+      projects,
+      page,
+      totalUserPages,
+      totalProjectPages,
+    }
     : {
-        message: "Bad Request",
-        status: 400,
-      };
+      message: "Bad Request",
+      status: 400,
+    };
 };
 
 module.exports = {

@@ -57,11 +57,7 @@ const projectSchema = new mongoose.Schema(
       maxPrice: { type: Number },
       currency: { type: String, default: "INR" },
     },
-    projectProgress: {
-      type: String,
-      enum: ["open", "working", "done"],
-      default: "open",
-    },
+
     postedBy: {
       type: mongoose.Schema.ObjectId,
       ref: "user",

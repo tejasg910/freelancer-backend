@@ -201,6 +201,7 @@ const getApplicationsByFreelancerIdService = async ({
       userId: freelancerId,
       active: true,
       applicationStatus: { $in: ["hired", "rejected"] },
+      projectId: { $ne: null },
     }).countDocuments();
     const totalPages = count / size;
     const applications = await Application.find(
@@ -208,6 +209,7 @@ const getApplicationsByFreelancerIdService = async ({
         userId: freelancerId,
         active: true,
         applicationStatus: { $in: ["hired", "rejected"] },
+        projectId: { $ne: null },
       },
       {},
       { limit, skip }
@@ -226,7 +228,7 @@ const getApplicationsByFreelancerIdService = async ({
     const count = await Application.find({
       userId: freelancerId,
       active: true,
-
+      projectId: { $ne: null },
       applicationStatus: "hold",
     }).countDocuments();
     const totalPages = count / size;
@@ -234,7 +236,7 @@ const getApplicationsByFreelancerIdService = async ({
       {
         userId: freelancerId,
         active: true,
-
+        projectId: { $ne: null },
         applicationStatus: "hold",
       },
       {},
@@ -256,15 +258,18 @@ const getApplicationsByFreelancerIdService = async ({
     const count = await Application.find({
       userId: freelancerId,
       active: true,
+      projectId: { $ne: null },
     }).countDocuments();
     const totalPages = count / size;
 
     const applications = await Application.find(
-      { userId: freelancerId, active: true },
+      { userId: freelancerId, active: true, projectId: { $ne: null } },
       {},
       { limit, skip }
     )
       .populate("projectId")
+      .populate("userId")
+
       .sort({ createdAt: -1 })
       .exec();
     console.log(applications, "this is applicatio");
@@ -283,17 +288,20 @@ const getAllRecivedApplicationsService = async ({ receiverId, page, size }) => {
   const count = await Application.find({
     receiverId,
     active: true,
+    projectId: { $ne: null },
   }).countDocuments();
   const totalPages = count / size;
   const applications = await Application.find(
     {
       receiverId,
       active: true,
+      projectId: { $ne: null },
     },
     {},
     { limit, skip }
   )
     .populate("projectId")
+    .populate("receiverId")
     .sort({ createdAt: -1 })
     .exec();
   return {

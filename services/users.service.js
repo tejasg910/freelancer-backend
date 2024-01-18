@@ -709,17 +709,19 @@ const updateUserService = async ({
         message: "Company Name is already exists",
       };
     }
-
   }
 
-  let profilePic = '';
+  let profilePic = "";
   const acceptedImageFormats = ["image/jpeg", "image/png", "image/jpg"];
-  if (files && files.length > 0 && acceptedImageFormats.includes(files[0].mimetype)) {
-    const image = files[0]
-    const uploadImage = await uploadFile(image, "ProfileImage")
+  if (
+    files &&
+    files.length > 0 &&
+    acceptedImageFormats.includes(files[0].mimetype)
+  ) {
+    const image = files[0];
+    const uploadImage = await uploadFile(image, "ProfileImage");
     profilePic = uploadImage;
   }
-
 
   const userDetails = await User.findOneAndUpdate(
     { email: email },
@@ -772,8 +774,9 @@ const resendOtpService = async (email) => {
     const remainingSeconds = Math.ceil((remainingTime % (60 * 1000)) / 1000);
     return {
       status: 400,
-      message: `Please wait ${remainingMinutes - 1
-        } minutes ${remainingSeconds} seconds before requesting a new OTP.`,
+      message: `Please wait ${
+        remainingMinutes - 1
+      } minutes ${remainingSeconds} seconds before requesting a new OTP.`,
     };
   }
   const emailTempate = emailVerificationTemplate(otp, email, company?.fullName);

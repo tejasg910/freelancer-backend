@@ -283,7 +283,10 @@ const hireRequestService = async ({ projectId, freelancerId, clientId }) => {
 };
 
 const getAllHireRequestsService = async ({ freelancerId }) => {
-  const hireRequests = await HireRequest.find({ freelancerId })
+  const hireRequests = await HireRequest.find({
+    freelancerId,
+    projectId: { $ne: null },
+  })
     .populate("projectId")
     .populate("clientId");
   return hireRequests;
@@ -424,7 +427,7 @@ const getAllSentHireRequestsService = async (clientId, page, size) => {
   }).count();
   const totalPages = count / size;
   const hireRequests = await HireRequest.find(
-    { clientId: clientId },
+    { clientId: clientId, projectId: { $ne: null } },
     {},
     { limit, skip }
   )
@@ -449,7 +452,7 @@ const getAllIncommingHireRequestsService = async (clientId, page, size) => {
   }).countDocuments();
   const totalPages = count / size;
   const hireRequests = await HireRequest.find(
-    { freelancerId: clientId },
+    { freelancerId: clientId, projectId: { $ne: null } },
     {},
     { limit, skip }
   )

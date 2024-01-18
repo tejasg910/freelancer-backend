@@ -51,40 +51,49 @@ const createUserFromPdfService = async (files, companyId) => {
           email: getData.email,
         });
 
-        console.log(existingUser, "this is existing user");
         if (!existingUser) {
-          console.log("came here ");
-          const skillsData = await Category.find({
-            title: { $in: getData?.skills },
-          });
-          const skillsId = skillsData.map((skill) => skill._id);
+          if (
+            getData.email &&
+            getData.name &&
+            getData.phone &&
+            getData.skills
+          ) {
+            const skillsData = await Category.find({
+              title: { $in: getData?.skills },
+            });
+            const skillsId = skillsData.map((skill) => skill._id);
 
-          const newSkills = skillsId.filter(
-            (skillId) => !user.skills.includes(skillId)
-          );
+            const newSkills = skillsId.filter(
+              (skillId) => !user.skills.includes(skillId)
+            );
 
-          const newUser = new User({
-            email: getData?.email,
-            fullName: getData?.name,
+            const newUser = new User({
+              email: getData?.email,
+              fullName: getData?.name,
 
-            phoneNumber: getData?.phone,
-            skills: skillsId,
-            userType: "user",
-            owner: companyId,
-            resume: url,
-          });
+              phoneNumber: getData?.phone,
+              skills: skillsId,
+              userType: "user",
+              owner: companyId,
+              resume: url,
+            });
 
-          const err = newUser.validateSync();
-          if (!err) {
-            const newUserSave = await newUser.save();
-            resumes.push(newUserSave.resume);
-            team.push(newUserSave._id);
+            const err = newUser.validateSync();
+            if (!err) {
+              const newUserSave = await newUser.save();
+              resumes.push(newUserSave.resume);
+              team.push(newUserSave._id);
 
-            if (newSkills.length > 0) {
-              skills.push(...newSkills);
+              if (newSkills.length > 0) {
+                skills.push(...newSkills);
+              }
+
+              await User.findByIdAndUpdate(companyId, {
+                resumes,
+                team,
+                skills,
+              });
             }
-
-            await User.findByIdAndUpdate(companyId, { resumes, team, skills });
           }
         }
         // Assuming you have an uploadFile function

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { User, Project, Application } = require("../models");
+const { User, Project, Application, HireRequest } = require("../models");
 const { pagination } = require("../services/utility.service");
 const { setNotification } = require("./notification.service");
 const { userSelect, applicationSelect } = require("./service.constants");
@@ -384,10 +384,56 @@ const deleteProjectById = async ({ projectId }) => {
     { $set: { active: false } }
   );
 
+  //updating hire request
+  const hireRequest = await HireRequest.findOneAndUpdate(
+    { projectId, active: true },
+    { $set: { isDeleted: false } }
+  );
+
   return {
     status: 200,
     message: "Project deleted successfully",
     deletedProject: updatedProject,
+  };
+};
+
+const updateProjectStatusService = async ({ projectId, status }) => {
+  const project = await Project.findById(projectId);
+
+  if (!status) {
+    return {
+      status: 404,
+      message: "Please provide status",
+    };
+  }
+
+  if (!project) {
+    return {
+      status: 404,
+      message: "Project not found",
+    };
+  }
+
+  if (status === "OPEN") {
+    const project = await Project.findOneAndUpdate(
+      { projectId, active: true },
+      { $set: { projectProgress: "OPEN" } }
+    );
+  } else if (status === "WORKING") {
+    const project = await Project.findOneAndUpdate(
+      { projectId, active: true },
+      { $set: { projectProgress: "WORKING" } }
+    );
+  } else if (status === "DONE") {
+    const project = await Project.findOneAndUpdate(
+      { projectId, active: true },
+      { $set: { projectProgress: "DONE" } }
+    );
+  }
+
+  return {
+    status: 200,
+    message: "Project progress updated successfully",
   };
 };
 
@@ -401,4 +447,5 @@ module.exports = {
   getValidProjects,
   deleteProjectService,
   deleteProjectById,
+  updateProjectStatusService,
 };

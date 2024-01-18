@@ -23,6 +23,10 @@ router.post(
   "/getProjectsInFeed",
   useTryCatch(projectControllers.getProjectsInFeed)
 );
+router.put(
+  "/updateProjectStatus",
+  useTryCatch(projectControllers.updateProjectStatus)
+);
 router.delete("/deleteProject", useTryCatch(projectControllers.deleteProject));
 router.delete(
   "/deleteProjectById/:projectId",

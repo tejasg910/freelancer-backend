@@ -1,7 +1,6 @@
 const {
   S3Client,
   PutObjectCommand,
-  GetObjectCommand,
 } = require("@aws-sdk/client-s3");
 
 const client = new S3Client({
@@ -10,8 +9,7 @@ const client = new S3Client({
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_ACCESS_SECRET_KEY,
   },
-  // accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  // secretAccessKey: process.env.AWS_ACCESS_SECRET_KEY,
+ 
 });
 
 
@@ -42,14 +40,13 @@ const uploadFile = async (file, folder) => {
       const bucketName = "freelance-ipan-bucket";
       const objectKey = `${folder}/${file.originalname}`;
       const region = "us-east-1";
-      // const getUrlCommand = new GetObjectCommand(getObjectParams);
       const downloadUrl = `https://${bucketName}.s3.${region}.amazonaws.com/${objectKey}`;
       const url = downloadUrl;
       return url;
     }
   } catch (error) {
     console.log("Error while Upload File", error);
-    throw error; // Rethrow the error to handle it at a higher level
+    throw error; 
   }
 };
 

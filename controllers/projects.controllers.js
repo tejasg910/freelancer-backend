@@ -9,6 +9,7 @@ const {
   deleteProjectService,
   deleteProjectById,
   getProjectInFeedService,
+  updateProjectStatusService,
 } = require("../services/projects.service");
 const { queryConditions } = require("../services/utility.service");
 
@@ -112,7 +113,7 @@ const deleteProjectByIdController = async (req, res) => {
   const { projectId } = req.params;
   const response = await deleteProjectById({ projectId });
 
-  return res.status(response.status).json({ message: response.message });
+  return res.status(response.status).json({ ...response });
 };
 
 const getValidProjectsForHire = async (req, res) => {
@@ -169,6 +170,18 @@ const deleteProject = async (req, res) => {
     ...response,
   });
 };
+
+const updateProjectStatus = async (req, res) => {
+  const { projectId, status } = req.body;
+  const response = await updateProjectStatusService({
+    projectId,
+    status,
+  });
+
+  res.status(response.status).json({
+    ...response,
+  });
+};
 module.exports = {
   getAllProjects,
   createProject,
@@ -179,4 +192,5 @@ module.exports = {
   deleteProject,
   deleteProjectByIdController,
   getProjectsInFeed,
+  updateProjectStatus,
 };
