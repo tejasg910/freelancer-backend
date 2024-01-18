@@ -95,6 +95,13 @@ const userFindService = async (conditions) => {
     })
     .populate({
       path: "skills",
+    })
+    .populate({
+      path: "team",
+      select: userSelect,
+      populate: {
+        path: "skills",
+      },
     });
   return user;
 };
