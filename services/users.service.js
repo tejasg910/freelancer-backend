@@ -103,11 +103,20 @@ const userFindService = async (conditions) => {
         path: "skills",
       },
     });
+
   return user;
 };
 
 const getCompanyByIdService = async (companyId) => {
-  const company = await User.findById(companyId).populate("skills");
+  const company = await User.findById(companyId)
+    .populate("skills")
+    .populate({
+      path: "team",
+      select: userSelect,
+      populate: {
+        path: "skills",
+      },
+    });
   if (!company) {
     return {
       status: 404,
@@ -255,7 +264,6 @@ const registerUserService = async ({
 
   const user = await User.findOne({
     email,
-    userType: "client",
   });
 
   if (user) {
@@ -319,6 +327,7 @@ const registerUserService = async ({
     }
   }
 };
+
 const verifyEmailService = async ({ email }) => {
   // Find the user by email
 
@@ -810,6 +819,7 @@ async function getMatchedUsers(projectId, currentUserId) {
     // Step 3: Find users with matching skills, excluding the current user
     const matchingUsers = await User.find({
       _id: { $ne: mongoose.Types.ObjectId(currentUserId) },
+      userType: "user",
       skills: { $in: projectSkills },
     }).populate("skills");
     // Step 4: Calculate matching score for each user

@@ -42,7 +42,7 @@ const calculateProfileCompletion = async (email) => {
   const requiredFields = [
     "fullName",
     "intro",
-    // "profilePic",
+    "profilePic",
     "phoneNumber",
     "address",
     "socialProfiles",

@@ -1,16 +1,19 @@
 const express = require("express");
 const applicationController = require("../../controllers/application.controller");
 const { useTryCatch } = require("../../services/utility.service");
+const { authMiddleware } = require("../../middleware/auth");
 
 const router = express.Router({ mergeParams: true });
 
 router.post(
   "/getApplicationsByProjectId",
+
   useTryCatch(applicationController.getApplicationsByProjectId)
 );
 
 router.post(
   "/getApplicationsByFreelancerId",
+
   useTryCatch(applicationController.getApplicationsByFreelancerId)
 );
 router.post(

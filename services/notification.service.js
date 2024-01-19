@@ -67,13 +67,47 @@ const getProjectPostedNotificationsService = async (companyId) => {
     },
     {},
     { limit: 20 }
-  ).populate({
-    path: "projectId",
-    populate: {
-      path: "postedBy",
-      select: userSelect,
+  )
+    .populate({
+      path: "projectId",
+      populate: {
+        path: "postedBy",
+        select: userSelect,
+      },
+    })
+    .populate({
+      path: "triggeredBy",
+    });
+
+  return {
+    status: 200,
+    message: "fetched notifications successfully",
+    notifications,
+  };
+};
+
+const getAllNotificationsSeervice = async (companyId) => {
+  const notifications = await Notification.find(
+    {
+      notify: companyId,
+      isRead: false,
     },
-  });
+    {},
+    { limit: 20 }
+  )
+    .populate({
+      path: "projectId",
+      populate: {
+        path: "postedBy",
+        select: userSelect,
+      },
+    })
+    .populate({
+      path: "hireRequestId",
+    })
+    .populate({
+      path: "triggeredBy",
+    });
 
   return {
     status: 200,
@@ -86,4 +120,5 @@ module.exports = {
   setNotification,
   readNotificationService,
   getProjectPostedNotificationsService,
+  getAllNotificationsSeervice,
 };

@@ -5,10 +5,10 @@ const { upload } = require("../../utils/multer");
 const addResourcesController = require("../../controllers/resources.controller");
 const { useTryCatch } = require("../../services/utility.service");
 
-router.post(
-  "/addResources",
-  upload.array("files"),
-  useTryCatch(addResourcesController.addResources)
-);
+router.post("/addResources", useTryCatch(addResourcesController.addResources));
 
+router.patch(
+  "/updateResource",
+  useTryCatch(addResourcesController.updateResourceController)
+);
 module.exports = router;

@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema(
 
     email: {
       type: String,
-      required: true,
+      // required: true,
       lowercase: true,
       trim: true,
       // unique: true,
@@ -49,6 +49,15 @@ const userSchema = new mongoose.Schema(
       type: String,
       // required: true,
     },
+    designation: { type: String },
+    experience: [
+      {
+        title: { type: String },
+        duration: { type: Number },
+        summary: { type: String },
+      },
+    ],
+
     password: {
       type: String,
     },
@@ -82,7 +91,7 @@ const userSchema = new mongoose.Schema(
     },
     resumes: [
       {
-        public_url: String,
+        type: String,
       },
     ],
     team: [
@@ -244,6 +253,11 @@ const userSchema = new mongoose.Schema(
       expireIn: Date,
     },
     isDeleted: { type: Boolean, default: false },
+    availability: { type: String, enum: ['Immediate', '1 Week', '2 Weeks', '3 Weeks', '1 Month', 'More than 1 Month'] },
+    budget: {
+      type: Number,
+      min: [0, "Budget must be a non-negative number."],
+    },
   },
   { timestamps: true }
 );

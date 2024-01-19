@@ -4,13 +4,20 @@ const search = async (req, res) => {
     const { page = 1, size = 10, userType } = req.query;
     const {
         searchString,
-        skill
+        skill,
+        minBudget,
+        maxBudget,
+        availability
+
     } = req.body;
     const response = await searchService({
         searchString,
         page,
         size,
-        skill
+        skill,
+        minBudget,
+        maxBudget,
+        availability
     })
 
     res.status(response.status).json({

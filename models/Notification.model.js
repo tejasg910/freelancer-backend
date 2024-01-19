@@ -40,6 +40,7 @@ const notificationSchema = new mongoose.Schema(
         "hired",
         "rejected",
         "projectPosted",
+        "invitationReceived",
       ],
       required: true,
     },

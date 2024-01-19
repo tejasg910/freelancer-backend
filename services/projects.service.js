@@ -219,6 +219,8 @@ const getProjectByClientIdService = async ({
       { limit, skip }
     )
 
+      .populate("skills")
+
       .sort({ createdAt: -1 })
       .exec();
     return {
@@ -379,17 +381,20 @@ const deleteProjectById = async ({ projectId }) => {
   }
 
   //updating the applications
-  const application = await Application.findOneAndUpdate(
+  const application = await Application.updateMany(
     { projectId, active: true },
     { $set: { active: false } }
   );
 
   //updating hire request
-  const hireRequest = await HireRequest.findOneAndUpdate(
-    { projectId, active: true },
-    { $set: { isDeleted: false } }
+  const hireRequest = await HireRequest.updateMany(
+    { projectId, isDeleted: false },
+    { $set: { isDeleted: true } }
   );
-
+  const notification = await Notification.updateMany(
+    { projectId, isRead: false },
+    { $set: { isRead: false } }
+  );
   return {
     status: 200,
     message: "Project deleted successfully",

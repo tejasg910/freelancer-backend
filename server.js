@@ -3,6 +3,8 @@ var logger = require("morgan");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const { connectDB } = require("./db");
+const cookieParser = require("cookie-parser");
+
 // routers
 
 const apiRouter = require("./routes/api");
@@ -20,8 +22,9 @@ corsOptions = {
 
 dotenv.config();
 app.use(logger("dev"));
-app.use(express.json());
+app.use(express.json({}));
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 app.use(cors(corsOptions));
 

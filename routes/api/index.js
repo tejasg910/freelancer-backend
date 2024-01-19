@@ -15,6 +15,8 @@ const qualificationRouter = require("./qualification.routes");
 const notificationRouter = require("./notification.routes");
 const resourcesRouter = require("./resources.routes");
 const pdf_extractor = require("./pdfFileService.routes");
+const invitation = require("./invitation.routes");
+const dashboard = require("./dashboard.routes");
 
 apiRouter.use("/search", searchRouter);
 apiRouter.use("/users", userRouter);
@@ -29,5 +31,7 @@ apiRouter.use("/qualification", qualificationRouter);
 apiRouter.use("/resources", resourcesRouter);
 apiRouter.use("/notification", notificationRouter);
 apiRouter.use("/pdf_extractor", pdf_extractor);
+apiRouter.use("/invitation", invitation);
+apiRouter.use("/dashboard", dashboard);
 
 module.exports = apiRouter;

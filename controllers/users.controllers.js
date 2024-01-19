@@ -154,8 +154,13 @@ const loginUser = async (req, res) => {
   });
   if (response.status === 200) {
     const token = await generateLoginToken(email);
-
-    res.cookie("token", token, { httpOnly: false });
+    const options = {
+      expires: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
+      httpOnly: false,
+      // secure: true, // Set to true in production
+      sameSite: "None", // Set to 'None' in production with HTTPS
+    };
+    res.cookie("authToken", token, options);
   }
   res.status(response?.status).json({
     ...response,

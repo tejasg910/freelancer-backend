@@ -1,5 +1,6 @@
 const {
   getProjectPostedNotificationsService,
+  getAllNotificationsSeervice,
 } = require("../services/notification.service");
 
 const getProjectPostedNotifications = async (req, res) => {
@@ -11,5 +12,14 @@ const getProjectPostedNotifications = async (req, res) => {
     ...response,
   });
 };
+const getAllNotifications = async (req, res) => {
+  const { companyId } = req.body;
 
-module.exports = { getProjectPostedNotifications };
+  const response = await getAllNotificationsSeervice(companyId);
+
+  res.status(response.status).json({
+    ...response,
+  });
+};
+
+module.exports = { getProjectPostedNotifications, getAllNotifications };

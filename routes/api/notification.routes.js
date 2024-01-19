@@ -8,5 +8,9 @@ router.post(
   "/getProjectPostedNotification",
   useTryCatch(notificationController.getProjectPostedNotifications)
 );
+router.post(
+  "/getAllNotifications",
+  useTryCatch(notificationController.getAllNotifications)
+);
 
 module.exports = router;

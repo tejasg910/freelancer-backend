@@ -15,6 +15,7 @@ const applyProjectService = async (bodyArgs) => {
       status: 400,
     };
   }
+
   const application = new Application({
     ...bodyArgs,
   });
@@ -424,10 +425,11 @@ const getAllSentHireRequestsService = async (clientId, page, size) => {
   const { limit, skip } = pagination({ page, size });
   const count = await HireRequest.find({
     clientId: clientId,
+    isDeleted: false,
   }).count();
   const totalPages = count / size;
   const hireRequests = await HireRequest.find(
-    { clientId: clientId, projectId: { $ne: null } },
+    { clientId: clientId, isDeleted: false },
     {},
     { limit, skip }
   )
@@ -449,10 +451,11 @@ const getAllIncommingHireRequestsService = async (clientId, page, size) => {
   const { limit, skip } = pagination({ page, size });
   const count = await HireRequest.find({
     freelancerId: clientId,
+    isDeleted: false,
   }).countDocuments();
   const totalPages = count / size;
   const hireRequests = await HireRequest.find(
-    { freelancerId: clientId, projectId: { $ne: null } },
+    { freelancerId: clientId, isDeleted: false },
     {},
     { limit, skip }
   )

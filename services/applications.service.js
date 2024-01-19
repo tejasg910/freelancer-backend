@@ -246,7 +246,6 @@ const getApplicationsByFreelancerIdService = async ({
       .sort({ createdAt: -1 })
       .exec();
 
-    console.log(application, "this is applications");
     return {
       status: 200,
       totalPages,
@@ -268,7 +267,7 @@ const getApplicationsByFreelancerIdService = async ({
       { limit, skip }
     )
       .populate("projectId")
-      .populate("userId")
+      .populate("receiverId")
 
       .sort({ createdAt: -1 })
       .exec();
@@ -283,25 +282,24 @@ const getApplicationsByFreelancerIdService = async ({
   }
 };
 const getAllRecivedApplicationsService = async ({ receiverId, page, size }) => {
+  console.log(receiverId, "reciver");
   const { limit, skip } = pagination({ page, size });
 
   const count = await Application.find({
     receiverId,
     active: true,
-    projectId: { $ne: null },
   }).countDocuments();
   const totalPages = count / size;
   const applications = await Application.find(
     {
       receiverId,
       active: true,
-      projectId: { $ne: null },
     },
     {},
     { limit, skip }
   )
     .populate("projectId")
-    .populate("receiverId")
+    .populate("userId")
     .sort({ createdAt: -1 })
     .exec();
   return {

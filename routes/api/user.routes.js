@@ -1,14 +1,21 @@
 const express = require("express");
 const userControllers = require("../../controllers/users.controllers");
 const { useTryCatch } = require("../../services/utility.service");
+const { authMiddleware } = require("../../middleware/auth");
 
 const router = express.Router({ mergeParams: true });
 
 router.post("/getAllUsers", useTryCatch(userControllers.getAllUsers));
-router.post("/getUserByEmail", useTryCatch(userControllers.findByEmail));
+router.post(
+  "/getUserByEmail",
+
+  useTryCatch(userControllers.findByEmail)
+);
 router.post("/getUserById", useTryCatch(userControllers.getCompanyById));
 
 router.post("/registerUser", useTryCatch(userControllers.registerUser));
+router.post("/createResource", useTryCatch(userControllers.registerUser));
+
 router.post("/loginUser", useTryCatch(userControllers.loginUser));
 router.post("/forgotPassword", useTryCatch(userControllers.forgotPassword));
 router.post("/resetPassword", useTryCatch(userControllers.resetPassword));
