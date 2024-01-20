@@ -9,6 +9,29 @@ const sendInvitationToResourceService = async ({
   rateType,
   avaibility,
 }) => {
+  const resource = await User.findOne({ _id: resourceId, userType: "user" });
+  if (!resource) {
+    return {
+      status: 404,
+      message: "Resource not found",
+    };
+  }
+  console.log(resource);
+  const company = await User.findOne({ _id: companyId, userType: "client" });
+  if (!company) {
+    return {
+      status: 404,
+      message: "Company not found",
+    };
+  }
+
+  if (resource?.owner === companyId) {
+    return {
+      status: 400,
+      message: "You can not send request to your own resource",
+    };
+  }
+  console.log(resourceId, companyId);
   const inviteExists = await Invitation.find({
     resourceId,
     companyId,
@@ -19,21 +42,6 @@ const sendInvitationToResourceService = async ({
     return {
       status: 400,
       message: "You have already sent the invitation to this resource",
-    };
-  }
-
-  const resource = await User.findById(resourceId);
-  if (!resource) {
-    return {
-      status: 404,
-      message: "Resource not found",
-    };
-  }
-
-  if (resource?.owner === companyId) {
-    return {
-      status: 400,
-      message: "You can not send request to your own resource",
     };
   }
 

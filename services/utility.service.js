@@ -1,4 +1,5 @@
-const { HireRequest, User } = require("../models");
+const mongoose = require("mongoose");
+const { HireRequest, User, Project } = require("../models");
 var bcrypt = require("bcryptjs");
 
 const pagination = ({ page, size }) => {
@@ -86,6 +87,60 @@ const calculateProfileCompletion = async (email) => {
   // Return the percentage with 2 decimal places
 };
 
+async function getMatchedCompanies(projectId, currentUserId) {
+  try {
+    // Step 1: Find the project by ID
+    const project = await Project.findById(projectId).populate("skills");
+    if (!project) {
+      throw new Error("Project not found");
+    }
+    // Step 2: Extract skills from the project
+    const projectSkills = project.skills.map((skill) => skill._id);
+    // Step 3: Find users with matching skills, excluding the current user
+    const matchingUsers = await User.find({
+      _id: { $ne: mongoose.Types.ObjectId(currentUserId) },
+      userType: "client",
+      skills: { $in: projectSkills },
+    }).populate("skills");
+    // Step 4: Calculate matching score for each user
+    const usersWithScore = matchingUsers.map((user) => {
+      let matchingScore = 0;
+      user.skills.forEach((userSkill) => {
+        if (projectSkills.includes(userSkill._id)) {
+          matchingScore++;
+        }
+      });
+      const matchingPercentage = (matchingScore / projectSkills.length) * 100;
+
+      const formattedPercentage = matchingPercentage.toFixed(2);
+
+      return {
+        matchingPercentage: formattedPercentage,
+        project,
+        user,
+        matchingScore,
+      };
+    });
+    // // Step 5: Sort users based on the matching score
+    // console.log(
+    //   "Before Sorting:",
+    //   usersWithScore.map((user) => user.matchingScore)
+    // );
+
+    // const sortedUsers = usersWithScore.sort(
+    //   (a, b) => parseInt(b.matchingScore) - parseInt(a.matchingScore)
+    // );
+
+    // sortedUsers.forEach((user) => {
+    //   console.log(user.matchingScore, projectId);
+    // });
+
+    return usersWithScore;
+  } catch (error) {
+    throw error;
+  }
+}
+
 const useTryCatch = (fn) => (req, res, next) =>
   Promise.resolve(fn(req, res, next)).catch((err) => next(err));
 
@@ -96,4 +151,5 @@ module.exports = {
   comparePassword,
   hashPassword,
   calculateProfileCompletion,
+  getMatchedCompanies,
 };

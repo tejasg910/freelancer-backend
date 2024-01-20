@@ -92,6 +92,7 @@ app.use("*", function (req, res) {
 
 // error handler middleware
 app.use((error, req, res, next) => {
+  console.log(error);
   return res.status(error.status || 500).send({
     error: {
       status: error.status || 500,

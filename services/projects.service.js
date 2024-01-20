@@ -1,6 +1,15 @@
 const mongoose = require("mongoose");
-const { User, Project, Application, HireRequest } = require("../models");
-const { pagination } = require("../services/utility.service");
+const {
+  User,
+  Project,
+  Application,
+  HireRequest,
+  Notification,
+} = require("../models");
+const {
+  pagination,
+  getMatchedCompanies,
+} = require("../services/utility.service");
 const { setNotification } = require("./notification.service");
 const { userSelect, applicationSelect } = require("./service.constants");
 const { getMatchedUsers } = require("./users.service");
@@ -29,7 +38,7 @@ const createProjectService = async (bodyArgs) => {
 
     //creating notification
 
-    const allUsersArrays = await getMatchedUsers(
+    const allUsersArrays = await getMatchedCompanies(
       projectSave?._id,
       projectSave?.postedBy
     );
@@ -393,8 +402,11 @@ const deleteProjectById = async ({ projectId }) => {
   );
   const notification = await Notification.updateMany(
     { projectId, isRead: false },
-    { $set: { isRead: false } }
+    { $set: { isRead: true } }
   );
+
+  //clear notifications
+
   return {
     status: 200,
     message: "Project deleted successfully",
