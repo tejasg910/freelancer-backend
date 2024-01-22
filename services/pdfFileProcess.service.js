@@ -52,11 +52,12 @@ const createUserFromPdfService = async (files, companyId) => {
         const getData = await FileService(url);
         console.log(getData);
         if (getData.email != null && getData.name != null) {
-          const existingUser = await User.findOne({
-            email: getData.email,
-          });
-
-          console.log(existingUser);
+          let existingUser = null;
+          if (getData.email != "") {
+            existingUser = await User.findOne({
+              email: getData.email,
+            });
+          }
 
           if (!existingUser) {
             const skillsData = await Category.find({
@@ -82,6 +83,7 @@ const createUserFromPdfService = async (files, companyId) => {
             const err = newUser.validateSync();
             if (!err) {
               const newUserSave = await newUser.save();
+              console.log(newUserSave, "this is saved");
               resumes.push(newUserSave.resume);
               team.push(newUserSave._id);
 
@@ -96,9 +98,7 @@ const createUserFromPdfService = async (files, companyId) => {
               });
             }
             resourceCount += 1;
-            processedResources.push(
-              newUser.push(`${newUser.fullName} added successfully`)
-            );
+            processedResources.push(`${newUser.fullName} added successfully`);
           } else {
             existedResources.push(`${existingUser?.fullName} already exists`);
           }

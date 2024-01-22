@@ -247,7 +247,7 @@ const registerUserService = async ({
   password,
   // phoneNumber,
   // userName,
-
+  gstId,
   // firstName,
   // lastName,
 
@@ -283,6 +283,7 @@ const registerUserService = async ({
     }
     // const fullName = firstName + " " + lastName;
     //send
+    console.log(gstId);
 
     //verify user
     const otp = await generateOTP();
@@ -293,7 +294,7 @@ const registerUserService = async ({
     const newUser = new User({
       email,
       fullName,
-
+      gstId,
       password: hashedPassword,
       otp: {
         otp,

@@ -55,7 +55,7 @@ const registerUser = async (req, res) => {
     fullName,
     // firstName,
     // lastName,
-
+    gstId,
     // userType,
   } = req.body;
 
@@ -68,7 +68,7 @@ const registerUser = async (req, res) => {
     fullName,
     // firstName,
     // lastName,
-
+    gstId,
     // userType,
   });
 
