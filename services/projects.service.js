@@ -42,12 +42,15 @@ const createProjectService = async (bodyArgs) => {
       projectSave?._id,
       projectSave?.postedBy
     );
+
     const allUsers = allUsersArrays.flat();
     allUsers.forEach(async (user) => {
       const switchObj = {
         notificationType: "projectPosted",
-        notificationMessage: `"${user?.project?.projectTitle}" posted by  ${user?.user?.fullName}`,
-        responseMessage: "HireRequest Agreed",
+        // notificationMessage: `"${user?.project?.projectTitle}" posted by  ${user?.user?.fullName}`,
+        notificationMessage: `"${user?.project?.projectTitle}" posted`,
+
+        responseMessage: "Project posted",
       };
       const notification = await setNotification({
         triggeredBy: projectSave?.postedBy,

@@ -140,7 +140,48 @@ async function getMatchedCompanies(projectId, currentUserId) {
     throw error;
   }
 }
+async function getMatchedCompaniesForResources(resource, currentUserId) {
+  try {
+    // Step 1: Extract skills from the project
 
+    // const resource = await User.findOne({ _id: resourceId, type: "user" });
+    console.log(resource, "resource");
+    const resourceSkillsId = resource.skills.map((skill) => skill._id);
+    if (!resource) {
+      throw new Error("No resource found");
+    }
+
+    // Step 2: Find users with matching skills, excluding the current user
+    const matchingUsers = await User.find({
+      _id: { $ne: mongoose.Types.ObjectId(currentUserId) },
+      userType: "client",
+      skills: { $in: resourceSkillsId },
+    }).populate("skills");
+    // Step 4: Calculate matching score for each user
+    const usersWithScore = matchingUsers.map((user) => {
+      let matchingScore = 0;
+      user.skills.forEach((userSkill) => {
+        if (resourceSkillsId.includes(userSkill._id)) {
+          matchingScore++;
+        }
+      });
+      const matchingPercentage =
+        (matchingScore / resourceSkillsId.length) * 100;
+
+      const formattedPercentage = matchingPercentage.toFixed(2);
+
+      return {
+        matchingPercentage: formattedPercentage,
+        user,
+        matchingScore,
+      };
+    });
+
+    return usersWithScore;
+  } catch (error) {
+    throw error;
+  }
+}
 const useTryCatch = (fn) => (req, res, next) =>
   Promise.resolve(fn(req, res, next)).catch((err) => next(err));
 
@@ -152,4 +193,5 @@ module.exports = {
   hashPassword,
   calculateProfileCompletion,
   getMatchedCompanies,
+  getMatchedCompaniesForResources,
 };

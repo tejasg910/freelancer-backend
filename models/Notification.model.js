@@ -26,6 +26,10 @@ const notificationSchema = new mongoose.Schema(
       type: mongoose.Schema.ObjectId,
       ref: "hireRequest",
     },
+    resourceId: {
+      type: mongoose.Schema.ObjectId,
+      ref: "user",
+    },
     notificationType: {
       type: String,
       enum: [
@@ -41,6 +45,7 @@ const notificationSchema = new mongoose.Schema(
         "rejected",
         "projectPosted",
         "invitationReceived",
+        "resourcePosted",
       ],
       required: true,
     },

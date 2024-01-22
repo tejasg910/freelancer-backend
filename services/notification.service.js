@@ -8,6 +8,7 @@ const setNotification = async ({
   projectId,
   notificationType,
   hireRequestId,
+  resourceId,
 }) => {
   const notificationCreate = await new Notification({
     triggeredBy,
@@ -16,6 +17,7 @@ const setNotification = async ({
     projectId,
     notificationType,
     hireRequestId,
+    resourceId,
   });
   const err = await notificationCreate.validateSync();
   if (!err) {
@@ -86,6 +88,30 @@ const getProjectPostedNotificationsService = async (companyId) => {
   };
 };
 
+const getResourcePostedNotificationsService = async (companyId) => {
+  const notifications = await Notification.find(
+    {
+      notificationType: "resourcePosted",
+      notify: companyId,
+      isRead: false,
+    },
+    {},
+    { limit: 20 }
+  )
+    .populate({
+      path: "triggeredBy",
+    })
+    .populate({
+      path: "resourceId",
+    });
+
+  return {
+    status: 200,
+    message: "fetched notifications successfully",
+    notifications,
+  };
+};
+
 const getAllNotificationsSeervice = async (companyId) => {
   const notifications = await Notification.find(
     {
@@ -121,4 +147,5 @@ module.exports = {
   readNotificationService,
   getProjectPostedNotificationsService,
   getAllNotificationsSeervice,
+  getResourcePostedNotificationsService,
 };

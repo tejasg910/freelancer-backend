@@ -1,5 +1,7 @@
 const { User } = require("../models");
 const { uploadFile } = require("../utils/awsUpload");
+const { setNotification } = require("./notification.service");
+const { getMatchedCompaniesForResources } = require("./utility.service");
 
 const addResourcesServices = async ({
   firstName,
@@ -71,7 +73,6 @@ const addResourcesServices = async ({
       ownerSkills.push(...skillId);
     }
 
-    console.log(ownerSkills, "ownerskils");
     ownerResumes.push(url);
     team.push(newUserSave._id);
     const updateOwner = await User.findOneAndUpdate(
@@ -87,6 +88,33 @@ const addResourcesServices = async ({
         runValidators: true,
       }
     );
+
+    //sending notification to the company when resources added
+
+    //extracting skills
+    const matchedCompanies = await getMatchedCompaniesForResources(
+      newUserSave,
+      ownerId
+    );
+
+    matchedCompanies.forEach(async (user) => {
+      console.log(user, "user");
+      const switchObj = {
+        notificationType: "resourcePosted",
+        // notificationMessage: `"${user?.project?.projectTitle}" posted by  ${user?.user?.fullName}`,
+        notificationMessage: `${newUserSave?.fullName} posted`,
+
+        responseMessage: "resource posted",
+      };
+      const notification = await setNotification({
+        triggeredBy: ownerId,
+        notify: user?.user?._id,
+        notificationMessage: switchObj.notificationMessage,
+        resourceId: newUserSave?._id,
+        notificationType: switchObj?.notificationType,
+      });
+    });
+
     return {
       message: "Resource added successfully",
       userDetails: newUserSave,

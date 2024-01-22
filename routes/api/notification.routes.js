@@ -9,6 +9,10 @@ router.post(
   useTryCatch(notificationController.getProjectPostedNotifications)
 );
 router.post(
+  "/getResourcePostedNotification",
+  useTryCatch(notificationController.getResourcesPostedNotifications)
+);
+router.post(
   "/getAllNotifications",
   useTryCatch(notificationController.getAllNotifications)
 );

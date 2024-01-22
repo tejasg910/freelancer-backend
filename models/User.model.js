@@ -253,7 +253,17 @@ const userSchema = new mongoose.Schema(
       expireIn: Date,
     },
     isDeleted: { type: Boolean, default: false },
-    availability: { type: String, enum: ['Immediate', '1 Week', '2 Weeks', '3 Weeks', '1 Month', 'More than 1 Month'] },
+    availability: {
+      type: String,
+      enum: [
+        "Immediate",
+        "1 Week",
+        "2 Weeks",
+        "3 Weeks",
+        "1 Month",
+        "More than 1 Month",
+      ],
+    },
     budget: {
       type: Number,
       min: [0, "Budget must be a non-negative number."],
