@@ -16,4 +16,12 @@ router.post(
   "/getAllSentInvitations",
   useTryCatch(invitationControllers.getSentInvitations)
 );
+router.put(
+  "/acceptInvitation",
+  useTryCatch(invitationControllers.acceptInvitation)
+);
+router.put(
+  "/rejectInvitaion",
+  useTryCatch(invitationControllers.rejectInvitation)
+);
 module.exports = router;

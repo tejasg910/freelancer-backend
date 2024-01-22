@@ -3,6 +3,8 @@ const {
   getAllReceivedInvitations,
   getAllReceivedInvitationsService,
   getAllSentInvitationsService,
+  acceptInvitationStatusService,
+  rejectInvitationStatusService,
 } = require("../services/invitation.service");
 
 const sendInvitionToResource = async (req, res) => {
@@ -53,8 +55,33 @@ const getSentInvitations = async (req, res) => {
     ...response,
   });
 };
+const acceptInvitation = async (req, res) => {
+  const { invitationId } = req.body;
+
+  const response = await acceptInvitationStatusService({
+    invitationId,
+  });
+
+  res.status(response.status).json({
+    ...response,
+  });
+};
+const rejectInvitation = async (req, res) => {
+  const { invitationId } = req.body;
+
+  const response = await rejectInvitationStatusService({
+    invitationId,
+  });
+
+  res.status(response.status).json({
+    ...response,
+  });
+};
+
 module.exports = {
   sendInvitionToResource,
   getReceivedInvitations,
   getSentInvitations,
+  acceptInvitation,
+  rejectInvitation,
 };

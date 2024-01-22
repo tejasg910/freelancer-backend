@@ -122,6 +122,12 @@ const projectSchema = new mongoose.Schema(
         },
       },
     ],
+    jobtype: {
+      type: String,
+    },
+    location: {
+      type: String,
+    },
     projectProgress: {
       type: String,
       enum: ["OPEN", "WORKING", "DONE"],

@@ -1,5 +1,6 @@
 const { Invitation, User } = require("../models");
 const { setNotification } = require("./notification.service");
+const { setContactedService } = require("./users.service");
 const { pagination } = require("./utility.service");
 
 const sendInvitationToResourceService = async ({
@@ -150,7 +151,7 @@ const getAllSentInvitationsService = async ({ companyId, page, size }) => {
   };
 };
 
-const acceptInvitationStatus = async ({ invitationId }) => {
+const acceptInvitationStatusService = async ({ invitationId }) => {
   const invitation = await Invitation.findById(invitationId);
 
   if (!invitation) {
@@ -159,9 +160,82 @@ const acceptInvitationStatus = async ({ invitationId }) => {
       message: "No invitation found",
     };
   }
+
+  if (invitation.invitationStatus === "accepted") {
+    return {
+      status: 400,
+      message: "You have already accepted invitation",
+    };
+  }
+  if (invitation.invitationStatus === "rejected") {
+    return {
+      status: 400,
+      message: "You have already rejected invitation",
+    };
+  }
+  const updateInvitation = await Invitation.findByIdAndUpdate(
+    invitationId,
+    {
+      invitationStatus: "accepted",
+    },
+    {
+      runValidators: true,
+      new: true,
+    }
+  ).populate("resourceId");
+
+  const senderUserId = invitation.companyId;
+  const receiverUserId = invitation.resourceOwner;
+
+  await setContactedService({ senderUserId, receiverUserId });
+  return {
+    status: 200,
+    message: "Invitation accepted successfully",
+  };
+};
+const rejectInvitationStatusService = async ({ invitationId }) => {
+  const invitation = await Invitation.findById(invitationId);
+
+  if (!invitation) {
+    return {
+      status: 404,
+      message: "No invitation found",
+    };
+  }
+
+  if (invitation.invitationStatus === "accepted") {
+    return {
+      status: 400,
+      message: "You have already accepted invitation",
+    };
+  }
+  if (invitation.invitationStatus === "rejected") {
+    return {
+      status: 400,
+      message: "You have already rejected invitation",
+    };
+  }
+
+  const updateInvitation = await Invitation.findByIdAndUpdate(
+    invitationId,
+    {
+      invitationStatus: "rejected",
+    },
+    {
+      runValidators: true,
+      new: true,
+    }
+  ).populate("resourceId");
+
+  return {
+    status: 200,
+    message: "Invitation rejected successfully",
+  };
 };
 module.exports = {
   sendInvitationToResourceService,
   getAllReceivedInvitationsService,
   getAllSentInvitationsService,
+  acceptInvitationStatusService,
+  rejectInvitationStatusService,
 };

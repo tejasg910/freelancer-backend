@@ -51,6 +51,8 @@ const createProject = async (req, res) => {
     budget,
     duration,
     category,
+    jobtype,
+    location,
   } = req.body;
 
   const response = await createProjectService({
@@ -66,6 +68,8 @@ const createProject = async (req, res) => {
     budget,
     duration,
     category,
+    jobtype,
+    location,
   });
 
   return res.status(response.status).json({
