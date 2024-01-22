@@ -11,4 +11,5 @@ module.exports = {
   Qualification: require("./Qualification.model"),
   Category: require("./Category.model"),
   Invitation: require("./Invitation.model"),
+  Designation: require("./Designation.model"),
 };

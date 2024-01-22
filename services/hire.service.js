@@ -202,6 +202,13 @@ const hireAndRejectService = async ({
 const hireRequestService = async ({ projectId, freelancerId, clientId }) => {
   //checks if hire request service sent or not
 
+  if (!projectId || !freelancerId || !clientId) {
+    return {
+      status: 400,
+      message: "Bad reqeust",
+    };
+  }
+
   const isHireRequestServiceSent = await HireRequest.find({
     projectId,
     freelancerId,

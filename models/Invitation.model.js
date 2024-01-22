@@ -5,11 +5,13 @@ const invitationSchema = new mongoose.Schema(
     resourceId: {
       type: mongoose.Schema.ObjectId,
       ref: "user",
+      required: true,
       // unique: true,
     },
     companyId: {
       type: mongoose.Schema.ObjectId,
       ref: "user",
+      required: true,
     },
     budget: {
       type: Number,
@@ -23,6 +25,7 @@ const invitationSchema = new mongoose.Schema(
     resourceOwner: {
       type: mongoose.Schema.ObjectId,
       ref: "user",
+      required: true,
     },
 
     invitationStatus: {

@@ -149,6 +149,17 @@ const getAllSentInvitationsService = async ({ companyId, page, size }) => {
     message: "Invitation received successfully",
   };
 };
+
+const acceptInvitationStatus = async ({ invitationId }) => {
+  const invitation = await Invitation.findById(invitationId);
+
+  if (!invitation) {
+    return {
+      status: 404,
+      message: "No invitation found",
+    };
+  }
+};
 module.exports = {
   sendInvitationToResourceService,
   getAllReceivedInvitationsService,

@@ -2,6 +2,7 @@ const { Application, Project, User } = require("../models");
 const mongoose = require("mongoose");
 const { pagination, queryConditions } = require("../services/utility.service");
 const { application } = require("express");
+const { userSelect } = require("./service.constants");
 const sortApplications = async (condition, filters) => {
   let sortQuery = {};
   let sortedApplications = [];
@@ -214,7 +215,14 @@ const getApplicationsByFreelancerIdService = async ({
       {},
       { limit, skip }
     )
-      .populate("projectId")
+      .populate({
+        path: "projectId",
+
+        populate: {
+          path: "postedBy",
+          select: userSelect,
+        },
+      })
       .sort({ createdAt: -1 })
       .exec();
     return {
@@ -242,7 +250,14 @@ const getApplicationsByFreelancerIdService = async ({
       {},
       { limit, skip }
     )
-      .populate("projectId")
+      .populate({
+        path: "projectId",
+
+        populate: {
+          path: "postedBy",
+          select: userSelect,
+        },
+      })
       .sort({ createdAt: -1 })
       .exec();
 
@@ -266,12 +281,20 @@ const getApplicationsByFreelancerIdService = async ({
       {},
       { limit, skip }
     )
-      .populate("projectId")
+
+      .populate({
+        path: "projectId",
+
+        populate: {
+          path: "postedBy",
+          select: userSelect,
+        },
+      })
       .populate("receiverId")
 
       .sort({ createdAt: -1 })
       .exec();
-    console.log(applications, "this is applicatio");
+
     return {
       status: 200,
       totalPages,

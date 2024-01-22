@@ -43,6 +43,7 @@ const addResourcesServices = async ({
     fullName,
     designation,
     skills,
+    email,
     availiability,
     experience,
     budget,

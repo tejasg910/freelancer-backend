@@ -5,15 +5,18 @@ const applicationSchema = new mongoose.Schema(
     projectId: {
       type: mongoose.Schema.ObjectId,
       ref: "project",
+      required: true,
     },
     userId: {
       type: mongoose.Schema.ObjectId,
       ref: "user",
+      required: true,
       // unique: true,
     },
     receiverId: {
       type: mongoose.Schema.ObjectId,
       ref: "user",
+      required: true,
     },
 
     description: {

@@ -1,7 +1,6 @@
 const express = require("express");
 const userControllers = require("../../controllers/users.controllers");
 const { useTryCatch } = require("../../services/utility.service");
-const { authMiddleware } = require("../../middleware/auth");
 
 const router = express.Router({ mergeParams: true });
 

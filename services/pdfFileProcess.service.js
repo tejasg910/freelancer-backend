@@ -22,6 +22,9 @@ async function FileService(url) {
 const createUserFromPdfService = async (files, companyId) => {
   try {
     const user = await User.findById(companyId);
+    const processedResources = [];
+    const existedResources = [];
+    let resourceCount = 0;
     if (!user) {
       return {
         status: 404,
@@ -47,12 +50,15 @@ const createUserFromPdfService = async (files, companyId) => {
       const users = await files.map(async (file) => {
         const url = await uploadFile(file, "document");
         const getData = await FileService(url);
-        const existingUser = await User.findOne({
-          email: getData.email,
-        });
+        console.log(getData);
+        if (getData.email != null && getData.name != null) {
+          const existingUser = await User.findOne({
+            email: getData.email,
+          });
 
-        if (!existingUser) {
-          if (getData.email) {
+          console.log(existingUser);
+
+          if (!existingUser) {
             const skillsData = await Category.find({
               title: { $in: getData?.skills },
             });
@@ -89,13 +95,23 @@ const createUserFromPdfService = async (files, companyId) => {
                 skills,
               });
             }
+            resourceCount += 1;
+            processedResources.push(
+              newUser.push(`${newUser.fullName} added successfully`)
+            );
+          } else {
+            existedResources.push(`${existingUser?.fullName} already exists`);
           }
         }
-        // Assuming you have an uploadFile function
       });
 
       const result = await Promise.all(users);
-      return { status: 200, message: "Team added successfully" };
+      return {
+        status: 200,
+        message: `${resourceCount} resources added successfully`,
+        resources: processedResources,
+        existing: existedResources,
+      };
     }
 
     return {
