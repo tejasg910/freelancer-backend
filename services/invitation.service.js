@@ -32,7 +32,7 @@ const sendInvitationToResourceService = async ({
       message: "You can not send request to your own resource",
     };
   }
-  console.log(resourceId, companyId);
+
   const inviteExists = await Invitation.find({
     resourceId,
     companyId,
@@ -66,6 +66,17 @@ const sendInvitationToResourceService = async ({
   } else {
     const newInvitationSave = await newInvitation.save();
 
+    const ownerUpdate = await User.findOneAndUpdate(
+      { _id: companyId },
+      {
+        $push: { invitationsSent: resource._id },
+      },
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+
     //send notification to company
     const switchObj = {
       notificationType: "invitationReceived",
@@ -82,6 +93,7 @@ const sendInvitationToResourceService = async ({
     return {
       status: 200,
       message: "Invitation sent successfully",
+      newInvitationSave,
     };
   }
 };
@@ -184,10 +196,22 @@ const acceptInvitationStatusService = async ({ invitationId }) => {
     }
   ).populate("resourceId");
 
-  const senderUserId = invitation.companyId;
-  const receiverUserId = invitation.resourceOwner;
+  const senderUserId = updateInvitation.companyId;
+  const receiverUserId = updateInvitation.resourceOwner;
 
   await setContactedService({ senderUserId, receiverUserId });
+
+  //send notification
+  const switchObj = {
+    notificationType: "invitationAccepted",
+    notificationMessage: `${updateInvitation.resourceId?.fullName}`,
+  };
+  const notification = await setNotification({
+    triggeredBy: updateInvitation.companyId,
+    notify: updateInvitation.resourceId?.owner,
+    notificationMessage: switchObj.notificationMessage,
+    notificationType: switchObj?.notificationType,
+  });
   return {
     status: 200,
     message: "Invitation accepted successfully",

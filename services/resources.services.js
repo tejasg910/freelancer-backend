@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const { User } = require("../models");
 const { uploadFile } = require("../utils/awsUpload");
 const { setNotification } = require("./notification.service");
@@ -92,23 +93,22 @@ const addResourcesServices = async ({
     //sending notification to the company when resources added
 
     //extracting skills
-    const matchedCompanies = await getMatchedCompaniesForResources(
-      newUserSave,
-      ownerId
-    );
+    const allCompanies = await User.find({
+      _id: { $ne: mongoose.Types.ObjectId(ownerId) },
+      userType: "client",
+    });
 
-    matchedCompanies.forEach(async (user) => {
-      console.log(user, "user");
+    allCompanies.forEach(async (user) => {
       const switchObj = {
         notificationType: "resourcePosted",
         // notificationMessage: `"${user?.project?.projectTitle}" posted by  ${user?.user?.fullName}`,
-        notificationMessage: `${newUserSave?.fullName} posted`,
+        notificationMessage: `${newUserSave?.fullName}`,
 
         responseMessage: "resource posted",
       };
       const notification = await setNotification({
         triggeredBy: ownerId,
-        notify: user?.user?._id,
+        notify: user?._id,
         notificationMessage: switchObj.notificationMessage,
         resourceId: newUserSave?._id,
         notificationType: switchObj?.notificationType,

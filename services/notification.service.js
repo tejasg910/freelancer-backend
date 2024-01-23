@@ -133,7 +133,8 @@ const getAllNotificationsSeervice = async (companyId) => {
     })
     .populate({
       path: "triggeredBy",
-    });
+    })
+    .sort({ createdAt: -1 });
 
   return {
     status: 200,

@@ -145,36 +145,42 @@ async function getMatchedCompaniesForResources(resource, currentUserId) {
     // Step 1: Extract skills from the project
 
     // const resource = await User.findOne({ _id: resourceId, type: "user" });
-    console.log(resource, "resource");
-    const resourceSkillsId = resource.skills.map((skill) => skill._id);
-    if (!resource) {
-      throw new Error("No resource found");
-    }
+    //getting projects postedby company
 
-    // Step 2: Find users with matching skills, excluding the current user
-    const matchingUsers = await User.find({
-      _id: { $ne: mongoose.Types.ObjectId(currentUserId) },
-      userType: "client",
-      skills: { $in: resourceSkillsId },
-    }).populate("skills");
-    // Step 4: Calculate matching score for each user
-    const usersWithScore = matchingUsers.map((user) => {
-      let matchingScore = 0;
-      user.skills.forEach((userSkill) => {
-        if (resourceSkillsId.includes(userSkill._id)) {
-          matchingScore++;
-        }
+    const projects = await Project.find({ postedBy: currentUserId });
+    let usersWithScore = null;
+    projects.forEach(async (project) => {
+      console.log(resource, "resource");
+      const projectsSkillsIds = project.skills.map((skill) => skill._id);
+      if (!resource) {
+        throw new Error("No resource found");
+      }
+
+      // Step 2: Find users with matching skills, excluding the current user
+      const matchingUsers = await User.find({
+        _id: { $ne: mongoose.Types.ObjectId(currentUserId) },
+        userType: "client",
+        skills: { $in: projectsSkillsIds },
+      }).populate("skills");
+      // Step 4: Calculate matching score for each user
+      usersWithScore = matchingUsers.map((user) => {
+        let matchingScore = 0;
+        user.skills.forEach((userSkill) => {
+          if (projectsSkillsIds.includes(userSkill._id)) {
+            matchingScore++;
+          }
+        });
+        const matchingPercentage =
+          (matchingScore / projectsSkillsIds.length) * 100;
+
+        const formattedPercentage = matchingPercentage.toFixed(2);
+
+        return {
+          matchingPercentage: formattedPercentage,
+          user,
+          matchingScore,
+        };
       });
-      const matchingPercentage =
-        (matchingScore / resourceSkillsId.length) * 100;
-
-      const formattedPercentage = matchingPercentage.toFixed(2);
-
-      return {
-        matchingPercentage: formattedPercentage,
-        user,
-        matchingScore,
-      };
     });
 
     return usersWithScore;

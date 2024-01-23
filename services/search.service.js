@@ -22,46 +22,57 @@ const searchService = async ({
     const stringScore = isSearchValid ? { score: { $meta: "textScore" } } : {};
 
     const skillsQuery = { ...stringQuery };
+
     const skills = await Category.find(skillsQuery);
     const skillIds = skills.map((skill) => skill._id);
 
     const availabilityQuery =
-      availability === "" ? {} : { availability: availability };
+      availability === "" ? null : { availability: availability };
 
     // console.log(availabilityQuery);
 
     const budgetQuery =
       minBudget !== null && maxBudget !== null
         ? {
-            "budget.minPrice": { $gte: minBudget },
-            "budget.maxPrice": { $lte: maxBudget },
-          }
+          "budget.minPrice": { $gte: minBudget },
+          "budget.maxPrice": { $lte: maxBudget },
+        }
         : {};
 
     const matchStage = {
       $match: {
         $or: [
           { $text: { $search: searchString } },
-          {
-            skills: { $in: skillIds },
-          },
-        ],
+
+          { skills: { $in: skillIds } },
+
+        ]
       },
     };
 
     const userAggregationPipeline = [
-      matchStage,
       {
         $match: {
-          $and: [
-            { budget: { $lte: maxBudget } },
-            { budget: { $gte: minBudget } },
-          ],
+          $or: [
+            { $text: { $search: searchString } },
+
+            { skills: { $in: skillIds } },
+            // { availability: availability }
+
+          ]
         },
       },
-      {
-        $match: availabilityQuery,
-      },
+      // {
+      //   $match: {
+      //     $and: [
+      //       { budget: { $lte: maxBudget } },
+      //       { budget: { $gte: minBudget } },
+      //     ],
+      //   },
+      // },
+      // {
+      //   $match: availabilityQuery,
+      // },
       {
         $lookup: {
           from: "categories",
@@ -87,9 +98,7 @@ const searchService = async ({
           createdAt: 1,
         },
       },
-      { $sort: { createdAt: -1, ...stringScore } },
-      { $skip: skip },
-      { $limit: limit },
+      { $sort: { createdAt: -1, ...stringScore } }
     ];
 
     const projectAggregationPipeline = [
@@ -97,7 +106,6 @@ const searchService = async ({
       {
         $match: budgetQuery,
       },
-      { $sort: { createdAt: -1, ...stringScore } },
       {
         $lookup: {
           from: "users",
@@ -128,39 +136,38 @@ const searchService = async ({
           createdAt: 1,
         },
       },
-      { $skip: skip },
-      { $limit: limit },
+      { $sort: { createdAt: -1, ...stringScore } },
     ];
 
     const [users, projects] = await Promise.all([
-      User.aggregate(userAggregationPipeline),
-      Project.aggregate(projectAggregationPipeline),
+      await User.aggregate(userAggregationPipeline),
+      await Project.aggregate(projectAggregationPipeline),
     ]);
 
     /*   console.log("websites");
-    
+     
       const [userCount, projectCount] = await Promise.all([
         User.countDocuments({ ...stringQuery }),
         Project.countDocuments({ ...stringQuery, skills: { $in: skillIds } }),
       ]);
      */
-    const totalUserPages = Math.ceil(User.length / size);
-    const totalProjectPages = Math.ceil(Project.length / size);
+    const totalUserPages = Math.ceil(users.length / size);
+    const totalProjectPages = Math.ceil(projects.length / size);
 
     return users.length >= 1 || projects.length >= 1
       ? {
-          message: "search done",
-          status: 200,
-          users,
-          projects,
-          page,
-          totalUserPages,
-          totalProjectPages,
-        }
+        message: "search done",
+        status: 200,
+        users,
+        projects,
+        page,
+        totalUserPages,
+        totalProjectPages,
+      }
       : {
-          message: "Bad Request",
-          status: 400,
-        };
+        message: "Bad Request",
+        status: 400,
+      };
   } catch (e) {
     console.log(e);
   }

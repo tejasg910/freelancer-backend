@@ -151,6 +151,7 @@ const userSchema = new mongoose.Schema(
         project_url: String,
       },
     ],
+    invitationsSent: [{ type: mongoose.Schema.ObjectId, ref: "user" }],
     reviews: [
       {
         title: {
