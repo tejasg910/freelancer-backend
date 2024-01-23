@@ -1,6 +1,8 @@
+const mongoose = require("mongoose");
 const axios = require("axios");
 const { User, Category } = require("../models");
 const { uploadFile } = require("../utils/awsUpload");
+const { setNotification } = require("./notification.service");
 
 async function FileService(url) {
   try {
@@ -49,7 +51,6 @@ const createUserFromPdfService = async (files, companyId) => {
       //uploading the files
       const users = await files.map(async (file) => {
         const url = await uploadFile(file, "document");
-        console.log(url, "this url");
         const getData = await FileService(url);
         console.log(getData, "getdata");
         if (getData && getData.email != null && getData.name != null) {
@@ -57,10 +58,9 @@ const createUserFromPdfService = async (files, companyId) => {
           if (getData.email != "") {
             existingUser = await User.findOne({
               email: getData.email,
+              owner: companyId,
             });
           }
-
-          console.log(existingUser, "existing");
 
           if (!existingUser) {
             const skillsData = await Category.find({
@@ -87,7 +87,6 @@ const createUserFromPdfService = async (files, companyId) => {
             if (!err) {
               const newUserSave = await newUser.save();
 
-              console.log(newUserSave, "this is saved");
               resumes.push(newUserSave.resume);
               team.push(newUserSave._id);
 
@@ -95,14 +94,38 @@ const createUserFromPdfService = async (files, companyId) => {
                 skills.push(...newSkills);
               }
 
-              await User.findByIdAndUpdate(companyId, {
+              const updatedUser = await User.findByIdAndUpdate(companyId, {
                 resumes,
                 team,
                 skills,
               });
+
+              resourceCount += 1;
+              processedResources.push(`${newUser.fullName} added successfully`);
+
+              //sending notification
+              const allCompanies = await User.find({
+                _id: { $ne: mongoose.Types.ObjectId(companyId) },
+                userType: "client",
+              });
+
+              allCompanies.forEach(async (user) => {
+                const switchObj = {
+                  notificationType: "resourcePosted",
+                  // notificationMessage: `"${user?.project?.projectTitle}" posted by  ${user?.user?.fullName}`,
+                  notificationMessage: `${newUserSave?.fullName}`,
+
+                  responseMessage: "resource posted",
+                };
+                const notification = await setNotification({
+                  triggeredBy: companyId,
+                  notify: user?._id,
+                  notificationMessage: switchObj.notificationMessage,
+                  resourceId: newUserSave?._id,
+                  notificationType: switchObj?.notificationType,
+                });
+              });
             }
-            resourceCount += 1;
-            processedResources.push(`${newUser.fullName} added successfully`);
           } else {
             existedResources.push(`${existingUser?.fullName} already exists`);
           }
