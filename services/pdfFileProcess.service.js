@@ -51,7 +51,7 @@ const createUserFromPdfService = async (files, companyId) => {
         const url = await uploadFile(file, "document");
         console.log(url, "this url");
         const getData = await FileService(url);
-
+        console.log(getData, "getdata");
         if (getData && getData.email != null && getData.name != null) {
           let existingUser = null;
           if (getData.email != "") {
@@ -59,6 +59,8 @@ const createUserFromPdfService = async (files, companyId) => {
               email: getData.email,
             });
           }
+
+          console.log(existingUser, "existing");
 
           if (!existingUser) {
             const skillsData = await Category.find({
@@ -84,6 +86,7 @@ const createUserFromPdfService = async (files, companyId) => {
             const err = newUser.validateSync();
             if (!err) {
               const newUserSave = await newUser.save();
+
               console.log(newUserSave, "this is saved");
               resumes.push(newUserSave.resume);
               team.push(newUserSave._id);

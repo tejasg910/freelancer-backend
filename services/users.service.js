@@ -322,7 +322,7 @@ const registerUserService = async ({
       const newUserSave = await newUser.save();
       return {
         message: "Please enter otp sent on your email",
-        userDetails: newUserSave,
+        user: newUserSave,
         status: 200,
       };
     }
@@ -385,6 +385,7 @@ const verifyUserService = async ({ email, otp }) => {
     return {
       message: "Company is already verfied",
       status: 400,
+      user,
     };
   }
 
@@ -427,11 +428,7 @@ const verifyUserService = async ({ email, otp }) => {
   return {
     message: "Company verified successfully",
     status: 200,
-    userDetails: {
-      email: updatedUser?.email,
-      fullName: updatedUser?.fullName,
-      // Omit other sensitive fields...
-    },
+    user: updatedUser,
   };
 };
 

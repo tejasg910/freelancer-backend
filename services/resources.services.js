@@ -7,7 +7,7 @@ const { getMatchedCompaniesForResources } = require("./utility.service");
 const addResourcesServices = async ({
   firstName,
   lastName,
-  email,
+  // email,
   designation,
   skills,
   availiability,
@@ -16,13 +16,13 @@ const addResourcesServices = async ({
   files,
   budget,
 }) => {
-  const existingUser = await User.findOne({ email });
-  if (existingUser) {
-    return {
-      status: 404,
-      message: "This email is already taken",
-    };
-  }
+  // const existingUser = await User.findOne({ email });
+  // if (existingUser) {
+  //   return {
+  //     status: 404,
+  //     message: "This email is already taken",
+  //   };
+  // }
 
   const owner = await User.findById(ownerId);
   const ownerResumes = owner.resumes;
@@ -46,7 +46,7 @@ const addResourcesServices = async ({
     fullName,
     designation,
     skills,
-    email,
+    // email,
     availiability,
     experience,
     budget,
