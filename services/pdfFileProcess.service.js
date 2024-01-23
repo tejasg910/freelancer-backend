@@ -44,14 +44,15 @@ const createUserFromPdfService = async (files, companyId) => {
 
     // let files = req.files;
 
+    console.log(files, "files");
     if (files && files.length > 0 && files[0].mimetype == "application/pdf") {
       //uploading the files
-      console.log(files, "files");
       const users = await files.map(async (file) => {
         const url = await uploadFile(file, "document");
+        console.log(url, "this url");
         const getData = await FileService(url);
-        console.log(getData);
-        if (getData.email != null && getData.name != null) {
+
+        if (getData && getData.email != null && getData.name != null) {
           let existingUser = null;
           if (getData.email != "") {
             existingUser = await User.findOne({

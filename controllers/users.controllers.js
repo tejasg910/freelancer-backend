@@ -156,7 +156,7 @@ const loginUser = async (req, res) => {
     const token = await generateLoginToken(email);
     const options = {
       expires: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
-      httpOnly: false,
+      httpOnly: true,
       // secure: true, // Set to true in production
       sameSite: "None", // Set to 'None' in production with HTTPS
     };
