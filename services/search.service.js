@@ -11,7 +11,9 @@ const searchService = async ({
   availability,
 }) => {
   try {
-    // console.log(minBudget, maxBudget, availability);
+    console.log(minBudget, maxBudget, availability);
+
+    console.log(page, size)
 
     const isSearchValid = searchString && searchString.length >= 3;
     const { limit, skip } = pagination({ page, size });
@@ -27,16 +29,19 @@ const searchService = async ({
     const skillIds = skills.map((skill) => skill._id);
 
     const availabilityQuery =
-      availability === "" ? null : { availability: availability };
+      availability === "" ? {} : { availability: availability };
 
     // console.log(availabilityQuery);
 
     const budgetQuery =
       minBudget !== null && maxBudget !== null
         ? {
-          "budget.minPrice": { $gte: minBudget },
-          "budget.maxPrice": { $lte: maxBudget },
+          $and: [
+            { "budget.minPrice": { $gte: minBudget } },
+            { "budget.maxPrice": { $lte: maxBudget } },
+          ],
         }
+
         : {};
 
     const matchStage = {
@@ -57,21 +62,20 @@ const searchService = async ({
             { $text: { $search: searchString } },
 
             { skills: { $in: skillIds } },
-            // { availability: availability }
 
           ]
         },
       },
+      {
+        $match: {
+          budget: { $lte: maxBudget },
+          // budget: { $gte: maxBudget - minBudget }
+        },
+      },
       // {
       //   $match: {
-      //     $and: [
-      //       { budget: { $lte: maxBudget } },
-      //       { budget: { $gte: minBudget } },
-      //     ],
+      //     // availabilityQuery
       //   },
-      // },
-      // {
-      //   $match: availabilityQuery,
       // },
       {
         $lookup: {
@@ -96,9 +100,11 @@ const searchService = async ({
           "skills._id": 1,
           "skills.title": 1,
           createdAt: 1,
+          fullDocument: "$$ROOT",
         },
       },
-      { $sort: { createdAt: -1, ...stringScore } }
+      { $sort: { createdAt: -1, ...stringScore } },
+
     ];
 
     const projectAggregationPipeline = [
@@ -106,6 +112,9 @@ const searchService = async ({
       {
         $match: budgetQuery,
       },
+      // {
+      //   $match: availabilityQuery,
+      // },
       {
         $lookup: {
           from: "users",
@@ -151,15 +160,22 @@ const searchService = async ({
         Project.countDocuments({ ...stringQuery, skills: { $in: skillIds } }),
       ]);
      */
+
+    const paginatedUsers = users.slice(skip, skip + limit);
+    const paginatedProjects = projects.slice(skip, skip + limit);
+
+
+
     const totalUserPages = Math.ceil(users.length / size);
     const totalProjectPages = Math.ceil(projects.length / size);
+
 
     return users.length >= 1 || projects.length >= 1
       ? {
         message: "search done",
         status: 200,
-        users,
-        projects,
+        users: paginatedUsers,
+        projects: paginatedProjects,
         page,
         totalUserPages,
         totalProjectPages,
