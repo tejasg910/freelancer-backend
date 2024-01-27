@@ -179,6 +179,8 @@ const createUserFromPdfService = async (files, companyId) => {
               userType: "user",
               owner: companyId,
               resume: url,
+              budget: 0,
+              availability: "Immediate",
             });
 
             const err = newUser.validateSync();
