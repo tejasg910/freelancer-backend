@@ -122,7 +122,6 @@ const getAllProjectsService = async ({ filter, page, size, conditions }) => {
     .skip(skip)
     .limit(limit)
     .sort(sorted)
-    .populate("postedBy")
     .populate({
       path: "appliedBy.userId",
       model: "user",

@@ -44,7 +44,7 @@ const projectSchema = new mongoose.Schema(
       //         required: true
     },
     duration: {
-      type: String,
+      type: Number,
     },
     visibility: [
       {
