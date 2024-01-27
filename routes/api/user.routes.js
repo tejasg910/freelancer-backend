@@ -35,6 +35,19 @@ router.post(
   useTryCatch(userControllers.getCompaniesByProjectIdInFeed)
 );
 router.post("/verifyUser", useTryCatch(userControllers.verifyUser));
+router.post(
+  "/addExperience",
+  useTryCatch(userControllers.addExperienceToCompany)
+);
+router.put(
+  "/updateExperience",
+  useTryCatch(userControllers.updateExperienceceOfCompany)
+);
+router.delete(
+  "/deleteExperience",
+  useTryCatch(userControllers.deleteExperienceOfCompany)
+);
+
 router.post("/forgotPassword", useTryCatch(userControllers.forgotPassword));
 
 module.exports = router;

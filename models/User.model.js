@@ -49,17 +49,21 @@ const userSchema = new mongoose.Schema(
       type: String,
       // required: true,
     },
-    designation: { type: String },
+    designation: [{ type: mongoose.Schema.ObjectId, ref: "designation" }],
+    totalExperience: { type: Number },
     experience: [
       {
         title: { type: String },
-        duration: { type: Number },
+        duration_string: { type: String },
+        duration_number: { type: Number },
+
         summary: { type: String },
       },
     ],
-
+    briefExperience: { type: String },
     password: {
       type: String,
+      // required: true,
     },
     gstId: {
       type: String,
@@ -131,14 +135,15 @@ const userSchema = new mongoose.Schema(
         type: mongoose.Schema.ObjectId,
         ref: "category",
         index: true,
+        required: true,
       },
     ],
 
     portfolioProjects: [
       {
-        title: String,
+        title: { type: String },
 
-        description: String,
+        description: { type: String },
 
         skills: [
           {
@@ -147,8 +152,8 @@ const userSchema = new mongoose.Schema(
           },
         ],
 
-        image_url: String,
-        project_url: String,
+        image_url: { type: String },
+        project_url: { type: String },
       },
     ],
     invitationsSent: [{ type: mongoose.Schema.ObjectId, ref: "user" }],
@@ -264,16 +269,25 @@ const userSchema = new mongoose.Schema(
         "1 Month",
         "More than 1 Month",
       ],
+      // required: true,
     },
     budget: {
       type: Number,
       min: [0, "Budget must be a non-negative number."],
+      // required: true,
     },
   },
   { timestamps: true }
 );
 // run this below line in mongo for full text search
 // db.users.createIndex({ "$**" : "text" })
+userSchema.pre("find", function () {
+  this.where({ isDeleted: false });
+});
+
+userSchema.pre("findOne", function () {
+  this.where({ isDeleted: false });
+});
 userSchema.index({
   fullName: "text",
   intro: "text",

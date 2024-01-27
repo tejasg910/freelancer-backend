@@ -65,7 +65,7 @@ const getProjectPostedNotificationsService = async (companyId) => {
     {
       notificationType: "projectPosted",
       notify: companyId,
-      isRead: false,
+      // isRead: false,
     },
     {},
     { limit: 20 }
@@ -91,19 +91,20 @@ const getProjectPostedNotificationsService = async (companyId) => {
 const getResourcePostedNotificationsService = async (companyId) => {
   const notifications = await Notification.find(
     {
-      notificationType: "resourcePosted",
+      notificationType: "requirementPosted",
       notify: companyId,
-      isRead: false,
+      // isRead: false,
     },
     {},
-    { limit: 20 }
+    { limit: 50 }
   )
     .populate({
       path: "triggeredBy",
     })
     .populate({
       path: "resourceId",
-    });
+    })
+    .sort({ createdAt: -1 });
 
   return {
     status: 200,
@@ -116,7 +117,7 @@ const getAllNotificationsSeervice = async (companyId) => {
   const notifications = await Notification.find(
     {
       notify: companyId,
-      isRead: false,
+      // isRead: false,
     },
     {},
     { limit: 20 }

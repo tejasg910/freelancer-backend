@@ -5,7 +5,7 @@ const getAllCategories = async (req, res, next) => {
   try {
     const categories = await CategoryModel.find({ active: true });
 
-    console.log(categories);
+    // console.log(categories);
     return res.status(200).json(categories);
   } catch (error) {
     return res.status(500).json({ status: false, message: error.message });

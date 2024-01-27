@@ -14,11 +14,17 @@ const {
 const { queryConditions } = require("../services/utility.service");
 
 const getAllProjects = async (req, res) => {
-  const { page = 1, size = 10 } = req.query;
+  const { page, size } = req.query;
+  const filter = req.body;
 
   const conditions = queryConditions(req.body, Object.keys(Project.schema.obj));
 
-  const response = await getAllProjectsService({ page, size, conditions });
+  const response = await getAllProjectsService({
+    filter,
+    page,
+    size,
+    conditions,
+  });
 
   return res.status(response.status).json({
     ...response,

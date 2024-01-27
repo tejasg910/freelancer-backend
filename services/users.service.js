@@ -116,6 +116,10 @@ const getCompanyByIdService = async (companyId) => {
       populate: {
         path: "skills",
       },
+    })
+    .populate({
+      path: "portfolioProjects.skills",
+      model: "category",
     });
   if (!company) {
     return {
@@ -131,11 +135,62 @@ const getCompanyByIdService = async (companyId) => {
   };
 };
 
-const getAllUsersService = async ({ conditions, page, size }) => {
+const getAllUsersService = async ({ filter, conditions, page, size }) => {
   const { limit, skip } = pagination({ page, size });
+  console.log(limit, skip);
+  console.log("condition", filter);
 
-  const users = await User.find({ ...conditions }, {}, { limit, skip })
-    .sort({ createdAt: -1 })
+  const { maxBudget, minBudget, availability, experience, skill, sort } =
+    filter;
+
+  if (maxBudget !== null && minBudget !== null) {
+    conditions = {
+      ...conditions,
+      // Add conditions for budget filtering
+      budget: { $gte: minBudget, $lte: maxBudget },
+    };
+  }
+
+  // Apply additional filters if provided
+  if (availability && availability !== undefined) {
+    conditions = {
+      ...conditions,
+      availability: availability,
+    };
+  }
+
+  // Apply additional filters if provided
+  if (experience && experience !== null) {
+    conditions = {
+      ...conditions,
+      experience: experience,
+    };
+  }
+
+  const ObjSkill = skill ? mongoose.Types.ObjectId(skill) : "";
+
+  // Apply additional filters if provided
+  if (skill && skill !== undefined && ObjSkill) {
+    conditions = {
+      ...conditions,
+      skills: { $eq: ObjSkill },
+    };
+  }
+
+  let sorted = { createdAt: -1 };
+
+  if (sort === "newest") {
+    sorted = { createdAt: -1 }; // Sort by createdAt field in descending order for newest
+  } else if (sort === "oldest") {
+    sorted = { createdAt: 1 }; // Sort by createdAt field in ascending order for oldest
+  }
+
+  console.log(conditions);
+
+  const users = await User.find({ isDeleted: false, ...conditions })
+    .skip(skip)
+    .limit(limit)
+    .sort(sorted)
     .populate({
       path: "notifications",
       populate: {
@@ -206,7 +261,7 @@ const getAllUsersService = async ({ conditions, page, size }) => {
       path: "skills",
     });
 
-  const count = await User.find({ ...conditions }).count();
+  const count = await User.find({ isDeleted: false, ...conditions }).count();
   const totalPages = count / size;
 
   if (users) {
@@ -816,10 +871,11 @@ async function getMatchedUsers(projectId, currentUserId) {
     const projectSkills = project.skills.map((skill) => skill._id);
     // Step 3: Find users with matching skills, excluding the current user
     const matchingUsers = await User.find({
-      _id: { $ne: mongoose.Types.ObjectId(currentUserId) },
+      owner: { $ne: mongoose.Types.ObjectId(currentUserId) },
       userType: "user",
       skills: { $in: projectSkills },
     }).populate("skills");
+
     // Step 4: Calculate matching score for each user
     const usersWithScore = matchingUsers.map((user) => {
       let matchingScore = 0;

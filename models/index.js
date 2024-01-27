@@ -12,4 +12,6 @@ module.exports = {
   Category: require("./Category.model"),
   Invitation: require("./Invitation.model"),
   Designation: require("./Designation.model"),
+  Shortlist: require("./Shortlist.model"),
+  ResourceRequirement: require("./ResourceRequirement.model"),
 };

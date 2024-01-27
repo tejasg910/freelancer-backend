@@ -21,13 +21,20 @@ const {
   getCompaniesByProjectIdInFeedService,
 } = require("../services/users.service");
 const { generateLoginToken } = require("../utils/forgotPasswordtoken");
+const {
+  addExperienceOfCompanyService,
+  updateExperienceOfCompanyService,
+  deleteExperienceOfCompanyService,
+} = require("../services/user/updateUser.service");
 
 const getAllUsers = async (req, res) => {
   const { page = 1, size = 10 } = req.query;
 
-  const conditions = queryConditions(req.body, Object.keys(User.schema.obj));
+  const filter = req.body
+  let conditions = queryConditions(req.body, Object.keys(User.schema.obj));
 
   const response = await getAllUsersService({
+    filter,
     conditions,
     page,
     size,
@@ -303,6 +310,47 @@ const getCompaniesByProjectIdInFeed = async (req, res) => {
     ...response,
   });
 };
+
+const addExperienceToCompany = async (req, res) => {
+  const { title, description, skills, companyId } = req.body;
+  const response = await addExperienceOfCompanyService({
+    title,
+    description,
+    skills,
+    companyId,
+  });
+  res.status(response.status).json({
+    ...response,
+  });
+};
+
+const updateExperienceceOfCompany = async (req, res) => {
+  const { title, description, skills, companyId, portFolioProjectId } =
+    req.body;
+  const response = await updateExperienceOfCompanyService({
+    title,
+    description,
+    skills,
+    portFolioProjectId,
+    companyId,
+  });
+  res.status(response.status).json({
+    ...response,
+  });
+};
+
+const deleteExperienceOfCompany = async (req, res) => {
+  const { companyId, portFolioProjectId } = req.body;
+  const response = await deleteExperienceOfCompanyService({
+    portFolioProjectId,
+
+    companyId,
+  });
+  res.status(response.status).json({
+    ...response,
+  });
+};
+
 module.exports = {
   getAllUsers,
   registerUser,
@@ -321,4 +369,7 @@ module.exports = {
   resendOTP,
   verifyEmail,
   getCompaniesByProjectIdInFeed,
+  addExperienceToCompany,
+  updateExperienceceOfCompany,
+  deleteExperienceOfCompany,
 };

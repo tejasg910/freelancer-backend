@@ -11,4 +11,9 @@ router.patch(
   "/updateResource",
   useTryCatch(addResourcesController.updateResourceController)
 );
+
+router.delete(
+  "/deleteResource",
+  useTryCatch(addResourcesController.deleteResourceController)
+);
 module.exports = router;

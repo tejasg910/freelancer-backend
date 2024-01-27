@@ -70,12 +70,58 @@ const createProjectService = async (bodyArgs) => {
     };
   }
 };
-const getAllProjectsService = async ({ page, size, conditions }) => {
+const getAllProjectsService = async ({ filter, page, size, conditions }) => {
   const { limit, skip } = pagination({ page, size });
-  const count = await Project.find({ ...conditions }).count();
+  let { maxBudget, minBudget, duration, skill, sort } = filter;
+
+  if (maxBudget !== null && minBudget !== null) {
+    conditions = {
+      ...conditions,
+      $and: [
+        { "budget.minPrice": { $lte: maxBudget } },
+        { "budget.maxPrice": { $gte: minBudget, $lte: maxBudget } },
+      ],
+    };
+  }
+
+  if (duration && duration !== undefined) {
+    conditions = {
+      ...conditions,
+      // Add conditions for budget filtering
+      duration: duration,
+    };
+  }
+
+  const ObjSkill = skill ? mongoose.Types.ObjectId(skill) : "";
+
+  // Apply additional filters if provided
+  if (skill && skill !== undefined && ObjSkill) {
+    conditions = {
+      ...conditions,
+      skills: { $eq: ObjSkill },
+    };
+  }
+
+  let sorted = { createdAt: -1 };
+
+  if (sort === "newest") {
+    sorted = { createdAt: -1 }; // Sort by createdAt field in descending order for newest
+  } else if (sort === "oldest") {
+    sorted = { createdAt: 1 }; // Sort by createdAt field in ascending order for oldest
+  }
+
+  console.log(conditions);
+
+  const count = await Project.find({ isDeleted: false, ...conditions }).count();
   const totalPages = count / size;
-  const projects = await Project.find({ ...conditions }, {}, { limit, skip })
-    .sort({ createdAt: -1 })
+
+  const projects = await Project.find({
+    isDeleted: false,
+    ...conditions,
+  })
+    .skip(skip)
+    .limit(limit)
+    .sort(sorted)
     .populate("postedBy")
     .populate({
       path: "appliedBy.userId",
@@ -143,7 +189,35 @@ const getAllProjectsService = async ({ page, size, conditions }) => {
   }
 };
 const getProjectByIdService = async ({ projectId }) => {
-  const project = await Project.findById(projectId).populate("skills");
+  const project = await Project.findById(projectId)
+    .populate("postedBy")
+    .populate({
+      path: "appliedBy.userId",
+      select: userSelect,
+    })
+    .populate({
+      path: "appliedBy.applicationId",
+      select: applicationSelect,
+    })
+    .populate({
+      path: "postedBy",
+      select: userSelect,
+    })
+    .populate({
+      path: "hireRequests.freelancerId",
+      select: userSelect,
+    })
+    .populate({
+      path: "hireRequests.hireRequest",
+    })
+    .populate({
+      path: "hired.freelancerId",
+      select: userSelect,
+    })
+    .populate({
+      path: "skills",
+      select: "_id title  ",
+    });
   if (!project) {
     return { status: 404, message: "No project found" };
   } else {

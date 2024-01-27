@@ -34,6 +34,7 @@ const invitationSchema = new mongoose.Schema(
       default: "pending",
     },
     isDeleted: { type: Boolean, default: false },
+    active: { type: Boolean, default: true },
   },
   { timestamps: true }
 );

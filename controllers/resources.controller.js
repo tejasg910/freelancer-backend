@@ -1,6 +1,9 @@
 const { User } = require("../models");
 
-const { addResourcesServices } = require("../services/resources.services");
+const {
+  addResourcesServices,
+  deleteResourceService,
+} = require("../services/resources.services");
 
 const addResources = async (req, res) => {
   const {
@@ -51,7 +54,6 @@ const updateResourceController = async (req, res) => {
       { $set: { availability: availiability, budget: budget } }
     );
 
-    console.log(updateResourceResponse);
     if (
       updateResourceResponse.ok === 1 &&
       updateResourceResponse.nModified > 0
@@ -77,5 +79,19 @@ const updateResourceController = async (req, res) => {
     }
   }
 };
+const deleteResourceController = async (req, res) => {
+  const { resourceId } = req.body;
 
-module.exports = { addResources, updateResourceController };
+  const response = await deleteResourceService({
+    resourceId,
+  });
+
+  res.status(response.status).json({
+    ...response,
+  });
+};
+module.exports = {
+  addResources,
+  updateResourceController,
+  deleteResourceController,
+};

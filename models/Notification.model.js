@@ -46,7 +46,7 @@ const notificationSchema = new mongoose.Schema(
         "projectPosted",
         "invitationReceived",
         "invitationAccepted",
-
+        "requirementPosted",
         "resourcePosted",
       ],
       required: true,

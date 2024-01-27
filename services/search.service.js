@@ -9,12 +9,21 @@ const searchService = async ({
   minBudget,
   maxBudget,
   availability,
+  skill,
+  experience,
+  sort,
+  duration,
 }) => {
   try {
-    console.log(minBudget, maxBudget, availability);
-
-    console.log(page, size)
-
+    console.log(
+      minBudget,
+      maxBudget,
+      availability,
+      skill,
+      duration,
+      experience,
+      sort
+    );
     const isSearchValid = searchString && searchString.length >= 3;
     const { limit, skip } = pagination({ page, size });
 
@@ -24,25 +33,11 @@ const searchService = async ({
     const stringScore = isSearchValid ? { score: { $meta: "textScore" } } : {};
 
     const skillsQuery = { ...stringQuery };
-
     const skills = await Category.find(skillsQuery);
     const skillIds = skills.map((skill) => skill._id);
 
-    const availabilityQuery =
-      availability === "" ? {} : { availability: availability };
-
-    // console.log(availabilityQuery);
-
-    const budgetQuery =
-      minBudget !== null && maxBudget !== null
-        ? {
-          $and: [
-            { "budget.minPrice": { $gte: minBudget } },
-            { "budget.maxPrice": { $lte: maxBudget } },
-          ],
-        }
-
-        : {};
+    const ObjSkill = skill ? mongoose.Types.ObjectId(skill) : "";
+    console.log(ObjSkill);
 
     const matchStage = {
       $match: {
@@ -50,33 +45,50 @@ const searchService = async ({
           { $text: { $search: searchString } },
 
           { skills: { $in: skillIds } },
-
-        ]
+        ],
       },
     };
 
-    const userAggregationPipeline = [
-      {
-        $match: {
-          $or: [
-            { $text: { $search: searchString } },
+    /* -------------Resource Pipeline ----------------- */
 
-            { skills: { $in: skillIds } },
+    const userAggregationPipeline = [];
 
-          ]
-        },
-      },
-      {
+    userAggregationPipeline.push(matchStage);
+
+    //-------------Budget Filter Resources
+
+    if (minBudget !== null && maxBudget !== null) {
+      userAggregationPipeline.push({
         $match: {
+          budget: { $gte: minBudget },
           budget: { $lte: maxBudget },
-          // budget: { $gte: maxBudget - minBudget }
         },
-      },
-      // {
-      //   $match: {
-      //     // availabilityQuery
-      //   },
-      // },
+      });
+    }
+
+    // Add availability filter Resources
+
+    if (availability && availability !== undefined) {
+      userAggregationPipeline.push({ $match: { availability: availability } });
+    }
+
+    // Add experience filter Resources
+
+    if (experience && experience !== undefined) {
+      userAggregationPipeline.push({
+        $match: { experience: { $eq: experience } },
+      });
+    }
+
+    //-----------Skill Filer Resources
+
+    if (skill !== "" && ObjSkill) {
+      userAggregationPipeline.push({ $match: { skills: { $eq: ObjSkill } } });
+    }
+
+    // -----------  Pipeline Default stage Resources
+
+    userAggregationPipeline.push(
       {
         $lookup: {
           from: "categories",
@@ -102,19 +114,59 @@ const searchService = async ({
           createdAt: 1,
           fullDocument: "$$ROOT",
         },
-      },
-      { $sort: { createdAt: -1, ...stringScore } },
+      }
+    );
 
-    ];
+    // -----------  Sort filter stage Resources
 
-    const projectAggregationPipeline = [
-      matchStage,
-      {
-        $match: budgetQuery,
-      },
-      // {
-      //   $match: availabilityQuery,
-      // },
+    if (sort === "newest") {
+      userAggregationPipeline.push({
+        $sort: { createdAt: -1 }, // Sort by createdAt field in descending order for newest
+      });
+    } else if (sort === "oldest") {
+      userAggregationPipeline.push({
+        $sort: { createdAt: 1 }, // Sort by createdAt field in ascending order for oldest
+      });
+    } else if (!sort || sort === "") {
+      userAggregationPipeline.push({ $sort: { ...stringScore } });
+    } else {
+      userAggregationPipeline.push({ $sort: { ...stringScore } });
+    }
+
+    /* -------------Project Pipeline ----------------- */
+
+    const projectAggregationPipeline = [];
+
+    projectAggregationPipeline.push(matchStage);
+
+    // ------------ Budget Filter Project
+    if (minBudget !== null && maxBudget !== null) {
+      projectAggregationPipeline.push({
+        $match: {
+          $and: [
+            { "budget.minPrice": { $lte: maxBudget } },
+            { "budget.maxPrice": { $gte: minBudget, $lte: maxBudget } },
+          ],
+        },
+      });
+    }
+
+    // ------------ Duration Filter Project
+    if (duration && duration !== null) {
+      projectAggregationPipeline.push({
+        $match: { duration: { $eq: duration } },
+      });
+    }
+
+    // ------------ Skill Filter Project
+    if (skill !== "" && ObjSkill) {
+      projectAggregationPipeline.push({
+        $match: { skills: { $eq: ObjSkill } },
+      });
+    }
+
+    // -----------  Pipeline Default stage Project
+    projectAggregationPipeline.push(
       {
         $lookup: {
           from: "users",
@@ -144,46 +196,57 @@ const searchService = async ({
           "postedBy.fullName": 1,
           createdAt: 1,
         },
-      },
-      { $sort: { createdAt: -1, ...stringScore } },
-    ];
+      }
+    );
+
+    // -----------  Sort filter stage Project
+    if (sort === "newest") {
+      projectAggregationPipeline.push({
+        $sort: { createdAt: -1 }, // Sort by createdAt field in descending order for newest
+      });
+    } else if (sort === "oldest") {
+      projectAggregationPipeline.push({
+        $sort: { createdAt: 1 }, // Sort by createdAt field in ascending order for oldest
+      });
+    } else if (!sort || sort === "") {
+      projectAggregationPipeline.push({ $sort: { ...stringScore } });
+    } else {
+      projectAggregationPipeline.push({ $sort: { ...stringScore } });
+    }
+
+    //----------- Applying Aggregation
 
     const [users, projects] = await Promise.all([
       await User.aggregate(userAggregationPipeline),
       await Project.aggregate(projectAggregationPipeline),
     ]);
 
-    /*   console.log("websites");
-     
-      const [userCount, projectCount] = await Promise.all([
-        User.countDocuments({ ...stringQuery }),
-        Project.countDocuments({ ...stringQuery, skills: { $in: skillIds } }),
-      ]);
-     */
+    //----------- Pagination
 
     const paginatedUsers = users.slice(skip, skip + limit);
     const paginatedProjects = projects.slice(skip, skip + limit);
 
-
+    // ---------- Counting numbers of Documents
 
     const totalUserPages = Math.ceil(users.length / size);
     const totalProjectPages = Math.ceil(projects.length / size);
 
+    // ------------- Sending Response
 
     return users.length >= 1 || projects.length >= 1
       ? {
-        message: "search done",
-        status: 200,
-        users: paginatedUsers,
-        projects: paginatedProjects,
-        page,
-        totalUserPages,
-        totalProjectPages,
-      }
+          message: "search done",
+          status: 200,
+          users: paginatedUsers,
+          projects: paginatedProjects,
+          page,
+          totalUserPages,
+          totalProjectPages,
+        }
       : {
-        message: "Bad Request",
-        status: 400,
-      };
+          message: "Bad Request",
+          status: 400,
+        };
   } catch (e) {
     console.log(e);
   }

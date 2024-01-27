@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
-const { User } = require("../models");
+const { User, Shortlist, Invitation, Notification } = require("../models");
 const { uploadFile } = require("../utils/awsUpload");
-const { setNotification } = require("./notification.service");
-const { getMatchedCompaniesForResources } = require("./utility.service");
 
 const addResourcesServices = async ({
   firstName,
@@ -93,27 +91,28 @@ const addResourcesServices = async ({
     //sending notification to the company when resources added
 
     //extracting skills
-    const allCompanies = await User.find({
-      _id: { $ne: mongoose.Types.ObjectId(ownerId) },
-      userType: "client",
-    });
 
-    allCompanies.forEach(async (user) => {
-      const switchObj = {
-        notificationType: "resourcePosted",
-        // notificationMessage: `"${user?.project?.projectTitle}" posted by  ${user?.user?.fullName}`,
-        notificationMessage: `${newUserSave?.fullName}`,
+    // const allCompanies = await User.find({
+    //   _id: { $ne: mongoose.Types.ObjectId(ownerId) },
+    //   userType: "client",
+    // });
 
-        responseMessage: "resource posted",
-      };
-      const notification = await setNotification({
-        triggeredBy: ownerId,
-        notify: user?._id,
-        notificationMessage: switchObj.notificationMessage,
-        resourceId: newUserSave?._id,
-        notificationType: switchObj?.notificationType,
-      });
-    });
+    // allCompanies.forEach(async (user) => {
+    //   const switchObj = {
+    //     notificationType: "resourcePosted",
+    //     // notificationMessage: `"${user?.project?.projectTitle}" posted by  ${user?.user?.fullName}`,
+    //     notificationMessage: `${newUserSave?.fullName}`,
+
+    //     responseMessage: "resource posted",
+    //   };
+    //   const notification = await setNotification({
+    //     triggeredBy: ownerId,
+    //     notify: user?._id,
+    //     notificationMessage: switchObj.notificationMessage,
+    //     resourceId: newUserSave?._id,
+    //     notificationType: switchObj?.notificationType,
+    //   });
+    // });
 
     return {
       message: "Resource added successfully",
@@ -123,6 +122,105 @@ const addResourcesServices = async ({
   }
 };
 
+const deleteResourceService = async ({ resourceId }) => {
+  if (!resourceId) {
+    return {
+      status: 400,
+      message: "Please provided valid resource id",
+    };
+  }
+
+  const resource = await User.findOne({
+    _id: resourceId,
+    userType: "user",
+    isDeleted: false,
+  });
+
+  if (!resource) {
+    return { status: 400, message: "Resource not found" };
+  }
+  const updateResourceResponse = await User.updateOne(
+    { _id: resourceId },
+    { $set: { isDeleted: true } }
+  );
+
+  if (updateResourceResponse.ok === 1 && updateResourceResponse.nModified > 0) {
+    //remove from the owner team
+    const removeFromTeamResponse = await User.updateOne(
+      { _id: resource.owner, team: resourceId },
+      { $pull: { team: resourceId } }
+    );
+
+    const owner = await User.findOne({
+      _id: resource.owner,
+      userType: "client",
+      isDeleted: false,
+    }).populate("team");
+
+    // Find unique skills of the deleted resource
+    const resourceSkills = resource.skills;
+
+    // Find unique skills of the deleted resource
+    const uniqueSkills = resourceSkills.filter((resourceSkill) => {
+      // Check if the skill is not present in any other team member
+      return !owner.team.some((teamMember) =>
+        teamMember.skills.some((teamMemberSkill) =>
+          teamMemberSkill.equals(resourceSkill)
+        )
+      );
+    });
+    const invites = await Invitation.find(
+      { resourceId: resource._id },
+      {
+        active: true,
+      }
+    );
+    const inviteId = invites.map((invite) => invite._id);
+
+    const removeFromSkillsResponse = await User.updateOne(
+      { _id: resource.owner },
+      {
+        $pull: {
+          skills: { $in: uniqueSkills },
+          invitationsSent: { $in: inviteId },
+          resumes: { $in: resource.resume },
+        },
+      }
+    );
+
+    const updateShortlist = await Shortlist.updateMany(
+      { resource: resource._id },
+      {
+        active: false,
+        isDeleted: true,
+      }
+    );
+
+    //get inviations
+
+    const updateInvite = await Invitation.updateMany(
+      { resourceId: resource._id },
+      {
+        active: false,
+        isDeleted: true,
+      }
+    );
+    const updateNotification = await Notification.updateMany(
+      { resourceId: resource._id },
+      {
+        isDeleted: true,
+      }
+    );
+    return { status: 200, message: "Resource successfully updated" };
+  } else {
+    return {
+      status: 500,
+      message: "Something went wrong",
+    };
+  }
+};
+
 module.exports = {
   addResourcesServices,
+  deleteResourceService,
 };

@@ -1,4 +1,4 @@
-const { Invitation, User } = require("../models");
+const { Invitation, User, Shortlist } = require("../models");
 const { setNotification } = require("./notification.service");
 const { setContactedService } = require("./users.service");
 const { pagination } = require("./utility.service");
@@ -33,13 +33,23 @@ const sendInvitationToResourceService = async ({
     };
   }
 
-  const inviteExists = await Invitation.find({
+  const isShortlisted = await Shortlist.findOne({
+    resource: resourceId,
+    company: companyId,
+    active: true,
+  });
+
+  if (!isShortlisted) {
+    return { status: 400, message: `Please shortlist ${resource.fullName}` };
+  }
+
+  const inviteExists = await Invitation.findOne({
     resourceId,
     companyId,
     isDeleted: false,
   });
 
-  if (inviteExists.length > 0) {
+  if (inviteExists) {
     return {
       status: 400,
       message: "You have already sent the invitation to this resource",
