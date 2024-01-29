@@ -86,10 +86,13 @@ async function FileService(url) {
 
 const createUserFromPdfService = async (files, companyId) => {
   try {
-    const user = await User.findById(companyId);
-    const processedResources = [];
-    const existedResources = [];
-    const fillEmail = [];
+    const user = await User.findOne({
+      _id: companyId,
+      isDeleted: false,
+      userType: "client",
+    });
+
+    const filesResult = [];
     let resourceCount = 0;
     if (!user) {
       return {
@@ -112,125 +115,123 @@ const createUserFromPdfService = async (files, companyId) => {
 
     if (files && files.length > 0 && files[0].mimetype == "application/pdf") {
       //uploading the files
+
       const users = await files.map(async (file) => {
+        console.log(file);
         const url = await uploadFile(file, "document");
         const getData = await FileService(url);
         // const testRead = await readPDFFromUrl(url);
         // console.log(testRead)
         console.log(getData, "getdata");
-        if (getData && getData.email != null && getData.name != null) {
-          let existingUser = null;
-          if (getData.email != "") {
-            existingUser = await User.findOne({
-              email: getData.email,
-              owner: companyId,
-            });
-          }
+        if (getData.name) {
+          if (getData && getData.email != null && getData.name != null) {
+            let existingUser = null;
+            if (getData.email != "") {
+              existingUser = await User.findOne({
+                email: getData.email,
+                owner: companyId,
+              });
+            }
 
-          if (!existingUser) {
-            //
-            let totalExperience = 0;
-            const { experience } = getData;
+            if (!existingUser) {
+              //
+              let totalExperience = 0;
+              const { experience } = getData;
 
-            const experiences = await experience.map((exp) => {
-              totalExperience += exp.amount_of_experience
-                ? exp.amount_of_experience
-                : 0;
-              return {
-                title: exp.title.length > 0 ? exp.title[0] : "",
-                duration_string: exp.duration_string
-                  ? exp.duration_string
-                  : "0 years",
-                duration_number: exp.amount_of_experience
+              const experiences = await experience.map((exp) => {
+                totalExperience += exp.amount_of_experience
                   ? exp.amount_of_experience
-                  : 0,
-                summary: exp.summary ? exp.summary : "",
-              };
-            });
-            const skillsData = await Category.find({
-              _id: { $in: getData.skills ? getData.skills : null },
-            });
-            console.log(skillsData, "skillsdata");
-            const designationData = await Designation.find({
-              _id: { $in: getData.designation ? getData.designation : null },
-            });
-
-            const skillsId = skillsData.map((skill) => skill._id);
-
-            const newSkills = skillsId.filter(
-              (skillId) => !user.skills.includes(skillId)
-            );
-
-            const designationIds = designationData.map(
-              (designation) => designation._id
-            );
-
-            const newUser = new User({
-              email: getData.email ? getData.email : "",
-              designation: designationIds,
-              totalExperience: totalExperience,
-              experience: experiences,
-              fullName: getData.name ? getData.name : "",
-              briefExperience: getData.work_experience
-                ? getData.work_experience
-                : "",
-              phoneNumber: getData.phone ? getData.phone : "",
-              skills: skillsId,
-              userType: "user",
-              owner: companyId,
-              resume: url,
-              budget: 0,
-              availability: "1 Week",
-            });
-
-            const err = newUser.validateSync();
-            console.log(err, "err");
-            if (!err) {
-              const newUserSave = await newUser.save();
-
-              resumes.push(newUserSave.resume);
-              team.push(newUserSave._id);
-
-              if (newSkills.length > 0) {
-                skills.push(...newSkills);
-              }
-
-              const updatedUser = await User.findByIdAndUpdate(companyId, {
-                resumes,
-                team,
-                skills,
+                  : 0;
+                return {
+                  title: exp.title ? exp.title : "",
+                  duration_string: exp.duration_string
+                    ? exp.duration_string
+                    : "0 years",
+                  duration_number: exp.amount_of_experience
+                    ? exp.amount_of_experience
+                    : 0,
+                  summary: exp.summary ? exp.summary : "",
+                };
+              });
+              const skillsData = await Category.find({
+                title: { $in: getData.skills ? getData.skills : null },
+              });
+              const designationData = await Designation.find({
+                designation: {
+                  $in: getData.designation ? getData.designation : null,
+                },
               });
 
-              resourceCount += 1;
-              processedResources.push(`${newUser.fullName} added successfully`);
-              fillEmail.push(`Fill email of ${newUserSave.fullName}`);
+              const skillsId = skillsData.map((skill) => skill._id);
 
-              //sending notification
-              // const allCompanies = await User.find({
-              //   _id: { $ne: mongoose.Types.ObjectId(companyId) },
-              //   userType: "client",
-              // });
+              const newSkills = skillsId.filter(
+                (skillId) => !user.skills.includes(skillId)
+              );
 
-              // allCompanies.forEach(async (user) => {
-              //   const switchObj = {
-              //     notificationType: "resourcePosted",
-              //     // notificationMessage: `"${user?.project?.projectTitle}" posted by  ${user?.user?.fullName}`,
-              //     notificationMessage: `${newUserSave?.fullName}`,
+              const designationIds = designationData.map(
+                (designation) => designation._id
+              );
 
-              //     responseMessage: "resource posted",
-              //   };
-              //   const notification = await setNotification({
-              //     triggeredBy: companyId,
-              //     notify: user?._id,
-              //     notificationMessage: switchObj.notificationMessage,
-              //     resourceId: newUserSave?._id,
-              //     notificationType: switchObj?.notificationType,
-              //   });
-              // });
+              const newUser = new User({
+                email: getData.email ? getData.email : "",
+                designation: designationIds,
+                totalExperience: totalExperience,
+                experience: experiences,
+                fullName: getData.name ? getData.name : "",
+                briefExperience: getData.work_experience
+                  ? getData.work_experience
+                  : "",
+                phoneNumber: getData.phone ? getData.phone : "",
+                skills: skillsId,
+                userType: "user",
+                owner: companyId,
+                resume: url,
+                budget: 0,
+                availability: 1,
+              });
+
+              const err = newUser.validateSync();
+              if (!err) {
+                const newUserSave = await newUser.save();
+
+                resumes.push(newUserSave.resume);
+                team.push(newUserSave._id);
+
+                if (newSkills.length > 0) {
+                  skills.push(...newSkills);
+                }
+
+                const updatedUser = await User.findByIdAndUpdate(companyId, {
+                  resumes,
+                  team,
+                  skills,
+                });
+
+                resourceCount += 1;
+
+                filesResult.push({
+                  fileName: file.originalname,
+                  status: "Added successfully",
+                });
+              } else {
+                filesResult.push({
+                  fileName: file.originalname,
+                  status: "Something went wrong",
+                });
+              }
+            } else {
+              filesResult.push({
+                fileName: file.originalname,
+                status: "Already exists",
+              });
             }
-          } else {
-            existedResources.push(`${existingUser?.fullName} already exists`);
           }
+        } else {
+          //name not found
+          filesResult.push({
+            fileName: file.originalname,
+            status: "Name not found",
+          });
         }
       });
 
@@ -238,9 +239,7 @@ const createUserFromPdfService = async (files, companyId) => {
       return {
         status: 200,
         message: `${resourceCount} resources added successfully`,
-        resources: processedResources,
-        existing: existedResources,
-        emailRequired: fillEmail,
+        filesResult,
       };
     }
 

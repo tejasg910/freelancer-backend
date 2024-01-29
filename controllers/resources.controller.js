@@ -3,6 +3,7 @@ const { User } = require("../models");
 const {
   addResourcesServices,
   deleteResourceService,
+  updateResourceService,
 } = require("../services/resources.services");
 
 const addResources = async (req, res) => {
@@ -37,47 +38,52 @@ const addResources = async (req, res) => {
     ...response,
   });
 };
+const getResourceById = async (req, res) => {
+  const { resourceId } = req.body;
+  const files = req.files;
 
+  const response = await addResourcesServices({
+    resourceId,
+  });
+
+  res.status(response.status).json({
+    ...response,
+  });
+};
 const updateResourceController = async (req, res) => {
-  try {
-    const { resourceId, availiability, budget } = req.body;
+  const {
+    resourceId,
+    availiability,
+    budget,
+    email,
+    designation,
+    totalExperience,
+    experience,
+    fullName,
+    briefExperience,
+    phoneNumber,
+    skills,
+  } = req.body;
+  const files = req.files;
 
-    if (!resourceId || !availiability || !budget) {
-      return res.status(422).json({
-        status: false,
-        message: "Please provide all the required field properly",
-      });
-    }
+  const response = await updateResourceService({
+    resourceId,
+    availiability,
+    budget,
+    email,
+    designation,
+    totalExperience,
+    experience,
+    fullName,
+    briefExperience,
+    phoneNumber,
+    skills,
+    files,
+  });
 
-    const updateResourceResponse = await User.updateOne(
-      { _id: resourceId },
-      { $set: { availability: availiability, budget: budget } }
-    );
-
-    if (
-      updateResourceResponse.ok === 1 &&
-      updateResourceResponse.nModified > 0
-    ) {
-      return res
-        .status(201)
-        .json({ status: true, message: "Resource successfully updated" });
-    } else {
-      throw new Error("Failed to updated");
-    }
-  } catch (error) {
-    console.error(error);
-    if (error.message === "Failed to update resource") {
-      return res.status(422).json({
-        status: false,
-        message: "Failed to update resource.",
-      });
-    } else {
-      return res.status(500).json({
-        status: false,
-        message: "Internal Server Error",
-      });
-    }
-  }
+  res.status(response.status).json({
+    ...response,
+  });
 };
 const deleteResourceController = async (req, res) => {
   const { resourceId } = req.body;
@@ -94,4 +100,5 @@ module.exports = {
   addResources,
   updateResourceController,
   deleteResourceController,
+  getResourceById,
 };

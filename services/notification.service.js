@@ -35,7 +35,10 @@ const setNotification = async ({
         runValidators: true,
       }
     ).select(userSelect);
-    const triggeredByUserDetails = await User.findById(triggeredBy, userSelect);
+    const triggeredByUserDetails = await User.findOne(
+      { _id: triggeredBy, isDeleted: false },
+      userSelect
+    );
 
     return { notificationDetails, notifyUserDetails, triggeredByUserDetails };
   } else {

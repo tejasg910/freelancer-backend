@@ -22,7 +22,11 @@ const addResourcesServices = async ({
   //   };
   // }
 
-  const owner = await User.findById(ownerId);
+  const owner = await User.findOne({
+    _id: ownerId,
+    isDeleted: false,
+    userType: "client",
+  });
   const ownerResumes = owner.resumes;
   const ownerSkills = owner.skills;
   const team = owner.team;
@@ -122,11 +126,133 @@ const addResourcesServices = async ({
   }
 };
 
+const updateResourceService = async ({
+  resourceId,
+  availability,
+  budget,
+  email,
+  designation,
+  totalExperience,
+  experience,
+  fullName,
+  briefExperience,
+  phoneNumber,
+  skills,
+  files,
+}) => {
+  if (!resourceId) {
+    return res.status(422).json({
+      status: 400,
+      message: "Resource not found",
+    });
+  }
+
+  const resource = await User.findOne({
+    _id: resourceId,
+    userType: "user",
+    isDeleted: false,
+  });
+
+  if (!resource) {
+    return { status: 404, message: "Resource not found" };
+  }
+  let url = null;
+  if (files && files.length > 0 && files[0].mimetype == "application/pdf") {
+    url = await uploadFile(files[0], "document");
+  }
+
+  const oldSkills = resource.skills || [];
+  const oldResume = resource.resume;
+  const updateFields = {
+    availability,
+    budget,
+    email,
+    designation,
+    totalExperience,
+    experience,
+    fullName,
+    briefExperience,
+    phoneNumber,
+    skills,
+    resume: url,
+  };
+
+  // Remove undefined or null fields from the updateFields object
+  Object.keys(updateFields).forEach(
+    (key) => updateFields[key] == null && delete updateFields[key]
+  );
+
+  const updateResourceResponse = await User.updateOne(
+    { _id: resourceId },
+    { $set: updateFields }
+  );
+
+  if (updateResourceResponse.ok === 1 && updateResourceResponse.nModified > 0) {
+    //update skills and resumes  of the owner
+
+    const owner = await User.findOne({
+      _id: resource.owner,
+      userType: "client",
+      isDeleted: false,
+    });
+
+    if (owner) {
+      // Find skills to be removed (present in oldSkills but not in updated skills)
+
+      const skillsToBeRemoved = oldSkills.filter(
+        (oldSkill) =>
+          !skills.some((newSkill) =>
+            mongoose.Types.ObjectId(newSkill).equals(
+              mongoose.Types.ObjectId(oldSkill)
+            )
+          )
+      );
+
+      const skillsToBeAdded = skills.filter(
+        (newSkill) =>
+          !oldSkills.some((oldSkill) =>
+            mongoose.Types.ObjectId(oldSkill).equals(
+              mongoose.Types.ObjectId(newSkill)
+            )
+          )
+      );
+
+      // Update the owner with skills to be removed and skills to be added
+      await User.updateOne(
+        { _id: resource.owner },
+        {
+          $pull: {
+            skills: { $in: skillsToBeRemoved },
+            resumes: oldResume,
+          },
+        }
+      );
+
+      await User.updateOne(
+        { _id: resource.owner },
+        {
+          $addToSet: {
+            skills: { $each: skillsToBeAdded },
+            resumes: url,
+          },
+        }
+      );
+    }
+
+    return { status: 200, message: "Resource successfully updated" };
+  } else {
+    return {
+      status: 500,
+      message: "Failed to update",
+    };
+  }
+};
+
 const deleteResourceService = async ({ resourceId }) => {
   if (!resourceId) {
     return {
       status: 400,
-      message: "Please provided valid resource id",
+      message: "Resource not found",
     };
   }
 
@@ -146,11 +272,14 @@ const deleteResourceService = async ({ resourceId }) => {
 
   if (updateResourceResponse.ok === 1 && updateResourceResponse.nModified > 0) {
     //remove from the owner team
-    const removeFromTeamResponse = await User.updateOne(
-      { _id: resource.owner, team: resourceId },
-      { $pull: { team: resourceId } }
+    const updateOwner = await User.findOneAndUpdate(
+      { _id: resource.owner },
+      {
+        $pull: {
+          team: { $in: resource._id },
+        },
+      }
     );
-
     const owner = await User.findOne({
       _id: resource.owner,
       userType: "client",
@@ -184,6 +313,7 @@ const deleteResourceService = async ({ resourceId }) => {
           skills: { $in: uniqueSkills },
           invitationsSent: { $in: inviteId },
           resumes: { $in: resource.resume },
+          team: { $in: resource._id },
         },
       }
     );
@@ -223,4 +353,5 @@ const deleteResourceService = async ({ resourceId }) => {
 module.exports = {
   addResourcesServices,
   deleteResourceService,
+  updateResourceService,
 };

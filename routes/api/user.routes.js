@@ -6,6 +6,11 @@ const router = express.Router({ mergeParams: true });
 
 router.post("/getAllUsers", useTryCatch(userControllers.getAllUsers));
 router.post(
+  "/getAllSearchUsers",
+  useTryCatch(userControllers.getAllSearchUsers)
+);
+
+router.post(
   "/getUserByEmail",
 
   useTryCatch(userControllers.findByEmail)

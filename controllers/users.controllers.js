@@ -19,6 +19,7 @@ const {
   resendOtpService,
   verifyEmailService,
   getCompaniesByProjectIdInFeedService,
+  getAllUsersSearchService,
 } = require("../services/users.service");
 const { generateLoginToken } = require("../utils/forgotPasswordtoken");
 const {
@@ -30,14 +31,33 @@ const {
 const getAllUsers = async (req, res) => {
   const { page = 1, size = 10 } = req.query;
 
-  const filter = req.body
-  let conditions = queryConditions(req.body, Object.keys(User.schema.obj));
+  const filter = req.body;
+  let conditions = queryConditions(Object.keys(User.schema.obj));
 
   const response = await getAllUsersService({
     filter,
     conditions,
     page,
     size,
+  });
+
+  return res.status(response?.status).json({
+    ...response,
+  });
+};
+const getAllSearchUsers = async (req, res) => {
+  const { page = 1, size = 10 } = req.query;
+  const { userId } = req.body;
+
+  const filter = req.body;
+  let conditions = queryConditions(Object.keys(User.schema.obj));
+
+  const response = await getAllUsersSearchService({
+    filter,
+    conditions,
+    page,
+    size,
+    userId,
   });
 
   return res.status(response?.status).json({
@@ -372,4 +392,5 @@ module.exports = {
   addExperienceToCompany,
   updateExperienceceOfCompany,
   deleteExperienceOfCompany,
+  getAllSearchUsers,
 };

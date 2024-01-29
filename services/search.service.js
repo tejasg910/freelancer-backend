@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const { Project, Category, User } = require("../models");
 const { pagination } = require("./utility.service");
-
 const searchService = async ({
   searchString,
   page,
@@ -26,68 +25,60 @@ const searchService = async ({
     );
     const isSearchValid = searchString && searchString.length >= 3;
     const { limit, skip } = pagination({ page, size });
-
     const stringQuery = isSearchValid
       ? { $text: { $search: searchString } }
       : {};
     const stringScore = isSearchValid ? { score: { $meta: "textScore" } } : {};
-
     const skillsQuery = { ...stringQuery };
     const skills = await Category.find(skillsQuery);
     const skillIds = skills.map((skill) => skill._id);
-
     const ObjSkill = skill ? mongoose.Types.ObjectId(skill) : "";
     console.log(ObjSkill);
-
     const matchStage = {
       $match: {
         $or: [
           { $text: { $search: searchString } },
-
           { skills: { $in: skillIds } },
         ],
       },
     };
-
     /* -------------Resource Pipeline ----------------- */
-
     const userAggregationPipeline = [];
-
     userAggregationPipeline.push(matchStage);
-
+    userAggregationPipeline.push({
+      $match: {
+        isDeleted: false,
+        userType: "user",
+      },
+    });
     //-------------Budget Filter Resources
-
-    if (minBudget !== null && maxBudget !== null) {
+    if (minBudget !== null && maxBudget !== null && minBudget <= maxBudget) {
       userAggregationPipeline.push({
         $match: {
-          budget: { $gte: minBudget },
-          budget: { $lte: maxBudget },
+          budget: {
+            $gte: minBudget,
+            $lte: maxBudget,
+          },
         },
       });
     }
-
     // Add availability filter Resources
-
     if (availability && availability !== undefined) {
-      userAggregationPipeline.push({ $match: { availability: availability } });
-    }
-
-    // Add experience filter Resources
-
-    if (experience && experience !== undefined) {
       userAggregationPipeline.push({
-        $match: { experience: { $eq: experience } },
+        $match: { availability: { $lte: parseInt(availability) } },
       });
     }
-
+    // Add experience filter Resources
+    if (experience && experience !== undefined) {
+      userAggregationPipeline.push({
+        $match: { totalExperience: { $lte: parseInt(experience) } },
+      });
+    }
     //-----------Skill Filer Resources
-
     if (skill !== "" && ObjSkill) {
       userAggregationPipeline.push({ $match: { skills: { $eq: ObjSkill } } });
     }
-
     // -----------  Pipeline Default stage Resources
-
     userAggregationPipeline.push(
       {
         $lookup: {
@@ -108,6 +99,7 @@ const searchService = async ({
           address: 1,
           budget: 1,
           availability: 1,
+          totalExperience: 1,
           "experience.duration": 1,
           "skills._id": 1,
           "skills.title": 1,
@@ -116,9 +108,7 @@ const searchService = async ({
         },
       }
     );
-
     // -----------  Sort filter stage Resources
-
     if (sort === "newest") {
       userAggregationPipeline.push({
         $sort: { createdAt: -1 }, // Sort by createdAt field in descending order for newest
@@ -132,39 +122,38 @@ const searchService = async ({
     } else {
       userAggregationPipeline.push({ $sort: { ...stringScore } });
     }
-
     /* -------------Project Pipeline ----------------- */
-
     const projectAggregationPipeline = [];
-
     projectAggregationPipeline.push(matchStage);
-
+    projectAggregationPipeline.push({
+      $match: {
+        isDeleted: false,
+      },
+    });
     // ------------ Budget Filter Project
     if (minBudget !== null && maxBudget !== null) {
       projectAggregationPipeline.push({
         $match: {
-          $and: [
-            { "budget.minPrice": { $lte: maxBudget } },
-            { "budget.maxPrice": { $gte: minBudget, $lte: maxBudget } },
-          ],
+          // "budget.minPrice": { $gte: minBudget },
+          "budget.maxPrice": {
+            $gte: minBudget,
+            $lte: maxBudget,
+          },
         },
       });
     }
-
     // ------------ Duration Filter Project
     if (duration && duration !== null) {
       projectAggregationPipeline.push({
-        $match: { duration: { $eq: duration } },
+        $match: { duration: { $lte: duration } },
       });
     }
-
     // ------------ Skill Filter Project
     if (skill !== "" && ObjSkill) {
       projectAggregationPipeline.push({
         $match: { skills: { $eq: ObjSkill } },
       });
     }
-
     // -----------  Pipeline Default stage Project
     projectAggregationPipeline.push(
       {
@@ -198,7 +187,6 @@ const searchService = async ({
         },
       }
     );
-
     // -----------  Sort filter stage Project
     if (sort === "newest") {
       projectAggregationPipeline.push({
@@ -213,26 +201,19 @@ const searchService = async ({
     } else {
       projectAggregationPipeline.push({ $sort: { ...stringScore } });
     }
-
     //----------- Applying Aggregation
-
     const [users, projects] = await Promise.all([
       await User.aggregate(userAggregationPipeline),
       await Project.aggregate(projectAggregationPipeline),
     ]);
-
+    // console.log(users)
     //----------- Pagination
-
     const paginatedUsers = users.slice(skip, skip + limit);
     const paginatedProjects = projects.slice(skip, skip + limit);
-
     // ---------- Counting numbers of Documents
-
     const totalUserPages = Math.ceil(users.length / size);
     const totalProjectPages = Math.ceil(projects.length / size);
-
     // ------------- Sending Response
-
     return users.length >= 1 || projects.length >= 1
       ? {
           message: "search done",
@@ -251,7 +232,6 @@ const searchService = async ({
     console.log(e);
   }
 };
-
 module.exports = {
   searchService,
 };

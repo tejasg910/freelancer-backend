@@ -72,28 +72,25 @@ const createProjectService = async (bodyArgs) => {
 };
 const getAllProjectsService = async ({ filter, page, size, conditions }) => {
   const { limit, skip } = pagination({ page, size });
-  let { maxBudget, minBudget, duration, skill, sort } = filter;
-
+  const { maxBudget, minBudget, duration, skill, sort } = filter;
+  console.log(filter);
   if (maxBudget !== null && minBudget !== null) {
     conditions = {
       ...conditions,
-      $and: [
-        { "budget.minPrice": { $lte: maxBudget } },
-        { "budget.maxPrice": { $gte: minBudget, $lte: maxBudget } },
-      ],
+      "budget.maxPrice": {
+        $gte: minBudget,
+        $lte: maxBudget,
+      },
     };
   }
-
-  if (duration && duration !== undefined) {
+  if (duration && duration !== null) {
     conditions = {
       ...conditions,
       // Add conditions for budget filtering
-      duration: duration,
+      duration: { $lte: duration },
     };
   }
-
   const ObjSkill = skill ? mongoose.Types.ObjectId(skill) : "";
-
   // Apply additional filters if provided
   if (skill && skill !== undefined && ObjSkill) {
     conditions = {
@@ -101,20 +98,15 @@ const getAllProjectsService = async ({ filter, page, size, conditions }) => {
       skills: { $eq: ObjSkill },
     };
   }
-
   let sorted = { createdAt: -1 };
-
   if (sort === "newest") {
     sorted = { createdAt: -1 }; // Sort by createdAt field in descending order for newest
   } else if (sort === "oldest") {
     sorted = { createdAt: 1 }; // Sort by createdAt field in ascending order for oldest
   }
-
   console.log(conditions);
-
   const count = await Project.find({ isDeleted: false, ...conditions }).count();
   const totalPages = count / size;
-
   const projects = await Project.find({
     isDeleted: false,
     ...conditions,
@@ -187,6 +179,7 @@ const getAllProjectsService = async ({ filter, page, size, conditions }) => {
     };
   }
 };
+
 const getProjectByIdService = async ({ projectId }) => {
   const project = await Project.findById(projectId)
     .populate("postedBy")
@@ -405,11 +398,15 @@ async function getMatchedProjects(company) {
   }
 }
 const getProjectInFeedService = async ({ companyId, page, size }) => {
-  const company = await User.findById(companyId);
+  const company = await User.findOne({
+    _id: companyId,
+    isDeleted: false,
+    userType: "client",
+  });
   if (!company) {
     return {
       status: 404,
-      message: "No project found",
+      message: "No Company found",
     };
   }
 

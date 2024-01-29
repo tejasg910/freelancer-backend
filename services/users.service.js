@@ -108,8 +108,11 @@ const userFindService = async (conditions) => {
 };
 
 const getCompanyByIdService = async (companyId) => {
+  console.log(companyId);
   const company = await User.findById(companyId)
-    .populate("skills")
+    .populate({
+      path: "designation",
+    })
     .populate({
       path: "team",
       select: userSelect,
@@ -121,6 +124,8 @@ const getCompanyByIdService = async (companyId) => {
       path: "portfolioProjects.skills",
       model: "category",
     });
+
+  console.log(company);
   if (!company) {
     return {
       status: 404,
@@ -136,6 +141,165 @@ const getCompanyByIdService = async (companyId) => {
 };
 
 const getAllUsersService = async ({ filter, conditions, page, size }) => {
+  const { limit, skip } = pagination({ page, size });
+  console.log(limit, skip);
+  console.log("condition", filter);
+  const { maxBudget, minBudget, availability, experience, skill, sort } =
+    filter;
+  if (maxBudget !== null && minBudget !== null) {
+    conditions = {
+      ...conditions,
+      // Add conditions for budget filtering
+      budget: { $gte: minBudget, $lte: maxBudget },
+    };
+  }
+  // Apply additional filters if provided
+  if (availability && availability !== undefined) {
+    conditions = {
+      ...conditions,
+      availability: { $lte: availability },
+    };
+  }
+  // Apply additional filters if provided
+  if (experience && experience !== undefined) {
+    conditions = {
+      ...conditions,
+      totalExperience: { $lte: experience },
+    };
+  }
+  const ObjSkill = skill ? mongoose.Types.ObjectId(skill) : "";
+  // Apply additional filters if provided
+  if (skill && skill !== undefined && ObjSkill) {
+    conditions = {
+      ...conditions,
+      skills: ObjSkill,
+    };
+  }
+  let sorted = { createdAt: -1 };
+  if (sort === "newest") {
+    sorted = { createdAt: -1 }; // Sort by createdAt field in descending order for newest
+  } else if (sort === "oldest") {
+    sorted = { createdAt: 1 }; // Sort by createdAt field in ascending order for oldest
+  }
+  console.log(conditions);
+  const users = await User.find({
+    isDeleted: false,
+    userType: "user",
+    ...conditions,
+  })
+    .skip(skip)
+    .limit(limit)
+    .sort(sorted)
+    .populate({
+      path: "notifications",
+      populate: {
+        path: "triggeredBy",
+        select: userSelect,
+      },
+    })
+    .populate({
+      path: "notifications",
+      populate: {
+        path: "notify",
+        select: userSelect,
+      },
+      match: { isRead: false },
+    })
+    .populate({
+      path: "contacted",
+      select: userSelect,
+    })
+    .populate({
+      path: "projects",
+      select: projectSelect,
+    })
+    .populate({
+      path: "applications.projectId",
+      select: { ...projectSelect, hired: 1 },
+      populate: {
+        path: "hired.freelancerId",
+        select: userSelect,
+      },
+      populate: {
+        path: "skills",
+      },
+    })
+    .populate({
+      path: "applications.applicationId",
+      select: applicationSelect,
+    })
+    .populate({
+      path: "hireRequests.projectId",
+      select: projectSelect,
+    })
+    .populate({
+      path: "hireRequests.clientId",
+      select: userSelect,
+    })
+    .populate({
+      path: "hireRequests.hireRequestId",
+    })
+    .populate({
+      path: "reviews.reviewedBy",
+      select: userSelect,
+    })
+    .populate({
+      path: "favUsers",
+      select: userSelect,
+    })
+    .populate({
+      path: "favProjects",
+      select: userSelect,
+    })
+    .populate({
+      path: "favByUsers",
+      select: userSelect,
+    })
+    .populate({
+      path: "skills",
+    });
+  const count = await User.find({
+    isDeleted: false,
+    userType: "user",
+    ...conditions,
+  }).count();
+  const totalPages = count / size;
+  if (users) {
+    const skills = users
+      .reduce((a, c) => [...new Set([...a, ...c.skills])], [])
+      .reduce((a, c) => [...new Set([...a, c.name])], []);
+    const userType = users.reduce(
+      (a, c) => [...new Set([...a, c.userType])],
+      []
+    );
+    return {
+      message: "Users List",
+      status: 200,
+      users,
+      page,
+      size,
+      totalPages,
+      filter: {
+        skills,
+        // qualifications,
+        userType,
+      },
+    };
+  } else {
+    return {
+      message: "Bad Request",
+      status: 400,
+    };
+  }
+};
+
+const getAllUsersSearchService = async ({
+  filter,
+  conditions,
+  page,
+  size,
+  userId,
+}) => {
   const { limit, skip } = pagination({ page, size });
   console.log(limit, skip);
   console.log("condition", filter);
@@ -155,15 +319,15 @@ const getAllUsersService = async ({ filter, conditions, page, size }) => {
   if (availability && availability !== undefined) {
     conditions = {
       ...conditions,
-      availability: availability,
+      availability: { $lte: availability },
     };
   }
 
   // Apply additional filters if provided
-  if (experience && experience !== null) {
+  if (experience && experience !== undefined) {
     conditions = {
       ...conditions,
-      experience: experience,
+      totalExperience: { $lte: experience },
     };
   }
 
@@ -173,7 +337,7 @@ const getAllUsersService = async ({ filter, conditions, page, size }) => {
   if (skill && skill !== undefined && ObjSkill) {
     conditions = {
       ...conditions,
-      skills: { $eq: ObjSkill },
+      skills: ObjSkill,
     };
   }
 
@@ -185,9 +349,15 @@ const getAllUsersService = async ({ filter, conditions, page, size }) => {
     sorted = { createdAt: 1 }; // Sort by createdAt field in ascending order for oldest
   }
 
-  console.log(conditions);
+  console.log(userId, "userid");
 
-  const users = await User.find({ isDeleted: false, ...conditions })
+  const users = await User.find({
+    _id: { $ne: mongoose.Types.ObjectId(userId) },
+    isDeleted: false,
+    userType: "user",
+
+    ...conditions,
+  })
     .skip(skip)
     .limit(limit)
     .sort(sorted)
@@ -261,7 +431,12 @@ const getAllUsersService = async ({ filter, conditions, page, size }) => {
       path: "skills",
     });
 
-  const count = await User.find({ isDeleted: false, ...conditions }).count();
+  const count = await User.find({
+    _id: { $ne: mongoose.Types.ObjectId(userId) },
+    isDeleted: false,
+    userType: "user",
+    ...conditions,
+  }).count();
   const totalPages = count / size;
 
   if (users) {
@@ -294,7 +469,6 @@ const getAllUsersService = async ({ filter, conditions, page, size }) => {
     };
   }
 };
-
 const registerUserService = async ({
   email,
   // companyName,
@@ -874,6 +1048,7 @@ async function getMatchedUsers(projectId, currentUserId) {
       owner: { $ne: mongoose.Types.ObjectId(currentUserId) },
       userType: "user",
       skills: { $in: projectSkills },
+      isDeleted: false,
     }).populate("skills");
 
     // Step 4: Calculate matching score for each user
@@ -915,7 +1090,11 @@ async function getMatchedUsers(projectId, currentUserId) {
   }
 }
 const getCompaniesInFeedService = async ({ companyId, page, size }) => {
-  const company = await User.findById(companyId);
+  const company = await User.findOne({
+    _id: companyId,
+    isDeleted: false,
+    userType: "client",
+  });
   if (!company) {
     return {
       status: 404,
@@ -961,7 +1140,11 @@ const getCompaniesByProjectIdInFeedService = async ({
   size,
   projectId,
 }) => {
-  const company = await User.findById(companyId);
+  const company = await User.findOne({
+    _id: companyId,
+    isDeleted: false,
+    userType: "client",
+  });
   if (!company) {
     return {
       status: 404,
@@ -1019,4 +1202,5 @@ module.exports = {
   verifyEmailService,
   getMatchedUsers,
   getCompaniesByProjectIdInFeedService,
+  getAllUsersSearchService,
 };

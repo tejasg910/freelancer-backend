@@ -260,16 +260,10 @@ const userSchema = new mongoose.Schema(
     },
     isDeleted: { type: Boolean, default: false },
     availability: {
-      type: String,
-      enum: [
-        "Immediate",
-        "1 Week",
-        "2 Weeks",
-        "3 Weeks",
-        "1 Month",
-        "More than 1 Month",
-      ],
+      type: Number,
+      enum: [1, 2, 3, 4, 5, 6],
       // required: true,
+      default: 1,
     },
     budget: {
       type: Number,
@@ -281,13 +275,13 @@ const userSchema = new mongoose.Schema(
 );
 // run this below line in mongo for full text search
 // db.users.createIndex({ "$**" : "text" })
-userSchema.pre("find", function () {
-  this.where({ isDeleted: false });
-});
+// userSchema.pre("find", function () {
+//   this.where({ isDeleted: false });
+// });
 
-userSchema.pre("findOne", function () {
-  this.where({ isDeleted: false });
-});
+// userSchema.pre("findOne", function () {
+//   this.where({ isDeleted: false });
+// });
 userSchema.index({
   fullName: "text",
   intro: "text",

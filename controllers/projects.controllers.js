@@ -17,7 +17,7 @@ const getAllProjects = async (req, res) => {
   const { page, size } = req.query;
   const filter = req.body;
 
-  const conditions = queryConditions(req.body, Object.keys(Project.schema.obj));
+  const conditions = queryConditions(Object.keys(Project.schema.obj));
 
   const response = await getAllProjectsService({
     filter,

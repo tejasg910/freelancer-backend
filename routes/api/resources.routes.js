@@ -6,6 +6,10 @@ const addResourcesController = require("../../controllers/resources.controller")
 const { useTryCatch } = require("../../services/utility.service");
 
 router.post("/addResources", useTryCatch(addResourcesController.addResources));
+router.post(
+  "/getResourceById",
+  useTryCatch(addResourcesController.addResources)
+);
 
 router.patch(
   "/updateResource",
