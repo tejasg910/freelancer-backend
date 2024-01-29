@@ -71,7 +71,7 @@ const searchService = async ({
     // Add experience filter Resources
     if (experience && experience !== undefined) {
       userAggregationPipeline.push({
-        $match: { totalExperience: { $lte: parseInt(experience) } },
+        $match: { totalExperience: { $lte: experience } },
       });
     }
     //-----------Skill Filer Resources
