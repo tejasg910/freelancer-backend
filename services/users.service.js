@@ -123,6 +123,9 @@ const getCompanyByIdService = async (companyId) => {
     .populate({
       path: "portfolioProjects.skills",
       model: "category",
+    })
+    .populate({
+      path: "skills",
     });
 
   console.log(company);
