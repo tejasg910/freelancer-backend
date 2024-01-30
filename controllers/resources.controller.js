@@ -4,6 +4,7 @@ const {
   addResourcesServices,
   deleteResourceService,
   updateResourceService,
+  getResourceByIdService,
 } = require("../services/resources.services");
 
 const addResources = async (req, res) => {
@@ -40,9 +41,8 @@ const addResources = async (req, res) => {
 };
 const getResourceById = async (req, res) => {
   const { resourceId } = req.body;
-  const files = req.files;
 
-  const response = await addResourcesServices({
+  const response = await getResourceByIdService({
     resourceId,
   });
 

@@ -2,6 +2,7 @@ const { Category, User } = require("../models");
 const {
   FileService,
   createUserFromPdfService,
+  getLiveUpdateService,
 } = require("../services/pdfFileProcess.service");
 const { uploadFile } = require("../utils/awsUpload");
 
@@ -15,7 +16,14 @@ const Pdf_to_Detail_Json = async (req, res) => {
     ...response,
   });
 };
+const getLiveUpdate = async (req, res) => {
+  const response = await getLiveUpdateService();
 
+  return res.status(response.status).json({
+    ...response,
+  });
+};
 module.exports = {
   Pdf_to_Detail_Json,
+  getLiveUpdate,
 };

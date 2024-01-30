@@ -126,6 +126,42 @@ const addResourcesServices = async ({
   }
 };
 
+const getResourceByIdService = async ({ resourceId }) => {
+  const resource = await User.findOne({
+    _id: resourceId,
+    isDeleted: false,
+    userType: "user",
+  })
+    .select({
+      otp: 0,
+      password: 0,
+    })
+    .populate({
+      path: "designation",
+    })
+    .populate({
+      path: "skills",
+    })
+
+    .populate({
+      path: "portfolioProjects.skills",
+      model: "category",
+    });
+
+  if (!resource) {
+    return {
+      status: 404,
+      message: "No company found",
+    };
+  }
+
+  return {
+    status: 200,
+    message: "Fetched resource successfully",
+    resource,
+  };
+};
+
 const updateResourceService = async ({
   resourceId,
   availability,
@@ -353,5 +389,6 @@ const deleteResourceService = async ({ resourceId }) => {
 module.exports = {
   addResourcesServices,
   deleteResourceService,
+  getResourceByIdService,
   updateResourceService,
 };

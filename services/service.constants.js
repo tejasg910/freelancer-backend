@@ -5,6 +5,9 @@ const userSelect = {
   firstName: 1,
   lastName: 1,
   userType: 1,
+  designation: 1,
+  totalExperience: 1,
+  experience: 1,
 };
 
 const applicationSelect = {
@@ -63,10 +66,16 @@ const projectGenericSelect = {
   hired: 1,
 };
 
+const excludeUserInfo = {
+  password: 0,
+  otp: 0,
+};
+
 // end
 
 module.exports = {
   userSelect,
   applicationSelect,
   projectSelect,
+  excludeUserInfo,
 };

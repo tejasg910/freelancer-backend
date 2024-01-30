@@ -1,9 +1,8 @@
 const { Category, Designation } = require("../models");
-const CategoryModel = require("../models/Category.model");
-
+const skillsToInsert = require("./data.json");
 const getAllCategories = async (req, res, next) => {
   try {
-    const categories = await CategoryModel.find({ active: true });
+    const categories = await Category.find({ active: true });
 
     // console.log(categories);
     return res.status(200).json(categories);
@@ -49,4 +48,30 @@ const insertCategory = async (req, res, next) => {
   }
 };
 
-module.exports = { getAllCategories, insertCategory, getAllDesignations };
+const insertManyCategory = async (req, res, next) => {
+  try {
+    // const category = new Category({
+    //   title: 'CSS',
+    //   active: true,
+    // });
+
+    // const uniqueSkills = Array.from(
+    //   new Set(skillsToInsert.map((skill) => skill.title))
+    // ).map((title) => skillsToInsert.find((skill) => skill.title === title));
+
+    const category = await Category.insertMany(skillsToInsert);
+    console.log(skillsToInsert.length);
+
+    return res.status(200).json({ category });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ status: false, message: error.message });
+  }
+};
+
+module.exports = {
+  getAllCategories,
+  insertCategory,
+  getAllDesignations,
+  insertManyCategory,
+};

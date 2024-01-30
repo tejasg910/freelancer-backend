@@ -1,0 +1,6743 @@
+[
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e413",
+    "title": "PHP"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e414",
+    "title": "JavaScript"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e415",
+    "title": "Python"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e416",
+    "title": "Website Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e417",
+    "title": "Web Security"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e418",
+    "title": "SEO"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e419",
+    "title": "Data Entry"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e41a",
+    "title": "Mobile App Development"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e41b",
+    "title": "AJAX"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e41c",
+    "title": "iPhone"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e41d",
+    "title": "Android"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e41e",
+    "title": "Testing / QA"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e41f",
+    "title": "Computer Security"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e420",
+    "title": "Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e421",
+    "title": "Cloud Computing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e422",
+    "title": "Google App Engine"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e423",
+    "title": "eCommerce"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e424",
+    "title": "Software Testing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e425",
+    "title": "Article Writing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e426",
+    "title": "Website Testing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e427",
+    "title": "NoSQL Couch & Mongo"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e428",
+    "title": "Machine Learning (ML)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e429",
+    "title": "Amazon Web Services"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e42a",
+    "title": "HTML5"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e42b",
+    "title": "HTML"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e42c",
+    "title": "Yii"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e42d",
+    "title": "Unity 3D"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e42e",
+    "title": "Face Recognition"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e42f",
+    "title": "Node.js"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e430",
+    "title": "PhoneGap"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e431",
+    "title": "Bitcoin"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e432",
+    "title": "Express JS"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e433",
+    "title": "Socket IO"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e434",
+    "title": "Game Development"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e435",
+    "title": "Laravel"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e436",
+    "title": "RESTful"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e437",
+    "title": "AngularJS"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e438",
+    "title": "Database Development"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e439",
+    "title": "Internet Security"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e43a",
+    "title": "Salesforce App Development"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e43b",
+    "title": "Git"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e43c",
+    "title": "React.js"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e43d",
+    "title": "Augmented Reality"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e43e",
+    "title": "Wix"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e43f",
+    "title": "Ionic Framework"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e440",
+    "title": "Artificial Intelligence"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e441",
+    "title": "MeteorJS"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e442",
+    "title": "Typescript"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e443",
+    "title": "Raspberry Pi"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e444",
+    "title": "Blockchain"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e445",
+    "title": "Ethereum"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e446",
+    "title": "Docker"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e447",
+    "title": "API"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e448",
+    "title": "Full Stack Development"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e449",
+    "title": "Backend Development"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e44a",
+    "title": "Frontend Development"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e44b",
+    "title": "Sails.js"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e44c",
+    "title": "AWS Lambda"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e44d",
+    "title": "Vue.js"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e44e",
+    "title": "Internet of Things (IoT)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e44f",
+    "title": "Solutions Architecture"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e450",
+    "title": "RESTful API"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e451",
+    "title": "MongoDB"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e452",
+    "title": "Prometheus Monitoring"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e453",
+    "title": "React Native"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e454",
+    "title": "Flutter"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e455",
+    "title": "Process Automation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e456",
+    "title": "Bubble Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e457",
+    "title": "Google Firebase"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e458",
+    "title": "Kubernetes"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e459",
+    "title": "Webflow"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e45a",
+    "title": "React.js Framework"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e45b",
+    "title": "Redux.js"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e45c",
+    "title": "Shopify Development"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e45d",
+    "title": "System Analysis"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e45e",
+    "title": "GraphQL"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e45f",
+    "title": "Figma"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e460",
+    "title": "Automation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e461",
+    "title": "Hubspot"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e462",
+    "title": "Hubspot Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e463",
+    "title": "API Integration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e464",
+    "title": "Microservices"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e465",
+    "title": "WebRTC"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e466",
+    "title": "MERN Stack"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e467",
+    "title": "Next.js"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e468",
+    "title": "Nest.js"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e469",
+    "title": "MERN"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e46a",
+    "title": "SaaS"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e46b",
+    "title": "OpenAI"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e46c",
+    "title": "Stable Diffusion"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e46d",
+    "title": "Midjourney"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e46e",
+    "title": "Dall-E"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e46f",
+    "title": "ChatGPT"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e470",
+    "title": "Graphic design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e472",
+    "title": "Web design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e473",
+    "title": "Copywriting"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e474",
+    "title": "Social media"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e475",
+    "title": "Web Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e476",
+    "title": "Video editing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e477",
+    "title": "Programming"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e478",
+    "title": "Ecommerce"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e479",
+    "title": "Content writing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e47a",
+    "title": "Mobile app development"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e47b",
+    "title": "Virtual Assistant"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e47c",
+    "title": "Communication"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e47d",
+    "title": "Recruiting"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e47e",
+    "title": "Digital marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e47f",
+    "title": "Email writing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e480",
+    "title": "Editing and proofreading"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e481",
+    "title": "Bookkeeping"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e482",
+    "title": "Project managementProject management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e483",
+    "title": "Consultancy"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e484",
+    "title": "Data analysis"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e485",
+    "title": "Manual Testing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "659bf1c224310d6e7a81e487",
+    "title": "Illustration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba7c",
+    "title": "UI/UX Designer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba78",
+    "title": "Frontend Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba83",
+    "title": "Ruby on Rails Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba84",
+    "title": "Java Developer (Web)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba85",
+    "title": ".NET Developer (Web)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba88",
+    "title": "React Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba91",
+    "title": "Web Application Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba92",
+    "title": "Mobile Web Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba93",
+    "title": "Responsive Web Designer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba94",
+    "title": "Web Development Manager"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba7a",
+    "title": "Full Stack Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba95",
+    "title": "Technical Lead (Web)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba7d",
+    "title": "Frontend Engineer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba97",
+    "title": "DevOps Engineer (Web)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba9e",
+    "title": "Chief Information Officer (CIO)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba7f",
+    "title": "Software Engineer (Web)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba81",
+    "title": "PHP Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baa1",
+    "title": "Senior Web Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baa4",
+    "title": "Freelance Web Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba86",
+    "title": "Node.js Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baad",
+    "title": "Angular"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba8d",
+    "title": "Joomla Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba8e",
+    "title": "Magento Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bab0",
+    "title": "Express.js"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba8f",
+    "title": "Shopify Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bab3",
+    "title": "Ruby on Rails"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bab4",
+    "title": "ASP.NET"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba90",
+    "title": "E-commerce Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba96",
+    "title": "Solutions Architect (Web)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bab5",
+    "title": "Bootstrap"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bab8",
+    "title": "LESS"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba9b",
+    "title": "Frontend Architect"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baa3",
+    "title": "Web Development Consultant"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bac2",
+    "title": "Java"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bac8",
+    "title": "SQLAlchemy"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baa6",
+    "title": "Web Development Trainer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bac9",
+    "title": ".NET Core"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baca",
+    "title": "C#"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bab9",
+    "title": "Webpack"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baba",
+    "title": "Firebase"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bacb",
+    "title": "Xamarin"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bacd",
+    "title": "SOAP"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bacf",
+    "title": "XML"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bad5",
+    "title": "WebAssembly"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8babd",
+    "title": "TypeScript"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bac1",
+    "title": "CodeIgniter"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bad6",
+    "title": "Jest (JavaScript testing framework)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bad7",
+    "title": "Mocha (JavaScript test framework)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bac5",
+    "title": "Swift"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bac7",
+    "title": "Pyramid"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8badc",
+    "title": "D3.js (JavaScript library for data visualization)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8badd",
+    "title": "Chart.js (JavaScript charting library)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bacc",
+    "title": "RESTful API Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bae0",
+    "title": "Gatsby.js (React-based static site generator)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bace",
+    "title": "JSON"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bae1",
+    "title": "Next.js (React framework)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bae8",
+    "title": "Smarty (PHP templating engine)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bad3",
+    "title": "Web Accessibility (WCAG)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baec",
+    "title": "Contentful (Headless CMS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bad4",
+    "title": "Progressive Web Apps (PWA)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baee",
+    "title": "Netlify CMS (Headless CMS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baf1",
+    "title": "CircleCI (Continuous Integration)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bade",
+    "title": "Highcharts (JavaScript charting library)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bae3",
+    "title": "Electron (JavaScript framework for building desktop apps)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baf2",
+    "title": "Docker (Containerization)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baf4",
+    "title": "Git (Version Control)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bae7",
+    "title": "Blade (Laravel templating engine)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bae9",
+    "title": "Joomla (Content Management System)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baf7",
+    "title": "Bitbucket (Version Control)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baf9",
+    "title": "Trello (Project Management)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baf0",
+    "title": "Travis CI (Continuous Integration)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baf6",
+    "title": "Subversion (Version Control)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bafc",
+    "title": "Microsoft Teams (Team Communication)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb00",
+    "title": "OpenID Connect (Authentication)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bafa",
+    "title": "Asana (Project Management)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bafb",
+    "title": "Slack (Team Communication)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb02",
+    "title": "REST API Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb0c",
+    "title": "Zeplin (Design Collaboration)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bafd",
+    "title": "Zoom (Video Conferencing)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baff",
+    "title": "OAuth 2.0 (Authorization Framework)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb0d",
+    "title": "Adobe XD (UI/UX Design)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb0e",
+    "title": "Penetration Testing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb01",
+    "title": "JSON Web Tokens (JWT)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb0f",
+    "title": "OWASP Top 10"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb04",
+    "title": "RAML (RESTful API Modeling Language)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb14",
+    "title": "OWASP ZAP (Security Testing)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb06",
+    "title": "OpenAPI Specification"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb18",
+    "title": "Lighthouse (Web Performance Testing)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb10",
+    "title": "Security Headers"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb19",
+    "title": "Google PageSpeed Insights"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb12",
+    "title": "SSL/TLS"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb1e",
+    "title": "Gatling"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb22",
+    "title": "Cypress (End-to-End Testing)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb24",
+    "title": "Puppet"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb26",
+    "title": "Chef"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb2a",
+    "title": "Travis CI (CI/CD)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb29",
+    "title": "Jenkins Pipeline"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb2d",
+    "title": "GitLab CI/CD"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb32",
+    "title": "A/B Testing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb34",
+    "title": "Behavior-Driven Development (BDD)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb2f",
+    "title": "Blue-Green Deployment"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb30",
+    "title": "Canary Deployment"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb37",
+    "title": "Redux (State Management)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb39",
+    "title": "Recoil (React state management)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb33",
+    "title": "User Acceptance Testing (UAT)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb35",
+    "title": "Test-Driven Development (TDD)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb3a",
+    "title": "Swift programming language"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb3c",
+    "title": "Xcode IDE"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb38",
+    "title": "MobX (State Management)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb3b",
+    "title": "SwiftUI or UIKit framework"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb40",
+    "title": "Alamofire or URLSession (for networking)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb3f",
+    "title": "Core Data (for local data storage)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb46",
+    "title": "Android Jetpack components"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb48",
+    "title": "Retrofit or Volley (for networking)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb4b",
+    "title": "React Native (JavaScript and React)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb4f",
+    "title": "UI/UX Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb5e",
+    "title": "Ruby on Rails (Ruby)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb60",
+    "title": "Spring Boot (Java)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb67",
+    "title": "RESTful API design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb69",
+    "title": "Swagger or OpenAPI Specification"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb6b",
+    "title": "JWT (JSON Web Tokens)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb6c",
+    "title": "OpenID Connect"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb74",
+    "title": "JUnit (Android)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb75",
+    "title": "Jest (React Native)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb77",
+    "title": "Appium or Espresso (Android)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb7d",
+    "title": "Travis CI"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb7e",
+    "title": "CircleCI"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb7f",
+    "title": "GitLab CI"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb84",
+    "title": "Core Location (iOS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb8e",
+    "title": "Mixpanel"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb8f",
+    "title": "CoreData (iOS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb91",
+    "title": "Firebase Realtime Database or Firestore"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb93",
+    "title": "R"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb95",
+    "title": "Julia"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb9a",
+    "title": "TensorFlow"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bba3",
+    "title": "Data cleaning"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbaf",
+    "title": "OpenAI Gym"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbb5",
+    "title": "Gated Recurrent Unit (GRU)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbba",
+    "title": "Amazon Web Services (AWS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbbe",
+    "title": "GitHub"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbc3",
+    "title": "Random Search"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbd3",
+    "title": "TensorFlow Lite"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbd4",
+    "title": "ONNX (Open Neural Network Exchange)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbd7",
+    "title": "Model pruning"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbdc",
+    "title": "Medical image analysis"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbdf",
+    "title": "Fraud detection"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbe0",
+    "title": "Geospatial analysis"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbe1",
+    "title": "Platform architecture design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbf0",
+    "title": "Real-time chat systems"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbf7",
+    "title": "Content Delivery Network (CDN) integration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbfa",
+    "title": "Cross-platform compatibility"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbfd",
+    "title": "Google Analytics"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc00",
+    "title": "Helpdesk systems"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc03",
+    "title": "SKU management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc04",
+    "title": "Product variations"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc09",
+    "title": "Privacy policy"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc0c",
+    "title": "URL structure optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc0e",
+    "title": "Social media sharing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc12",
+    "title": "Disaster recovery planning"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc17",
+    "title": "Experimentation tools"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc18",
+    "title": "Conversion rate optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc1b",
+    "title": "Intuitive user interfaces"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc1d",
+    "title": "Multilingual support"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc21",
+    "title": "Plugin architecture"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc28",
+    "title": "EC2 (Elastic Compute Cloud)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc30",
+    "title": "Aurora (Managed Relational Database)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc31",
+    "title": "VPC (Virtual Private Cloud)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc33",
+    "title": "CloudFront (Content Delivery Network)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc35",
+    "title": "IAM (Identity and Access Management)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc36",
+    "title": "AWS Key Management Service (KMS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc39",
+    "title": "CloudWatch (Monitoring and Logging)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc3c",
+    "title": "AWS Elastic Beanstalk (Platform as a Service)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc3d",
+    "title": "Amazon EKS (Elastic Kubernetes Service)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc43",
+    "title": "AWS CodeDeploy (Deployment Service)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc46",
+    "title": "Amazon Comprehend (Natural Language Processing)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc47",
+    "title": "Amazon Rekognition (Image and Video Analysis)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc48",
+    "title": "Amazon EMR (Elastic MapReduce)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc4e",
+    "title": "AWS Server Migration Service (SMS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc51",
+    "title": "AWS CloudTrail (Log Monitoring)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc55",
+    "title": "AWS Identity Federation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc56",
+    "title": "AWS Marketplace"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc58",
+    "title": "AWS DMS (Database Migration Service)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc59",
+    "title": "AWS Snowball (Data Transfer)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc5a",
+    "title": "AWS Storage Gateway"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc63",
+    "title": "AWS Elemental MediaTailor"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb41",
+    "title": "CocoaPods or Swift Package Manager (dependency management)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb47",
+    "title": "Gradle build system"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb4c",
+    "title": "Xamarin (C# programming language)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb4d",
+    "title": "Cordova or PhoneGap (HTML, CSS, JavaScript)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb53",
+    "title": "InVision"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb54",
+    "title": "Zeplin"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb55",
+    "title": "Principle or Flinto (for prototyping)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb56",
+    "title": "User personas and journey mapping"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb59",
+    "title": "Framer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb63",
+    "title": "MongoDB (NoSQL)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb64",
+    "title": "MySQL or PostgreSQL (Relational)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb71",
+    "title": "GitHub or GitLab"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb78",
+    "title": "XCUITest (iOS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb81",
+    "title": "Push Notifications"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb8a",
+    "title": "Android Bluetooth API"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb96",
+    "title": "Linear Algebra"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb97",
+    "title": "Calculus"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb99",
+    "title": "Statistics"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb9b",
+    "title": "PyTorch"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb9d",
+    "title": "Keras"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bba2",
+    "title": "Data normalization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bba6",
+    "title": "Plotly"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bba8",
+    "title": "Apache Spark"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bba9",
+    "title": "NLTK (Natural Language Toolkit)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbab",
+    "title": "Transformers (Hugging Face)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbb1",
+    "title": "Artificial Neural Networks (ANN)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbb6",
+    "title": "Flask"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbbb",
+    "title": "Google Cloud Platform (GCP)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbbc",
+    "title": "Microsoft Azure"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbbf",
+    "title": "Google AutoML"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbc0",
+    "title": "H2O.ai"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbc1",
+    "title": "TPOT"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbcc",
+    "title": "Prophet"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbcd",
+    "title": "Apache Kafka"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbd1",
+    "title": "LIME (Local Interpretable Model-agnostic Explanations)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbd2",
+    "title": "SHAP (SHapley Additive exPlanations)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbd8",
+    "title": "Quantization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbde",
+    "title": "Algorithmic trading"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbe4",
+    "title": "Server-side languages"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbe5",
+    "title": "Database design and management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbe7",
+    "title": "HTML, CSS, JavaScript"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbeb",
+    "title": "User Authentication and Authorization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbef",
+    "title": "Search and Filtering"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbf2",
+    "title": "Push notifications"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbf5",
+    "title": "Secure coding practices"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc05",
+    "title": "Stock tracking"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc06",
+    "title": "Integration with shipping carriers"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc0a",
+    "title": "Compliance with regional regulations"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc0b",
+    "title": "Meta tags and descriptions"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc10",
+    "title": "Promotional campaigns"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc11",
+    "title": "Regular data backups"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc14",
+    "title": "Cloud infrastructure management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc1f",
+    "title": "Subscription billing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc23",
+    "title": "Market research tools"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc24",
+    "title": "Competitor monitoring"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc25",
+    "title": "Smart contracts"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc2a",
+    "title": "Lambda (Serverless Computing)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc2c",
+    "title": "EBS (Elastic Block Store)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc2f",
+    "title": "DynamoDB (NoSQL Database)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc32",
+    "title": "Route 53 (Domain Name System)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc37",
+    "title": "AWS WAF (Web Application Firewall)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc38",
+    "title": "AWS Shield (DDoS Protection)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc40",
+    "title": "AWS Step Functions (Workflow Orchestration)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc41",
+    "title": "AWS CodeCommit (Version Control)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc42",
+    "title": "AWS CodeBuild (Build Service)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc44",
+    "title": "AWS CodePipeline (Continuous Delivery)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc45",
+    "title": "Amazon SageMaker"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc54",
+    "title": "AWS Budgets (Cost Monitoring)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc5e",
+    "title": "AWS Elemental Appliances & Software"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc5f",
+    "title": "AWS Elemental MediaConnect"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc61",
+    "title": "AWS Elemental MediaConvert"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc64",
+    "title": "AWS Elemental Link"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc66",
+    "title": "AWS Elemental Server"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc67",
+    "title": "API Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc68",
+    "title": "RESTful API Development"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc6a",
+    "title": "API Documentation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba79",
+    "title": "Backend Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba89",
+    "title": "Vue.js Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba8a",
+    "title": "HTML/CSS Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba8c",
+    "title": "Drupal Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba98",
+    "title": "QA Engineer (Web)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba99",
+    "title": "Web Development Specialist"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba9a",
+    "title": "API Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba9f",
+    "title": "Web Development Team Lead"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baa0",
+    "title": "Junior Web Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baa5",
+    "title": "Web Development Instructor"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baaa",
+    "title": "CSS"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baac",
+    "title": "React"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bab7",
+    "title": "Sass"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bad8",
+    "title": "Jasmine (JavaScript testing framework)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bad9",
+    "title": "Selenium (automated testing)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8badf",
+    "title": "Nuxt.js (Vue.js framework)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bae4",
+    "title": "GraphQL Yoga (GraphQL server library)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bae6",
+    "title": "Webpacker (Webpack integration for Rails)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baef",
+    "title": "Jenkins (Continuous Integration)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baf5",
+    "title": "Mercurial (Version Control)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb03",
+    "title": "SOAP API"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb05",
+    "title": "Swagger (API Documentation)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb07",
+    "title": "Postman (API Testing)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb08",
+    "title": "Charles Proxy (Web Debugging Proxy)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb09",
+    "title": "Figma (UI/UX Design)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb0b",
+    "title": "InVision (UI/UX Design)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb13",
+    "title": "Content Security Policy (CSP)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb15",
+    "title": "Burp Suite (Security Testing)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb17",
+    "title": "Accessibility Testing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb1d",
+    "title": "Apache JMeter"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb1f",
+    "title": "Locust"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb21",
+    "title": "Selenium WebDriver"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb23",
+    "title": "Nightwatch.js"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb27",
+    "title": "Terraform"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb28",
+    "title": "Vagrant"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb2e",
+    "title": "Continuous Deployment"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb36",
+    "title": "Loadable Components (React code splitting)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb42",
+    "title": "Kotlin or Java programming language"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb43",
+    "title": "Android Studio IDE"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb45",
+    "title": "XML (for UI layouts)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb49",
+    "title": "Room Persistence Library (for local data storage)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb4a",
+    "title": "Flutter (Dart programming language)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb4e",
+    "title": "NativeScript (JavaScript, TypeScript)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb51",
+    "title": "Sketch"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb58",
+    "title": "Proto.io"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb5b",
+    "title": "Node.js (JavaScript)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb61",
+    "title": "Laravel (PHP)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb66",
+    "title": "SQLite (for mobile apps)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb6a",
+    "title": "OAuth 2.0"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb6f",
+    "title": "Nginx or Apache for web server configuration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb76",
+    "title": "XCTest (Swift)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb79",
+    "title": "Detox (React Native)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb7a",
+    "title": "Flutter Driver (Flutter)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb82",
+    "title": "Firebase Cloud Messaging (FCM)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb83",
+    "title": "Apple Push Notification Service (APNS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb85",
+    "title": "Google Location Services (Android)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb8b",
+    "title": "Bluetooth Low Energy (BLE)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb8c",
+    "title": "Google Analytics for Firebase"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb8d",
+    "title": "Flurry Analytics"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb90",
+    "title": "Room Persistence Library (Android)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba7b",
+    "title": "Web Designer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba7e",
+    "title": "Backend Engineer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba80",
+    "title": "JavaScript Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba82",
+    "title": "Python Developer (Web)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba87",
+    "title": "Angular Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba8b",
+    "title": "WordPress Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba9c",
+    "title": "Backend Architect"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8ba9d",
+    "title": "Chief Technology Officer (CTO)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baa2",
+    "title": "Principal Web Developer"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baa7",
+    "title": "Web Development Analyst"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baa8",
+    "title": "Web Development Coordinator"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bab1",
+    "title": "Django"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bab6",
+    "title": "jQuery"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bac3",
+    "title": "Spring Boot"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bac4",
+    "title": "Kotlin"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bad1",
+    "title": "WebSockets"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bad2",
+    "title": "Responsive Web Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bada",
+    "title": "Cypress (JavaScript end-to-end testing)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8badb",
+    "title": "Three.js (JavaScript 3D library)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bae2",
+    "title": "Svelte (JavaScript framework)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bae5",
+    "title": "Apollo Client (GraphQL client)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baea",
+    "title": "Drupal (Content Management System)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baeb",
+    "title": "WordPress (Content Management System)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baed",
+    "title": "Strapi (Headless CMS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baf3",
+    "title": "Kubernetes (Container Orchestration)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8baf8",
+    "title": "JIRA (Project Management)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bafe",
+    "title": "WebRTC (Real-Time Communication)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb0a",
+    "title": "Sketch (UI/UX Design)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb11",
+    "title": "Cross-Origin Resource Sharing (CORS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb16",
+    "title": "Bug Bounty Programs"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb1a",
+    "title": "YSlow"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb1b",
+    "title": "Pingdom"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb1c",
+    "title": "Load Testing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb20",
+    "title": "Puppeteer (Headless Browser Automation)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb25",
+    "title": "Ansible"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb2b",
+    "title": "CircleCI (CI/CD)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb2c",
+    "title": "GitHub Actions"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb31",
+    "title": "Feature Toggles (Feature Flags)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb3d",
+    "title": "iOS SDK"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb3e",
+    "title": "Interface Builder"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb44",
+    "title": "Android SDK"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb50",
+    "title": "Adobe XD"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb5a",
+    "title": "Marvel"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb5c",
+    "title": "Django (Python)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb5d",
+    "title": "Flask (Python)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb5f",
+    "title": "Express.js (JavaScript)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb62",
+    "title": "ASP.NET (C#)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb6d",
+    "title": "AWS, Azure, Google Cloud, or other cloud services"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb6e",
+    "title": "Docker and Kubernetes"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb72",
+    "title": "Unit Testing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb73",
+    "title": "XCTest (iOS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb7b",
+    "title": "Xamarin.UITest (Xamarin)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb7c",
+    "title": "Jenkins"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb86",
+    "title": "ARKit (iOS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb87",
+    "title": "ARCore (Android)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb88",
+    "title": "Unity (for AR/VR cross-platform development)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb89",
+    "title": "Core Bluetooth (iOS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb98",
+    "title": "Probability"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb9c",
+    "title": "Scikit-Learn"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb9e",
+    "title": "Pandas"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bba0",
+    "title": "Jupyter Notebooks"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bba5",
+    "title": "Seaborn"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbaa",
+    "title": "SpaCy"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbad",
+    "title": "TensorFlow Object Detection API"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbae",
+    "title": "Image processing techniques"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbb2",
+    "title": "Convolutional Neural Networks (CNN)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbb3",
+    "title": "Recurrent Neural Networks (RNN)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbb8",
+    "title": "FastAPI"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbc2",
+    "title": "Grid Search"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbc5",
+    "title": "Random Forest"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbc7",
+    "title": "XGBoost"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbc8",
+    "title": "LightGBM"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbca",
+    "title": "Bias detection and correction"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbce",
+    "title": "Apache Flink"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbcf",
+    "title": "Qiskit"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbd0",
+    "title": "Cirq"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbd6",
+    "title": "NVIDIA Jetson"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbda",
+    "title": "Robot Operating System (ROS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbe2",
+    "title": "Multi-vendor support"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbe3",
+    "title": "User roles and permissions"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbe6",
+    "title": "API development"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbe8",
+    "title": "Responsive web design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbe9",
+    "title": "Frontend frameworks"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbea",
+    "title": "Payment Gateway Integration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbee",
+    "title": "Single Sign-On (SSO)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbf3",
+    "title": "SSL/TLS implementation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbf4",
+    "title": "Data encryption"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbf9",
+    "title": "APIs for mobile app interaction"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbfb",
+    "title": "Rating systems"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbfc",
+    "title": "Review moderation tools"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbfe",
+    "title": "Custom reporting tools"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc02",
+    "title": "Chat support"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc08",
+    "title": "Terms of service"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc16",
+    "title": "Community engagement features"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc1a",
+    "title": "Legal compliance features"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc1e",
+    "title": "Currency conversion"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc20",
+    "title": "Membership levels and benefits"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc22",
+    "title": "Customization options for vendors"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc29",
+    "title": "ECS (Elastic Container Service)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc2b",
+    "title": "S3 (Simple Storage Service)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc2d",
+    "title": "Glacier (Low-cost Archive Storage)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc2e",
+    "title": "RDS (Relational Database Service)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc34",
+    "title": "API Gateway"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc3a",
+    "title": "CloudTrail (Auditing)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc3b",
+    "title": "AWS CloudFormation (Infrastructure as Code)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc3e",
+    "title": "Amazon ECS (Elastic Container Service)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc49",
+    "title": "Amazon Redshift (Data Warehousing)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc4a",
+    "title": "Serverless Application Model (SAM)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc4b",
+    "title": "AWS IoT Core"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc4f",
+    "title": "AWS Direct Connect"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc5b",
+    "title": "AWS Snowmobile (Bulk Data Transfer)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bb9f",
+    "title": "NumPy"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bba1",
+    "title": "Feature scaling"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bba4",
+    "title": "Matplotlib"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bba7",
+    "title": "Apache Hadoop"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbac",
+    "title": "OpenCV"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbb0",
+    "title": "Deep Reinforcement Learning (DRL) libraries"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbb4",
+    "title": "Long Short-Term Memory (LSTM)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbc4",
+    "title": "Bayesian Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbc6",
+    "title": "Gradient Boosting Machines (GBM)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbc9",
+    "title": "Fairness and transparency considerations"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbcb",
+    "title": "ARIMA (AutoRegressive Integrated Moving Average)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbd9",
+    "title": "Fine-tuning pre-trained models"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbdb",
+    "title": "Simultaneous Localization and Mapping (SLAM)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbdd",
+    "title": "Electronic Health Records (EHR) analysis"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbf1",
+    "title": "Email notifications"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbf6",
+    "title": "Caching strategies"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbf8",
+    "title": "Load balancing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bbff",
+    "title": "User behavior tracking"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc01",
+    "title": "Ticketing systems"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc07",
+    "title": "Tracking and fulfillment systems"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc0d",
+    "title": "Sitemap generation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc0f",
+    "title": "Affiliate marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc13",
+    "title": "Horizontal and vertical scaling strategies"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc15",
+    "title": "User forums"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc19",
+    "title": "Digital contracts"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc1c",
+    "title": "User experience optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc26",
+    "title": "Decentralized payment systems"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc27",
+    "title": "Collaboration with legal experts for compliance"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc4c",
+    "title": "AWS IoT Greengrass"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc4d",
+    "title": "AWS Migration Hub"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc50",
+    "title": "AWS Organizations (Account Management)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc52",
+    "title": "AWS Config (Resource Inventory)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc53",
+    "title": "AWS X-Ray (Distributed Tracing)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc57",
+    "title": "AWS Transit Gateway"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc5c",
+    "title": "AWS Transfer Family (Managed File Transfer)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc5d",
+    "title": "AWS Elemental Media Services"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc60",
+    "title": "AWS Elemental MediaLive"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc62",
+    "title": "AWS Elemental MediaPackage"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc6e",
+    "title": "API Testing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc70",
+    "title": "API Versioning"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc7c",
+    "title": "API Best Practices"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc82",
+    "title": "XML-RPC"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc8d",
+    "title": "API Contracts"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc98",
+    "title": "API Load Testing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc9d",
+    "title": "API Compatibility"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc9f",
+    "title": "API Marketplaces"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bca0",
+    "title": "API Monetization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bca5",
+    "title": "API Webhooks Implementation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bca7",
+    "title": "API Gateway Integration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bca8",
+    "title": "API Security Best Practices"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcb7",
+    "title": "Server Administration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcbc",
+    "title": "Cloud Server Management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcbe",
+    "title": "Server Deployment"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcc3",
+    "title": "Server Performance Tuning"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcc6",
+    "title": "Server Operating Systems"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcca",
+    "title": "Server Networking"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bccb",
+    "title": "DNS (Domain Name System)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcd2",
+    "title": "Database Server Administration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcd3",
+    "title": "FTP (File Transfer Protocol)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcd4",
+    "title": "SMTP (Simple Mail Transfer Protocol)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcd6",
+    "title": "Server Clustering"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcd7",
+    "title": "High Availability"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcd9",
+    "title": "Server Monitoring Tools"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcdb",
+    "title": "Server Security Standards"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcde",
+    "title": "Server Patch Management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcdf",
+    "title": "Server Log Analysis"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bce5",
+    "title": "Cloud Computing Platforms"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bce6",
+    "title": "AWS (Amazon Web Services)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bce9",
+    "title": "Server Configuration Management Tools"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bced",
+    "title": "SaltStack"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcf9",
+    "title": "Server Resource Scaling"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcfb",
+    "title": "Server Backup Solutions"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcfe",
+    "title": "Server Capacity Planning"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcff",
+    "title": "Server Configuration Auditing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd04",
+    "title": "Server Cluster Management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd05",
+    "title": "Server Patching Strategies"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd0c",
+    "title": "Interaction Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd0d",
+    "title": "Visual Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd0f",
+    "title": "User Research"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd16",
+    "title": "Web Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd19",
+    "title": "Color Theory"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd1a",
+    "title": "Typography"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd1e",
+    "title": "Component Libraries"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd1f",
+    "title": "Design Thinking"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd21",
+    "title": "Cognitive Psychology in Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd22",
+    "title": "Accessibility in Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd28",
+    "title": "Design Patterns"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd29",
+    "title": "A/B Testing in Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd2b",
+    "title": "Design Feedback and Iteration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd2c",
+    "title": "UI Animation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd2e",
+    "title": "Collaboration with Developers"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd3a",
+    "title": "Flinto"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd3e",
+    "title": "Moodboards"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd45",
+    "title": "Customer Journey Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd4a",
+    "title": "Design Handoff Tools"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd4b",
+    "title": "Design Leadership"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd4d",
+    "title": "Lean UX"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc7f",
+    "title": "Web Service Standards"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc87",
+    "title": "API Collaboration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc8b",
+    "title": "API Health Checks"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc8e",
+    "title": "API Data Formats"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc8f",
+    "title": "API Data Validation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc90",
+    "title": "API Request and Response Formats"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc92",
+    "title": "API Change Management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc94",
+    "title": "API Reverse Engineering"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc95",
+    "title": "API Standards Compliance"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc97",
+    "title": "API Deployment"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc9a",
+    "title": "API Maintenance"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bca3",
+    "title": "API Governance Policies"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bca4",
+    "title": "API Gateway Configuration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bca6",
+    "title": "API Security Standards"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcac",
+    "title": "API Gateway Monitoring"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcad",
+    "title": "API Rate Limiting Strategies"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcaf",
+    "title": "API Rate Quotas"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcb0",
+    "title": "API Access Control"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcb1",
+    "title": "API Key Management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcb5",
+    "title": "API Testing Automation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcb6",
+    "title": "API Test Data Generation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcba",
+    "title": "Server Monitoring"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcbd",
+    "title": "Server Maintenance"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcc0",
+    "title": "Server Troubleshooting"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcc5",
+    "title": "Server Automation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcc7",
+    "title": "Linux Server Administration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcc8",
+    "title": "Windows Server Administration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcc9",
+    "title": "Unix Server Administration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bccd",
+    "title": "NTP (Network Time Protocol)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcce",
+    "title": "VPN (Virtual Private Network)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcd0",
+    "title": "Proxy Server Management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcd1",
+    "title": "Web Server Configuration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcdc",
+    "title": "Firewall Configuration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bce7",
+    "title": "Azure"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcee",
+    "title": "Server Scripting Languages"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcef",
+    "title": "Bash"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcf2",
+    "title": "Ruby"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcfd",
+    "title": "Server Performance Monitoring"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd01",
+    "title": "Server Networking Protocols"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd03",
+    "title": "Server Database Integration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd0a",
+    "title": "Prototyping"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd0e",
+    "title": "Usability Testing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd10",
+    "title": "Persona Creation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd11",
+    "title": "Journey Mapping"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd15",
+    "title": "Mobile UI/UX Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd17",
+    "title": "App Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd24",
+    "title": "Motion Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd25",
+    "title": "Microinteractions"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd27",
+    "title": "Grid Systems"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd2d",
+    "title": "Design Handoff"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd37",
+    "title": "Axure RP"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd39",
+    "title": "Principle"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd40",
+    "title": "Design Management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd41",
+    "title": "Style Guides"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd51",
+    "title": "Gamification in Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd54",
+    "title": "Adaptive Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd57",
+    "title": "Design Research Methods"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd5b",
+    "title": "UI/UX Portfolio Presentation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd60",
+    "title": "Design Innovation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd62",
+    "title": "Code Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd6f",
+    "title": "Minification"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd73",
+    "title": "Code Splitting"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd7b",
+    "title": "Database Replication"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd7e",
+    "title": "Resource Cleanup"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd7f",
+    "title": "Garbage Collection Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd87",
+    "title": "Scalability Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd8a",
+    "title": "Load Balancing Strategies"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd94",
+    "title": "Network Bandwidth Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd98",
+    "title": "UX/UI Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd99",
+    "title": "User Flow Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd9c",
+    "title": "User Engagement Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bda1",
+    "title": "Responsive Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bda4",
+    "title": "Globalization Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bda5",
+    "title": "Infrastructure Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bda8",
+    "title": "System Architecture Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdac",
+    "title": "Lean Optimization Principles"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdbb",
+    "title": "Data Analysis for Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdc0",
+    "title": "Social Media Management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdc2",
+    "title": "Social Media Analytics"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdc3",
+    "title": "Online Reputation Management (ORM)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdc4",
+    "title": "Branding"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdc9",
+    "title": "Mobile Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdca",
+    "title": "App Store Optimization (ASO)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdcc",
+    "title": "Local Search Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdce",
+    "title": "QR Code Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdd1",
+    "title": "Augmented Reality (AR) Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdda",
+    "title": "Chat Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bddd",
+    "title": "Market Research"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bddf",
+    "title": "Trend Analysis"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bde1",
+    "title": "Campaign Planning and Execution"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bde4",
+    "title": "Customer Journey Mapping"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdeb",
+    "title": "Influencer Outreach and Management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdf6",
+    "title": "Visual Content Creation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdff",
+    "title": "Mobile Advertising"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd4f",
+    "title": "Storyboarding"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd52",
+    "title": "Design Psychology"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd56",
+    "title": "Data Visualization Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd58",
+    "title": "Design Sprint Facilitation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd59",
+    "title": "Design for Emerging Technologies"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd5a",
+    "title": "Design Ethics"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd65",
+    "title": "Mobile App Performance Tuning"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd6a",
+    "title": "Frontend Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd6e",
+    "title": "Caching Strategies"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd70",
+    "title": "Browser Rendering Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd74",
+    "title": "Lazy Loading"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd75",
+    "title": "Database Indexing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd76",
+    "title": "Query Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd7d",
+    "title": "Memory Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd80",
+    "title": "Thread Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd82",
+    "title": "Concurrent Programming Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd84",
+    "title": "Big-O Notation Understanding"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd8b",
+    "title": "High Availability Architecture"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd93",
+    "title": "Distributed Systems Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd95",
+    "title": "Content Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bda0",
+    "title": "Mobile Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bda2",
+    "title": "Cross-Browser Compatibility Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bda3",
+    "title": "Localization Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bda7",
+    "title": "Cost-Benefit Analysis"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bda9",
+    "title": "Resource Allocation Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdaf",
+    "title": "IT Service Management Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdb1",
+    "title": "Search Engine Optimization (SEO)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdb2",
+    "title": "Search Engine Marketing (SEM)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdb6",
+    "title": "Email Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdb8",
+    "title": "Affiliate Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdba",
+    "title": "Web Analytics"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdc6",
+    "title": "Blogging"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdc8",
+    "title": "Podcasting"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdcb",
+    "title": "E-commerce Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdd5",
+    "title": "Community Management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdd8",
+    "title": "Mobile App Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdd9",
+    "title": "SMS Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bddb",
+    "title": "Customer Segmentation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bde0",
+    "title": "Marketing Strategy Development"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdee",
+    "title": "Sales Funnel Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdf0",
+    "title": "Event Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdf5",
+    "title": "Marketing Dashboards"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdf7",
+    "title": "Graphic Design for Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdf9",
+    "title": "Marketing Technology Integration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdfa",
+    "title": "CRM Software Utilization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdfe",
+    "title": "Marketing Ethics"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8be00",
+    "title": "Podcast Advertising"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc6c",
+    "title": "API Security"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc72",
+    "title": "Webhooks"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc79",
+    "title": "API Authentication"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc7d",
+    "title": "API Performance Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc7e",
+    "title": "API Client Libraries"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc84",
+    "title": "API Discovery"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc88",
+    "title": "API Code Generation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc8c",
+    "title": "API Error Handling"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc91",
+    "title": "API Version Control"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc9b",
+    "title": "API Reliability"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc9e",
+    "title": "API Ecosystem"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcae",
+    "title": "API Request Throttling"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcb2",
+    "title": "API Authentication Protocols"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcb8",
+    "title": "Server Configuration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcb9",
+    "title": "Server Security"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcc1",
+    "title": "Server Hardening"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcc2",
+    "title": "Server Backup and Recovery"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bccc",
+    "title": "DHCP (Dynamic Host Configuration Protocol)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bccf",
+    "title": "Load Balancing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bce0",
+    "title": "Server Access Control"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bce2",
+    "title": "VMware"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bce4",
+    "title": "KVM (Kernel-based Virtual Machine)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcf0",
+    "title": "PowerShell"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcf7",
+    "title": "Continuous Integration/Continuous Deployment (CI/CD)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcfc",
+    "title": "Server Disaster Recovery Tools"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd06",
+    "title": "Server Incident Response"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd12",
+    "title": "Card Sorting"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd13",
+    "title": "User Flows"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd18",
+    "title": "Graphic Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd1d",
+    "title": "Design Systems"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd23",
+    "title": "Inclusive Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd2a",
+    "title": "UI/UX Copywriting"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd3b",
+    "title": "User Interface Kits (UI Kits)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd3c",
+    "title": "Wireframe Kits"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd43",
+    "title": "Design Briefs"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd44",
+    "title": "Persona-based Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd46",
+    "title": "Branding in UI/UX Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd47",
+    "title": "Design for Emotional Impact"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd49",
+    "title": "Rapid Prototyping"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd53",
+    "title": "VR/AR Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd55",
+    "title": "Design for Wearables"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd5c",
+    "title": "Interviewing Users"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd5e",
+    "title": "Design Collaboration Tools"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd5f",
+    "title": "UI/UX Trend Awareness"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd63",
+    "title": "Database Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd64",
+    "title": "Website Speed Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd66",
+    "title": "Network Performance Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd67",
+    "title": "Resource Utilization Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd68",
+    "title": "Load Time Reduction"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd6b",
+    "title": "Backend Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd6d",
+    "title": "Compression Techniques"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd7c",
+    "title": "Connection Pooling"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd81",
+    "title": "Multi-threading Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd85",
+    "title": "Space Complexity Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd86",
+    "title": "Time Complexity Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd88",
+    "title": "Horizontal Scaling"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd89",
+    "title": "Vertical Scaling"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd91",
+    "title": "Microservices Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd96",
+    "title": "SEO (Search Engine Optimization)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc6b",
+    "title": "OpenAPI Specification (Swagger)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc6f",
+    "title": "Postman"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc73",
+    "title": "API Rate Limiting"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc75",
+    "title": "API Monitoring"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc76",
+    "title": "API Analytics"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc78",
+    "title": "API Lifecycle Management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc7a",
+    "title": "API Authorization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc7b",
+    "title": "API Mocking"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc80",
+    "title": "SOAP (Simple Object Access Protocol)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc81",
+    "title": "WSDL (Web Services Description Language)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc83",
+    "title": "Hypermedia APIs"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc85",
+    "title": "API HATEOAS (Hypermedia as the Engine of Application State)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc86",
+    "title": "API Governance"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc89",
+    "title": "API Transformation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc8a",
+    "title": "Web API Security"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc93",
+    "title": "API Proxy"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc96",
+    "title": "API Lifecycle Automation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc99",
+    "title": "API Scalability"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bc9c",
+    "title": "API Scalability Testing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bca1",
+    "title": "API Billing Integration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bca2",
+    "title": "API Usage Analytics"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bca9",
+    "title": "API Security Auditing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcaa",
+    "title": "API Security Threats"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcab",
+    "title": "API Security Testing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcb3",
+    "title": "API Authorization Mechanisms"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcb4",
+    "title": "API Authorization Standards"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcbb",
+    "title": "Server Virtualization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcbf",
+    "title": "Server Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcc4",
+    "title": "Server Scripting"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcd5",
+    "title": "POP3/IMAP (Email Protocols)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcd8",
+    "title": "Disaster Recovery Planning"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcda",
+    "title": "SNMP (Simple Network Management Protocol)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcdd",
+    "title": "Intrusion Detection System (IDS)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bce1",
+    "title": "Server Virtualization Platforms"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bce3",
+    "title": "Hyper-V"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcf3",
+    "title": "Server Automation Tools"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcf8",
+    "title": "Server Load Testing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bcfa",
+    "title": "Server Deployment Automation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd00",
+    "title": "Server Scripting Automation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd02",
+    "title": "Server API Integration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd07",
+    "title": "User Interface (UI) Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd08",
+    "title": "User Experience (UX) Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd09",
+    "title": "Wireframing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd0b",
+    "title": "Information Architecture"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd1b",
+    "title": "Iconography"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd20",
+    "title": "Human-Centered Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd26",
+    "title": "Visual Hierarchy"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd30",
+    "title": "Cross-Platform Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd3d",
+    "title": "Prototyping Tools"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd3f",
+    "title": "Design Critique"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd42",
+    "title": "Design Documentation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd48",
+    "title": "Cross-Cultural Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd4c",
+    "title": "Design Thinking Workshops"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd4e",
+    "title": "Conversion-Centered Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd50",
+    "title": "Visual Storytelling"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd5d",
+    "title": "Visual Design for Data"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd61",
+    "title": "Performance Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd69",
+    "title": "Page Speed Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd9b",
+    "title": "Experimentation and Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd9d",
+    "title": "Personalization Techniques"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd9e",
+    "title": "E-commerce Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdaa",
+    "title": "Business Process Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdad",
+    "title": "Six Sigma Methodologies"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdb0",
+    "title": "DevOps Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdb3",
+    "title": "Pay-Per-Click Advertising (PPC)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdb5",
+    "title": "Social Media Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdb9",
+    "title": "Digital Analytics"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdbc",
+    "title": "Conversion Rate Optimization (CRO)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdcd",
+    "title": "Geo-Targeting"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdd0",
+    "title": "Voice Search Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdd2",
+    "title": "Virtual Reality (VR) Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdd3",
+    "title": "Native Advertising"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bddc",
+    "title": "Customer Persona Creation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bde2",
+    "title": "Budget Management in Digital Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdea",
+    "title": "User-Generated Content (UGC)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdec",
+    "title": "Email Automation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bded",
+    "title": "Landing Page Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdef",
+    "title": "Growth Hacking"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdf2",
+    "title": "Artificial Intelligence in Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdf8",
+    "title": "Video Editing for Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdfb",
+    "title": "Marketing Project Management"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdfd",
+    "title": "GDPR Compliance in Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd6c",
+    "title": "Image Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd71",
+    "title": "Content Delivery Network (CDN) Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd72",
+    "title": "Server Response Time Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd77",
+    "title": "Database Normalization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd78",
+    "title": "Database Denormalization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd79",
+    "title": "Database Sharding"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd7a",
+    "title": "Database Partitioning"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd83",
+    "title": "Algorithm Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd8c",
+    "title": "Fault Tolerance Design"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd8e",
+    "title": "Cloud Resource Scaling"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd8f",
+    "title": "Cloud Cost Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd90",
+    "title": "Serverless Architecture Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bd9f",
+    "title": "Social Media Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bda6",
+    "title": "IT Operations Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdab",
+    "title": "Continuous Improvement"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdae",
+    "title": "Data Center Optimization"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdb4",
+    "title": "Content Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdb7",
+    "title": "Influencer Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdbe",
+    "title": "Customer Relationship Management (CRM)"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdbf",
+    "title": "Marketing Automation"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdc1",
+    "title": "Social Media Advertising"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdc7",
+    "title": "Video Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdcf",
+    "title": "Chatbot Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdd4",
+    "title": "Influencer Collaboration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdd6",
+    "title": "Crisis Management in Digital Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdd7",
+    "title": "User Experience (UX) in Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdde",
+    "title": "Competitor Analysis"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bde3",
+    "title": "ROI Analysis in Digital Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bde5",
+    "title": "Customer Retention Strategies"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bde6",
+    "title": "Loyalty Programs"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bde7",
+    "title": "Referral Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bde8",
+    "title": "Gamification in Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bde9",
+    "title": "Interactive Content Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdf1",
+    "title": "Webinar Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdf3",
+    "title": "Chatbot Integration"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdf4",
+    "title": "Personalization in Marketing"
+  },
+  {
+    "active": true,
+    "isDeleted": false,
+    "default": [],
+    "_id": "65ae1816a12022fefeb8bdfc",
+    "title": "SEO Auditing"
+  }
+]

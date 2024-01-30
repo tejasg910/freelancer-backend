@@ -8,7 +8,7 @@ const { useTryCatch } = require("../../services/utility.service");
 router.post("/addResources", useTryCatch(addResourcesController.addResources));
 router.post(
   "/getResourceById",
-  useTryCatch(addResourcesController.addResources)
+  useTryCatch(addResourcesController.getResourceById)
 );
 
 router.patch(

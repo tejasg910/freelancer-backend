@@ -84,6 +84,11 @@ async function FileService(url) {
 //   }
 // };
 
+const pdfProcedure = {
+  percentage: 0,
+  totalFiles: 0,
+};
+
 const createUserFromPdfService = async (files, companyId) => {
   try {
     const user = await User.findOne({
@@ -112,17 +117,20 @@ const createUserFromPdfService = async (files, companyId) => {
     }
 
     // let files = req.files;
+    pdfProcedure.totalFiles = files.length;
+    pdfProcedure.remainingFiles = files.length;
 
     if (files && files.length > 0 && files[0].mimetype == "application/pdf") {
       //uploading the files
 
-      const users = await files.map(async (file) => {
-        console.log(file);
+      for (let index = 0; index < files.length; index++) {
+        const file = files[index];
+
         const url = await uploadFile(file, "document");
+
         const getData = await FileService(url);
         // const testRead = await readPDFFromUrl(url);
         // console.log(testRead)
-        console.log(getData, "getdata");
         if (getData.name) {
           if (getData && getData.email != null && getData.name != null) {
             let existingUser = null;
@@ -130,6 +138,7 @@ const createUserFromPdfService = async (files, companyId) => {
               existingUser = await User.findOne({
                 email: getData.email,
                 owner: companyId,
+                isDeleted: false,
               });
             }
 
@@ -233,9 +242,17 @@ const createUserFromPdfService = async (files, companyId) => {
             status: "Name not found",
           });
         }
-      });
 
-      const result = await Promise.all(users);
+        pdfProcedure.percentage = ((index + 1) * 100) / pdfProcedure.totalFiles;
+        pdfProcedure.remainingFiles = pdfProcedure.totalFiles - (index + 1);
+      }
+
+      // const result = await Promise.all(users);
+
+      pdfProcedure.percentage = 0;
+      pdfProcedure.totalFiles = 0;
+      pdfProcedure.remainingFiles = 0;
+
       return {
         status: 200,
         message: `${resourceCount} resources added successfully`,
@@ -243,11 +260,18 @@ const createUserFromPdfService = async (files, companyId) => {
       };
     }
 
+    pdfProcedure.percentage = 0;
+    pdfProcedure.totalFiles = 0;
+    pdfProcedure.remainingFiles = 0;
     return {
       status: 400,
       message: "Invlaid file format",
     };
   } catch (error) {
+    pdfProcedure.percentage = 0;
+    pdfProcedure.totalFiles = 0;
+    pdfProcedure.remainingFiles = 0;
+
     console.log("error in pdf extractor", error);
     return {
       status: 500,
@@ -256,4 +280,17 @@ const createUserFromPdfService = async (files, companyId) => {
   }
 };
 
-module.exports = { FileService, createUserFromPdfService };
+const getLiveUpdateService = async () => {
+  console.log(pdfProcedure);
+  return {
+    status: 200,
+
+    pdfProcedure,
+  };
+};
+
+module.exports = {
+  FileService,
+  createUserFromPdfService,
+  getLiveUpdateService,
+};

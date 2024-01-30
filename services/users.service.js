@@ -12,6 +12,7 @@ const {
   userSelect,
   applicationSelect,
   projectSelect,
+  excludeUserInfo,
 } = require("./service.constants");
 const { sendEmail } = require("../utils/sendEmail");
 const { generateOTP } = require("../utils/generateOtp");
@@ -28,6 +29,7 @@ const { uploadFile } = require("../utils/awsUpload");
 
 const userFindService = async (conditions) => {
   const user = await User.find({ ...conditions })
+    .select(excludeUserInfo)
     .populate({
       path: "notifications",
       populate: {
@@ -108,10 +110,16 @@ const userFindService = async (conditions) => {
 };
 
 const getCompanyByIdService = async (companyId) => {
-  console.log(companyId);
   const company = await User.findById(companyId)
+    .select({
+      otp: 0,
+      password: 0,
+    })
     .populate({
       path: "designation",
+    })
+    .populate({
+      path: "skills",
     })
     .populate({
       path: "team",
@@ -119,16 +127,15 @@ const getCompanyByIdService = async (companyId) => {
       populate: {
         path: "skills",
       },
+      populate: {
+        path: "designation",
+      },
     })
     .populate({
       path: "portfolioProjects.skills",
       model: "category",
-    })
-    .populate({
-      path: "skills",
     });
 
-  console.log(company);
   if (!company) {
     return {
       status: 404,
@@ -193,6 +200,7 @@ const getAllUsersService = async ({ filter, conditions, page, size }) => {
     .skip(skip)
     .limit(limit)
     .sort(sorted)
+    .select(excludeUserInfo)
     .populate({
       path: "notifications",
       populate: {
@@ -364,6 +372,7 @@ const getAllUsersSearchService = async ({
     .skip(skip)
     .limit(limit)
     .sort(sorted)
+    .select(excludeUserInfo)
     .populate({
       path: "notifications",
       populate: {
