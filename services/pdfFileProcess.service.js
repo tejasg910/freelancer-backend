@@ -128,7 +128,6 @@ const createUserFromPdfService = async (files, companyId) => {
       for (let index = 0; index < files.length; index++) {
         const file = files[index];
         const fileSize = checkFileSize(files[index]);
-        console.log(fileSize, "file size");
         if (files[index].mimetype == "application/pdf" && fileSize) {
           try {
             const url = await uploadFile(file, "document");
@@ -262,6 +261,9 @@ const createUserFromPdfService = async (files, companyId) => {
             continue;
           }
         } else {
+          pdfProcedure.percentage =
+            ((index + 1) * 100) / pdfProcedure.totalFiles;
+          pdfProcedure.remainingFiles = pdfProcedure.totalFiles - (index + 1);
           filesResult.push({
             fileName: file.originalname,
             status: "Invalid pdf or file may be bigger than 1 mb",
