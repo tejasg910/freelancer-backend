@@ -6,6 +6,7 @@ const axios = require("axios");
 const { User, Category, Designation } = require("../models");
 const { uploadFile } = require("../utils/awsUpload");
 const { setNotification } = require("./notification.service");
+const { checkFileSize } = require("../utils/chekFileSize");
 
 async function FileService(url) {
   try {
@@ -126,7 +127,9 @@ const createUserFromPdfService = async (files, companyId) => {
 
       for (let index = 0; index < files.length; index++) {
         const file = files[index];
-        if (files[index].mimetype == "application/pdf") {
+        const fileSize = checkFileSize(files[index]);
+        console.log(fileSize, "file size");
+        if (files[index].mimetype == "application/pdf" && fileSize) {
           try {
             const url = await uploadFile(file, "document");
             console.log(url);
@@ -261,7 +264,7 @@ const createUserFromPdfService = async (files, companyId) => {
         } else {
           filesResult.push({
             fileName: file.originalname,
-            status: "Invalid pdf",
+            status: "Invalid pdf or file may be bigger than 1 mb",
           });
         }
       }
