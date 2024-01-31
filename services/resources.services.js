@@ -199,6 +199,11 @@ const updateResourceService = async ({
   let url = null;
   if (files && files.length > 0 && files[0].mimetype == "application/pdf") {
     url = await uploadFile(files[0], "document");
+  } else {
+    return {
+      status: 400,
+      message: "Please upload valid pdf",
+    };
   }
 
   const oldSkills = resource.skills || [];

@@ -1,7 +1,4 @@
-const {
-  S3Client,
-  PutObjectCommand,
-} = require("@aws-sdk/client-s3");
+const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
 
 const client = new S3Client({
   region: "us-east-1",
@@ -9,12 +6,9 @@ const client = new S3Client({
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_ACCESS_SECRET_KEY,
   },
- 
 });
 
-
 const uploadFile = async (file, folder) => {
-
   let contentType;
   if (file.mimetype.startsWith("image/")) {
     contentType = "image/jpeg";
@@ -23,13 +17,14 @@ const uploadFile = async (file, folder) => {
   } else {
     contentType = "application/octet-stream";
   }
+  const sanitizedFileName = file.originalname.replace(/\+/g, "_");
 
   const params = {
     ACL: "public-read",
     Bucket: "freelance-ipan-bucket",
-    Key: `${folder}/` + file.originalname,
+    Key: `${folder}/` + sanitizedFileName,
     Body: file.buffer,
-    ContentType: contentType
+    ContentType: contentType,
   };
 
   const uploadCommand = new PutObjectCommand(params);
@@ -38,7 +33,7 @@ const uploadFile = async (file, folder) => {
     const uploadData = await client.send(uploadCommand);
     if (uploadData.$metadata.httpStatusCode === 200) {
       const bucketName = "freelance-ipan-bucket";
-      const objectKey = `${folder}/${file.originalname}`;
+      const objectKey = `${folder}/${sanitizedFileName}`;
       const region = "us-east-1";
       const downloadUrl = `https://${bucketName}.s3.${region}.amazonaws.com/${objectKey}`;
       const url = downloadUrl;
@@ -46,9 +41,8 @@ const uploadFile = async (file, folder) => {
     }
   } catch (error) {
     console.log("Error while Upload File", error);
-    throw error; 
+    throw error;
   }
 };
 
 module.exports = { uploadFile };
-
