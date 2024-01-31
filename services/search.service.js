@@ -71,7 +71,7 @@ const searchService = async ({
     // Add experience filter Resources
     if (experience && experience !== undefined) {
       userAggregationPipeline.push({
-        $match: { totalExperience: { $lte: experience } },
+        $match: { totalExperience: { $lte: parseInt(experience) } },
       });
     }
     //-----------Skill Filer Resources
@@ -216,18 +216,18 @@ const searchService = async ({
     // ------------- Sending Response
     return users.length >= 1 || projects.length >= 1
       ? {
-          message: "search done",
-          status: 200,
-          users: paginatedUsers,
-          projects: paginatedProjects,
-          page,
-          totalUserPages,
-          totalProjectPages,
-        }
+        message: "search done",
+        status: 200,
+        users: paginatedUsers,
+        projects: paginatedProjects,
+        page,
+        totalUserPages,
+        totalProjectPages,
+      }
       : {
-          message: "Bad Request",
-          status: 400,
-        };
+        message: "Bad Request",
+        status: 400,
+      };
   } catch (e) {
     console.log(e);
   }

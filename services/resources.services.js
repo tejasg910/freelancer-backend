@@ -176,6 +176,10 @@ const updateResourceService = async ({
   skills,
   files,
 }) => {
+  if (!skills || !skills.length > 0) {
+    return { status: 400, message: "Please provide skills properly" };
+  }
+
   if (!resourceId) {
     return res.status(422).json({
       status: 400,

@@ -26,6 +26,7 @@ const {
   verifyResetToken,
 } = require("../utils/forgotPasswordtoken");
 const { uploadFile } = require("../utils/awsUpload");
+const { validateGST } = require("../utils/validateGst");
 
 const userFindService = async (conditions) => {
   const user = await User.find({ ...conditions })
@@ -124,12 +125,7 @@ const getCompanyByIdService = async (companyId) => {
     .populate({
       path: "team",
       select: userSelect,
-      populate: {
-        path: "skills",
-      },
-      populate: {
-        path: "designation",
-      },
+      populate: [{ path: "skills" }, { path: "designation" }],
     })
     .populate({
       path: "portfolioProjects.skills",
@@ -167,7 +163,7 @@ const getAllUsersService = async ({ filter, conditions, page, size }) => {
   if (availability && availability !== undefined) {
     conditions = {
       ...conditions,
-      availability: { $lte: availability },
+      availability: { $lte: parseInt(availability) },
     };
   }
   // Apply additional filters if provided
@@ -360,8 +356,6 @@ const getAllUsersSearchService = async ({
     sorted = { createdAt: 1 }; // Sort by createdAt field in ascending order for oldest
   }
 
-  console.log(userId, "userid");
-
   const users = await User.find({
     _id: { $ne: mongoose.Types.ObjectId(userId) },
     isDeleted: false,
@@ -494,6 +488,22 @@ const registerUserService = async ({
 
   // userType,
 }) => {
+  //validate gst
+  const gstResponse = await validateGST(gstId);
+  if (!gstResponse.flag) {
+    return {
+      status: 400,
+      message: "Please provide valid gst number",
+    };
+  }
+  const companyName = fullName.trim().toUpperCase();
+  if (gstResponse.data.tradeNam !== companyName) {
+    return {
+      status: 400,
+      message: "Your company is not registered with this gst number",
+    };
+  }
+
   const company = await User.findOne({ fullName, userType: "client" });
 
   if (company) {
@@ -524,7 +534,6 @@ const registerUserService = async ({
     }
     // const fullName = firstName + " " + lastName;
     //send
-    console.log(gstId);
 
     //verify user
     const otp = await generateOTP();

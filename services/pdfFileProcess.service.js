@@ -91,6 +91,7 @@ const pdfProcedure = {
 
 const createUserFromPdfService = async (files, companyId) => {
   try {
+    console.log(files, "files");
     const user = await User.findOne({
       _id: companyId,
       isDeleted: false,

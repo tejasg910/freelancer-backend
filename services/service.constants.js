@@ -8,6 +8,7 @@ const userSelect = {
   designation: 1,
   totalExperience: 1,
   experience: 1,
+  skills: 1,
 };
 
 const applicationSelect = {
