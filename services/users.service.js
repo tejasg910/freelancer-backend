@@ -489,20 +489,6 @@ const registerUserService = async ({
   // userType,
 }) => {
   //validate gst
-  const gstResponse = await validateGST(gstId);
-  if (!gstResponse.flag) {
-    return {
-      status: 400,
-      message: "Please provide valid gst number",
-    };
-  }
-  const companyName = fullName.trim().toUpperCase();
-  if (gstResponse.data.tradeNam !== companyName) {
-    return {
-      status: 400,
-      message: "Your company is not registered with this gst number",
-    };
-  }
 
   const company = await User.findOne({ fullName, userType: "client" });
 
@@ -526,6 +512,21 @@ const registerUserService = async ({
     }
   } else {
     //hashing
+    const gstResponse = await validateGST(gstId);
+
+    if (!gstResponse.success) {
+      return {
+        status: 400,
+        message: "Please provide valid gst number",
+      };
+    }
+    const companyName = fullName.trim().toUpperCase();
+    if (gstResponse.data.tradeName !== companyName) {
+      return {
+        status: 400,
+        message: "Your company is not registered with this gst number",
+      };
+    }
 
     const hashedPassword = await hashPassword(password);
 
