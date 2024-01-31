@@ -178,6 +178,7 @@ const sortApplications = async (condition, filters) => {
   return sortedApplications;
 }; */
 const getApplicationsByProjectIdService = async ({ filters, sortedBy }) => {
+  console.log(filters, "filter");
   const sortedApplications = await sortApplications(sortedBy, filters);
   console.log(filters);
   console.log(sortedApplications);

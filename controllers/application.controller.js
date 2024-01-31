@@ -12,7 +12,7 @@ const getApplicationsByProjectId = async (req, res) => {
   const {
     projectId,
     minBid = 0,
-    maxBid = 10000,
+    // maxBid = 900000000,
     minRating = 0,
     maxRating = 5,
     sortedBy = "mostReviews",
@@ -20,8 +20,8 @@ const getApplicationsByProjectId = async (req, res) => {
   //   const conditions = queryConditions(req.body, Object.keys(Project.schema.obj));
   const filters = {
     projectId,
-
-    bid: { $gte: minBid, $lte: maxBid },
+    active: true,
+    bid: { $gte: minBid },
   };
 
   const response = await getApplicationsByProjectIdService({
