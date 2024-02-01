@@ -62,7 +62,7 @@ const applyProjectService = async (bodyArgs) => {
     const notification = await setNotification({
       triggeredBy: freelancerUpdate._id,
       notify: projectUpdate.postedBy,
-      notificationMessage: `${projectUpdate.projectTitle} applied `,
+      notificationMessage: `${projectUpdate.projectTitle} `,
       projectId: projectUpdate._id,
       notificationType: "jobApplication",
     });

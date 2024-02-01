@@ -19,7 +19,7 @@ const resourceRequirementSchema = new mongoose.Schema(
       type: Number,
     },
 
-    avaibility: {
+    availability: {
       type: String,
     },
 
