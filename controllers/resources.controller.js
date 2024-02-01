@@ -53,7 +53,7 @@ const getResourceById = async (req, res) => {
 const updateResourceController = async (req, res) => {
   const {
     resourceId,
-    availiability,
+    availability,
     budget,
     email,
     designation,
@@ -66,9 +66,10 @@ const updateResourceController = async (req, res) => {
   } = req.body;
   const files = req.files;
 
+
   const response = await updateResourceService({
     resourceId,
-    availiability,
+    availability,
     budget,
     email,
     designation,

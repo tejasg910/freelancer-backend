@@ -64,8 +64,10 @@ const searchService = async ({
     }
     // Add availability filter Resources
     if (availability && availability !== undefined) {
+      availability = parseInt(availability)
+      console.log(availability)
       userAggregationPipeline.push({
-        $match: { availability: { $lte: parseInt(availability) } },
+        $match: { availability: { $lte: availability } },
       });
     }
     // Add experience filter Resources

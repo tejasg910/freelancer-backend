@@ -181,10 +181,10 @@ const updateResourceService = async ({
   }
 
   if (!resourceId) {
-    return res.status(422).json({
+    return {
       status: 400,
       message: "Resource not found",
-    });
+    };
   }
 
   const resource = await User.findOne({
@@ -197,13 +197,10 @@ const updateResourceService = async ({
     return { status: 404, message: "Resource not found" };
   }
   let url = null;
-  if (files && files.length > 0 && files[0].mimetype == "application/pdf") {
-    url = await uploadFile(files[0], "document");
-  } else {
-    return {
-      status: 400,
-      message: "Please upload valid pdf",
-    };
+  if (files && files.length > 0) {
+    if (files[0].mimetype == "application/pdf") {
+      url = await uploadFile(files[0], "document");
+    }
   }
 
   const oldSkills = resource.skills || [];

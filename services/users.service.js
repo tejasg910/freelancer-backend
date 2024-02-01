@@ -150,7 +150,7 @@ const getAllUsersService = async ({ filter, conditions, page, size }) => {
   const { limit, skip } = pagination({ page, size });
   console.log(limit, skip);
   console.log("condition", filter);
-  const { maxBudget, minBudget, availability, experience, skill, sort } =
+  let { maxBudget, minBudget, availability, experience, skill, sort } =
     filter;
   if (maxBudget !== null && minBudget !== null) {
     conditions = {
@@ -161,9 +161,10 @@ const getAllUsersService = async ({ filter, conditions, page, size }) => {
   }
   // Apply additional filters if provided
   if (availability && availability !== undefined) {
+    availability = parseInt(availability)
     conditions = {
       ...conditions,
-      availability: { $lte: parseInt(availability) },
+      availability: { $lte: availability },
     };
   }
   // Apply additional filters if provided
@@ -512,21 +513,21 @@ const registerUserService = async ({
     }
   } else {
     //hashing
-    const gstResponse = await validateGST(gstId);
+    // const gstResponse = await validateGST(gstId);
 
-    if (!gstResponse.success) {
-      return {
-        status: 400,
-        message: "Please provide valid gst number",
-      };
-    }
-    const companyName = fullName.trim().toUpperCase();
-    if (gstResponse.data.tradeName !== companyName) {
-      return {
-        status: 400,
-        message: "Your company is not registered with this gst number",
-      };
-    }
+    // if (!gstResponse.success) {
+    //   return {
+    //     status: 400,
+    //     message: "Please provide valid gst number",
+    //   };
+    // }
+    // const companyName = fullName.trim().toUpperCase();
+    // if (gstResponse.data.tradeName !== companyName) {
+    //   return {
+    //     status: 400,
+    //     message: "Your company is not registered with this gst number",
+    //   };
+    // }
 
     const hashedPassword = await hashPassword(password);
 
