@@ -91,6 +91,14 @@ const searchService = async ({
         },
       },
       {
+        $lookup: {
+          from: "designations",
+          localField: "designation",
+          foreignField: "_id",
+          as: "designation",
+        },
+      },
+      {
         $project: {
           _id: 1,
           userType: 1,
@@ -101,6 +109,8 @@ const searchService = async ({
           address: 1,
           budget: 1,
           availability: 1,
+          "designation._id": 1,
+          "designation.designation": 1,
           totalExperience: 1,
           "experience.duration": 1,
           "skills._id": 1,

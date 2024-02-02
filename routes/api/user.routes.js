@@ -16,6 +16,7 @@ router.post(
   useTryCatch(userControllers.findByEmail)
 );
 router.post("/getUserById", useTryCatch(userControllers.getCompanyById));
+router.post("/getCompanyById", useTryCatch(userControllers.getCompanyById));
 
 router.post("/registerUser", useTryCatch(userControllers.registerUser));
 router.post("/createResource", useTryCatch(userControllers.registerUser));

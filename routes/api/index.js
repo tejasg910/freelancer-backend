@@ -18,6 +18,8 @@ const pdf_extractor = require("./pdfFileService.routes");
 const invitation = require("./invitation.routes");
 const dashboard = require("./dashboard.routes");
 const shortlist = require("./shortlist.routes");
+const auth = require("./auth.routes");
+
 const resourceRequirement = require("./resourceRequirement.routes");
 
 apiRouter.use("/search", searchRouter);
@@ -36,6 +38,7 @@ apiRouter.use("/pdf_extractor", pdf_extractor);
 apiRouter.use("/invitation", invitation);
 apiRouter.use("/dashboard", dashboard);
 apiRouter.use("/shortlist", shortlist);
+apiRouter.use("/auth", auth);
 
 apiRouter.use("/resourceRequirement", resourceRequirement);
 

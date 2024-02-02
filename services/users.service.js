@@ -265,6 +265,10 @@ const getAllUsersService = async ({ filter, conditions, page, size }) => {
     })
     .populate({
       path: "skills",
+    })
+    .populate({
+      path: "designation",
+      select: '_id designation'
     });
   const count = await User.find({
     isDeleted: false,
@@ -1040,9 +1044,8 @@ const resendOtpService = async (email) => {
     const remainingSeconds = Math.ceil((remainingTime % (60 * 1000)) / 1000);
     return {
       status: 400,
-      message: `Please wait ${
-        remainingMinutes - 1
-      } minutes ${remainingSeconds} seconds before requesting a new OTP.`,
+      message: `Please wait ${remainingMinutes - 1
+        } minutes ${remainingSeconds} seconds before requesting a new OTP.`,
     };
   }
   const emailTempate = emailVerificationTemplate(otp, email, company?.fullName);

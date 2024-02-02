@@ -7,8 +7,8 @@ async function generateResetToken(email) {
   });
   return token;
 }
-async function generateLoginToken(email) {
-  const token = await jwt.sign({ email }, process.env.JWT_SECRET, {
+async function generateLoginToken(id) {
+  const token = await jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: "7d", // Set the expiration time (e.g., 1 hour)
   });
   return token;

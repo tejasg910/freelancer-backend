@@ -72,6 +72,13 @@ const getCompanyById = async (req, res) => {
     ...response,
   });
 };
+const getCompanyByIdController = async (req, res) => {
+  console.log(req.user, "this is request");
+  return res.status(200).json({
+    user: req.user,
+    message: "feched successfully",
+  });
+};
 const registerUser = async (req, res) => {
   const {
     email,
@@ -180,12 +187,12 @@ const loginUser = async (req, res) => {
     password,
   });
   if (response.status === 200) {
-    const token = await generateLoginToken(email);
+    const token = await generateLoginToken(response.user[0]._id);
     const options = {
       expires: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
       httpOnly: true,
-      // secure: true, // Set to true in production
-      sameSite: "None", // Set to 'None' in production with HTTPS
+      secure: false, // Set to true in production
+      // sameSite: "None", // Set to 'None' in production with HTTPS
     };
     res.cookie("authToken", token, options);
   }
@@ -393,4 +400,5 @@ module.exports = {
   updateExperienceceOfCompany,
   deleteExperienceOfCompany,
   getAllSearchUsers,
+  getCompanyByIdController,
 };

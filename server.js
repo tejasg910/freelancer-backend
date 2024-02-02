@@ -17,7 +17,8 @@ const app = express();
 app.use(multer().any());
 
 corsOptions = {
-  origin: "*",
+  origin: "http://localhost:3000", // Change this to match your frontend URL
+  credentials: true,
 };
 
 dotenv.config();
