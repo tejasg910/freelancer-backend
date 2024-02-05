@@ -17,7 +17,7 @@ const app = express();
 app.use(multer().any());
 
 corsOptions = {
-  origin: "http://localhost:3000", // Change this to match your frontend URL
+  origin: process.env.FRONTEND_ORIGIN, // Change this to match your frontend URL
   credentials: true,
 };
 
