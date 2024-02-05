@@ -11,4 +11,5 @@ router.get(
   authMiddleware,
   useTryCatch(getCompanyByIdController)
 ),
+  router.get("/logout", authMiddleware, useTryCatch(getCompanyByIdController)),
   (module.exports = router);

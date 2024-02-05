@@ -13,4 +13,11 @@ const checkFileSize = (file) => {
   }
 };
 
-module.exports = { checkFileSize };
+const checkFileUploaded = (file, resumes) => {
+  const isFileUploaded = resumes.some((resume) =>
+    resume.includes(file.originalname)
+  );
+  return isFileUploaded;
+};
+
+module.exports = { checkFileSize, checkFileUploaded };

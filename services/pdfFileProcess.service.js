@@ -6,7 +6,7 @@ const axios = require("axios");
 const { User, Category, Designation } = require("../models");
 const { uploadFile } = require("../utils/awsUpload");
 const { setNotification } = require("./notification.service");
-const { checkFileSize } = require("../utils/checkFileSize");
+const { checkFileSize, checkFileUploaded } = require("../utils/checkFile");
 
 async function FileService(url) {
   try {
@@ -92,7 +92,6 @@ const pdfProcedure = {
 
 const createUserFromPdfService = async (files, companyId) => {
   try {
-    console.log(files, "files");
     const user = await User.findOne({
       _id: companyId,
       isDeleted: false,
@@ -127,162 +126,175 @@ const createUserFromPdfService = async (files, companyId) => {
 
       for (let index = 0; index < files.length; index++) {
         const file = files[index];
-        const isFileBig = checkFileSize(files[index]);
-        if (files[index].mimetype == "application/pdf") {
-          if (isFileBig) {
-            try {
-              const url = await uploadFile(file, "document");
-              console.log(url);
-              const getData = await FileService(url);
-              // const testRead = await readPDFFromUrl(url);
-              // console.log(testRead)
-              if (getData.name) {
-                if (getData && getData.email != null && getData.name != null) {
-                  let existingUser = null;
-                  if (getData.email != "") {
-                    existingUser = await User.findOne({
-                      email: getData.email,
-                      owner: companyId,
-                      isDeleted: false,
-                    });
-                  }
+        const isFileUpLoaded = await checkFileUploaded(file, resumes);
+        if (!isFileUpLoaded) {
+          const isFileBig = checkFileSize(files[index]);
+          if (files[index].mimetype == "application/pdf") {
+            if (isFileBig) {
+              try {
+                const url = await uploadFile(file, "document");
 
-                  if (!existingUser) {
-                    //
-                    let totalExperience = 0;
-                    const { experience } = getData;
+                const getData = await FileService(url);
+                // const testRead = await readPDFFromUrl(url);
+                // console.log(testRead)
+                if (getData.name) {
+                  if (
+                    getData &&
+                    getData.email != null &&
+                    getData.name != null
+                  ) {
+                    let existingUser = null;
+                    if (getData.email != "") {
+                      existingUser = await User.findOne({
+                        email: getData.email,
 
-                    const experiences = await experience.map((exp) => {
-                      totalExperience += exp.amount_of_experience
-                        ? exp.amount_of_experience
-                        : 0;
-                      return {
-                        title: exp.title ? exp.title : "",
-                        duration_string: exp.duration_string
-                          ? exp.duration_string
-                          : "0 years",
-                        duration_number: exp.amount_of_experience
+                        isDeleted: false,
+                      });
+                    }
+
+                    if (!existingUser) {
+                      //
+                      let totalExperience = 0;
+                      const { experience } = getData;
+
+                      const experiences = await experience.map((exp) => {
+                        totalExperience += exp.amount_of_experience
                           ? exp.amount_of_experience
-                          : 0,
-                        summary: exp.summary ? exp.summary : "",
-                      };
-                    });
-                    const skillsData = await Category.find({
-                      title: { $in: getData.skills ? getData.skills : null },
-                    });
-                    const designationData = await Designation.find({
-                      designation: {
-                        $in: getData.designation ? getData.designation : null,
-                      },
-                    });
+                          : 0;
+                        return {
+                          title: exp.title ? exp.title : "",
+                          duration_string: exp.duration_string
+                            ? exp.duration_string
+                            : "0 years",
+                          duration_number: exp.amount_of_experience
+                            ? exp.amount_of_experience
+                            : 0,
+                          summary: exp.summary ? exp.summary : "",
+                        };
+                      });
+                      const skillsData = await Category.find({
+                        title: { $in: getData.skills ? getData.skills : null },
+                      });
+                      const designationData = await Designation.find({
+                        designation: {
+                          $in: getData.designation ? getData.designation : null,
+                        },
+                      });
 
-                    const skillsId = skillsData.map((skill) => skill._id);
+                      const skillsId = skillsData.map((skill) => skill._id);
 
-                    const newSkills = skillsId.filter(
-                      (skillId) => !user.skills.includes(skillId)
-                    );
-
-                    const designationIds = designationData.map(
-                      (designation) => designation._id
-                    );
-
-                    const newUser = new User({
-                      email: getData.email ? getData.email : "",
-                      designation: designationIds,
-                      totalExperience: totalExperience,
-                      experience: experiences,
-                      fullName: getData.name ? getData.name : "",
-                      briefExperience: getData.work_experience
-                        ? getData.work_experience
-                        : "",
-                      phoneNumber: getData.phone ? getData.phone : "",
-                      skills: skillsId,
-                      userType: "user",
-                      owner: companyId,
-                      resume: url,
-                      budget: 0,
-                      availability: 1,
-                    });
-
-                    const err = newUser.validateSync();
-                    if (!err) {
-                      const newUserSave = await newUser.save();
-
-                      resumes.push(newUserSave.resume);
-                      team.push(newUserSave._id);
-
-                      if (newSkills.length > 0) {
-                        skills.push(...newSkills);
-                      }
-
-                      const updatedUser = await User.findByIdAndUpdate(
-                        companyId,
-                        {
-                          resumes,
-                          team,
-                          skills,
-                        }
+                      const newSkills = skillsId.filter(
+                        (skillId) => !user.skills.includes(skillId)
                       );
 
-                      resourceCount += 1;
+                      const designationIds = designationData.map(
+                        (designation) => designation._id
+                      );
 
-                      filesResult.push({
-                        error: false,
-                        fileName: file.originalname,
-                        status: `${newUserSave.fullName} added successfully`,
+                      const newUser = new User({
+                        email: getData.email ? getData.email : "",
+                        designation: designationIds,
+                        totalExperience: totalExperience,
+                        experience: experiences,
+                        fullName: getData.name ? getData.name : "",
+                        briefExperience: getData.work_experience
+                          ? getData.work_experience
+                          : "",
+                        phoneNumber: getData.phone ? getData.phone : "",
+                        skills: skillsId,
+                        userType: "user",
+                        owner: companyId,
+                        resume: url,
+                        budget: 0,
+                        availability: 1,
                       });
+
+                      const err = newUser.validateSync();
+                      if (!err) {
+                        const newUserSave = await newUser.save();
+
+                        resumes.push(newUserSave.resume);
+                        team.push(newUserSave._id);
+
+                        if (newSkills.length > 0) {
+                          skills.push(...newSkills);
+                        }
+
+                        const updatedUser = await User.findByIdAndUpdate(
+                          companyId,
+                          {
+                            resumes,
+                            team,
+                            skills,
+                          }
+                        );
+
+                        resourceCount += 1;
+
+                        filesResult.push({
+                          error: false,
+                          fileName: file.originalname,
+                          status: `${newUserSave.fullName} added successfully`,
+                        });
+                      } else {
+                        filesResult.push({
+                          error: true,
+                          fileName: file.originalname,
+                          status: "Something went wrong",
+                        });
+                      }
                     } else {
                       filesResult.push({
                         error: true,
                         fileName: file.originalname,
-                        status: "Something went wrong",
+                        status: `${existingUser.fullName} already exists in system`,
                       });
                     }
-                  } else {
-                    filesResult.push({
-                      error: true,
-                      fileName: file.originalname,
-                      status: `${existingUser.fullName} already exists in system`,
-                    });
                   }
+                } else {
+                  //name not found
+                  filesResult.push({
+                    error: true,
+                    fileName: file.originalname,
+                    status: "Resource Name not found please update resume",
+                  });
                 }
-              } else {
-                //name not found
+
+                pdfProcedure.percentage =
+                  ((index + 1) * 100) / pdfProcedure.totalFiles;
+                pdfProcedure.remainingFiles =
+                  pdfProcedure.totalFiles - (index + 1);
+              } catch (error) {
                 filesResult.push({
                   error: true,
                   fileName: file.originalname,
-                  status: "Resource Name not found please update resume",
+                  status: "Failed to scan resume",
                 });
+                continue;
               }
-
-              pdfProcedure.percentage =
-                ((index + 1) * 100) / pdfProcedure.totalFiles;
-              pdfProcedure.remainingFiles =
-                pdfProcedure.totalFiles - (index + 1);
-            } catch (error) {
+            } else {
               filesResult.push({
                 error: true,
                 fileName: file.originalname,
-                status: "Failed to scan resume",
+                status: `${file.originalname} must be 1 MB or less`,
               });
-              continue;
             }
           } else {
+            pdfProcedure.percentage =
+              ((index + 1) * 100) / pdfProcedure.totalFiles;
+            pdfProcedure.remainingFiles = pdfProcedure.totalFiles - (index + 1);
+            console.log(pdfProcedure);
             filesResult.push({
               error: true,
               fileName: file.originalname,
-              status: `${file.originalname} must be 1 MB or less`,
+              status: "Invalid pdf",
             });
           }
         } else {
-          pdfProcedure.percentage =
-            ((index + 1) * 100) / pdfProcedure.totalFiles;
-          pdfProcedure.remainingFiles = pdfProcedure.totalFiles - (index + 1);
-          console.log(pdfProcedure);
           filesResult.push({
             error: true,
             fileName: file.originalname,
-            status: "Invalid pdf",
+            status: `${file.originalname} already uploaded`,
           });
         }
       }

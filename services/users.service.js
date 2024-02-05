@@ -150,8 +150,7 @@ const getAllUsersService = async ({ filter, conditions, page, size }) => {
   const { limit, skip } = pagination({ page, size });
   console.log(limit, skip);
   console.log("condition", filter);
-  let { maxBudget, minBudget, availability, experience, skill, sort } =
-    filter;
+  let { maxBudget, minBudget, availability, experience, skill, sort } = filter;
   if (maxBudget !== null && minBudget !== null) {
     conditions = {
       ...conditions,
@@ -161,7 +160,7 @@ const getAllUsersService = async ({ filter, conditions, page, size }) => {
   }
   // Apply additional filters if provided
   if (availability && availability !== undefined) {
-    availability = parseInt(availability)
+    availability = parseInt(availability);
     conditions = {
       ...conditions,
       availability: { $lte: availability },
@@ -268,7 +267,7 @@ const getAllUsersService = async ({ filter, conditions, page, size }) => {
     })
     .populate({
       path: "designation",
-      select: '_id designation'
+      select: "_id designation",
     });
   const count = await User.find({
     isDeleted: false,
@@ -755,7 +754,7 @@ const forgotPasswordService = async ({ email }) => {
   const token = await generateResetToken(company.email);
   //sending email for user
 
-  const link = `${process.env.FRONTEND_ORIGIN}ForgotPassword/${token}`;
+  const link = `${process.env.FRONTEND_ORIGIN}/ForgotPassword/${token}`;
   const resetTemplate = resetPasswordTemplate(link, company?.fullName);
   await sendEmail(email, resetTemplate, "Reset your password");
 
@@ -1044,8 +1043,9 @@ const resendOtpService = async (email) => {
     const remainingSeconds = Math.ceil((remainingTime % (60 * 1000)) / 1000);
     return {
       status: 400,
-      message: `Please wait ${remainingMinutes - 1
-        } minutes ${remainingSeconds} seconds before requesting a new OTP.`,
+      message: `Please wait ${
+        remainingMinutes - 1
+      } minutes ${remainingSeconds} seconds before requesting a new OTP.`,
     };
   }
   const emailTempate = emailVerificationTemplate(otp, email, company?.fullName);
@@ -1075,8 +1075,13 @@ async function getMatchedUsers(projectId, currentUserId) {
       userType: "user",
       skills: { $in: projectSkills },
       isDeleted: false,
-    }).populate("skills");
+    })
+      .select(userSelect)
+      .populate("skills")
 
+      .populate({
+        path: "designation",
+      });
     // Step 4: Calculate matching score for each user
     const usersWithScore = matchingUsers.map((user) => {
       let matchingScore = 0;
@@ -1120,7 +1125,11 @@ const getCompaniesInFeedService = async ({ companyId, page, size }) => {
     _id: companyId,
     isDeleted: false,
     userType: "client",
-  });
+  })
+    .select(userSelect)
+    .populate({
+      path: "designation",
+    });
   if (!company) {
     return {
       status: 404,

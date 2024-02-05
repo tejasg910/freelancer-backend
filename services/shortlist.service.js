@@ -158,7 +158,7 @@ const sendInvitationToResourceServiceFromShortlistService = async ({
 
     //update the shortlist
 
-    const updateShortlist = await Shortlist.findOneAndUpdate(
+    const updateShortlist = await Shortlist.updateMany(
       { company: companyId, resource: resourceId },
       {
         active: false,

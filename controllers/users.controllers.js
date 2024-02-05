@@ -72,6 +72,13 @@ const getCompanyById = async (req, res) => {
     ...response,
   });
 };
+
+const logout = (async = (req, res) => {
+  res.clearCookie("authToken");
+
+  // Optionally, you can send a response indicating successful logout
+  res.json({ success: 200, message: "Logout successful" });
+});
 const getCompanyByIdController = async (req, res) => {
   console.log(req.user, "this is request");
   return res.status(200).json({
@@ -401,4 +408,5 @@ module.exports = {
   deleteExperienceOfCompany,
   getAllSearchUsers,
   getCompanyByIdController,
+  logout,
 };
