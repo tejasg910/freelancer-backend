@@ -7,3 +7,4 @@ const { useTryCatch } = require('../../services/utility.service');
 router.post('/', useTryCatch(searchController.search));
 
 module.exports = router;
+    

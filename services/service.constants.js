@@ -9,6 +9,7 @@ const userSelect = {
   totalExperience: 1,
   experience: 1,
   skills: 1,
+  createdAt: 1,
 };
 
 const applicationSelect = {

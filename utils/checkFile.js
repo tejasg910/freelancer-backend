@@ -15,7 +15,7 @@ const checkFileSize = (file) => {
 
 const checkFileUploaded = (file, resumes) => {
   const isFileUploaded = resumes.some((resume) =>
-    resume.includes(file.originalname)
+    resume?.includes(file.originalname)
   );
   return isFileUploaded;
 };

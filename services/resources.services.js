@@ -197,13 +197,13 @@ const updateResourceService = async ({
     return { status: 404, message: "Resource not found" };
   }
   let url = null;
-  if (files && files.length > 0) {  
+  if (files && files.length > 0) {
     if (files[0].mimetype == "application/pdf") {
       url = await uploadFile(files[0], "document");
     }
   }
 
-  const oldSkills = resource.skills || [];      
+  const oldSkills = resource.skills || [];
   const oldResume = resource.resume;
   const updateFields = {
     availability,
@@ -281,7 +281,7 @@ const updateResourceService = async ({
       );
     }
 
-    return { status: 200, message: "Resource successfully updated" };
+    return { status: 200, message: "Resource deleted successfully" };
   } else {
     return {
       status: 500,

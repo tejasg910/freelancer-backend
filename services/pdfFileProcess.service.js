@@ -91,7 +91,15 @@ const pdfProcedure = {
 };
 
 const createUserFromPdfService = async (files, companyId) => {
+  console.log(files, companyId);
+
+
   try {
+
+if(!files || !companyId){
+  return {status:400, message:"Please provide companyid and files"}
+}
+
     const user = await User.findOne({
       _id: companyId,
       isDeleted: false,
@@ -137,6 +145,7 @@ const createUserFromPdfService = async (files, companyId) => {
                 const getData = await FileService(url);
                 // const testRead = await readPDFFromUrl(url);
                 // console.log(testRead)
+
                 if (getData.name) {
                   if (
                     getData &&
